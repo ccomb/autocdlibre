@@ -149,3 +149,27 @@
 - mise à jour cornice 0.5.2-wx24
 - changement d'URL pour OOo 1.1.3
 - corrections et changements mineurs
+
+## version 19
+
+- mise à jour grisbi 0.5.3
+- mise à jour clamwin 0.37.3
+- mise à jour nvu 0.60
+- mise à jour abiword 2.2.1
+- retrait des sources gtk, glib, pango, atk, pkgconfig
+- mise à jour blender 2.35a et yafray 0.0.6-7
+- ajout de vidéos pour blender
+- retrait de python
+- mise à jour 7-zip 4.12 beta
+- mise à jour e-mule 0.44d
+- mise à jour inkscape 0.40
+- mise à jour audacity 1.2.3
+- ajout de lame pour audacity
+- ajout du manuel francais d'audacity
+- ajout de "moderne" au dossier de firefox
+- mise à jour thunderbird 1.0 FR
+- mise à jour gaim 1.1.0
+- mise à jour vlc 0.8.1
+- mise à jour scorched3D38
+- ajout de TORCS 1.2.2
+- ajout de Battle for Wesnoth 0.8
