@@ -25,7 +25,7 @@
 #set -x
 
 # version de ce script
-autocdlibre_version=15
+autocdlibre_version=16
 # où récupérer les infos
 autocdlibre_server="http://ccomb.free.fr/autocdlibre"
 
@@ -156,7 +156,13 @@ BEGIN { ORS="\r\n"; insource=0; infile=0 }
 }' $script 
   # on écrit le numéro de version dans le cd
   printf "CD-ROM généré le `date '+%A %d %B %Y'` par le script \"autocdlibre\" version $autocdlibre_version ($autocdlibre_server)" > $repcd/info
-  if [ -e ERROR ]; then rm -f ERROR; echo; echo "Au moins un fichier n'a pas pu être téléchargé"; exit; fi
+  if [ -e ERROR ]; then
+    rm -f ERROR
+    echo
+    echo "Au moins un fichier n'a pas pu être téléchargé"
+    echo "Merci de prévenir à l'adresse ccomb@free.fr"
+    exit
+  fi
   echo "téléchargement terminé, arborescence du CD terminée"
 
   # si demandé, on s'arrête
@@ -250,12 +256,12 @@ exit
 le code source peut être obtenu ici :
 http://ovh.dl.sourceforge.net/sourceforge/grisbi/grisbi-0.5.1.tar.bz2
 
-#% CLAMAV
-%DIR Internet/Antivirus
+#% CLAMWIN
+%DIR Internet/Scanner à virus
 %URL http://ovh.dl.sourceforge.net/sourceforge/clamwin/clamwin-0.35.2-setup.exe
-%DIR Internet/Antivirus/code source
+%DIR Internet/Scanner à virus/code source
 %URL http://ovh.dl.sourceforge.net/sourceforge/clamwin/clamwin-0.35.2-src.zip
-%FILE Internet/Antivirus/code source/codesource.txt
+%FILE Internet/Scanner à virus/code source/codesource.txt
 le code source peut être obtenu ici :
 http://ovh.dl.sourceforge.net/sourceforge/clamwin/clamwin-0.35.2-src.zip
 
@@ -269,11 +275,12 @@ le code source peut être obtenu ici : http://www.httrack.com/httrack-3.32-2.tar
 
 #% NVU
 %DIR Internet/Éditeur de site web
-%URL http://cvs.nvu.com/download/nvu-0.41-win32-installer-full.exe
+%URL http://cvs.nvu.com/download/nvu-0.50-win32-installer-full.exe
 %DIR Internet/Éditeur de site web/code source
-%URL http://www.nvu.com/download/nvu-0.41-source.tar.gz
+%URL http://cvs.nvu.com/download/nvu-0.50-sources.tar.bz2
 %FILE Internet/Éditeur de site web/code source/codesource.txt
-le code source peut être obtenu ici : http://www.nvu.com/download/nvu-0.41-source.tar.gz
+le code source peut être obtenu ici :
+http://cvs.nvu.com/download/nvu-0.50-sources.tar.bz2
 
 #% ABIWORD
 %DIR Bureautique/Traitement de texte seul
@@ -302,11 +309,12 @@ le code source peut être obtenu ici : http://ovh.dl.sourceforge.net/sourceforge
 
 #% CORNICE
 %DIR Multimedia/Visualiseur photos
-%URL http://wxglade.sourceforge.net/extra/Cornice-0.4-setup.exe
+%URL http://wxglade.sourceforge.net/extra/cornice-0.5.1-setup.exe
 %DIR Multimedia/Visualiseur photos/code source
-%URL http://wxglade.sourceforge.net/extra/Cornice-0.4.tgz
+%URL http://wxglade.sourceforge.net/extra/cornice-0.5.1.tar.gz
 %FILE Multimedia/Visualiseur photos/code source/codesource.txt
-le code source peut être obtenu ici : http://wxglade.sourceforge.net/extra/Cornice-0.4.tgz
+le code source peut être obtenu ici :
+http://wxglade.sourceforge.net/extra/cornice-0.5.1.tar.gz
 
 #% PDFCREATOR
 %DIR Bureautique/Création de fichiers PDF
@@ -318,8 +326,8 @@ le code source peut être obtenu ici : http://ovh.dl.sourceforge.net/sourceforge
 
 #% THE GIMP
 %DIR Multimedia/Retouche photo
-%URLZIP ftp://ftp.arnes.si/software/gimp-win/gtk+-2.4.7-setup.zip
-%URLZIP ftp://ftp.arnes.si/software/gimp-win/gimp-2.0.4-i586-setup.zip
+%URLZIP ftp://ftp.arnes.si/software/gimp-win/gtk+-2.4.9-setup.zip
+%URLZIP ftp://ftp.arnes.si/software/gimp-win/gimp-2.0.5-i586-setup.zip
 %URLZIP ftp://ftp.arnes.si/software/gimp-win/gimp-help-2-0.3-setup.zip
 %FILE Multimedia/Retouche photo/comment installer GIMP.txt
 Dans l'ordre, il faut installer :
@@ -365,12 +373,12 @@ ftp://sunsite.cnlab-switch.ch/mirror/ghost/ghostgum/gsv46src.zip
 
 #% FILEZILLA
 %DIR Internet/Transfert FTP
-%URL http://ovh.dl.sourceforge.net/sourceforge/filezilla/FileZilla_2_2_8b_setup.exe
+%URL http://ovh.dl.sourceforge.net/sourceforge/filezilla/FileZilla_2_2_8d_setup.exe
 %DIR Internet/Transfert FTP/code source
-%URL http://ovh.dl.sourceforge.net/sourceforge/filezilla/FileZilla_2_2_8b_src.zip
+%URL http://ovh.dl.sourceforge.net/sourceforge/filezilla/FileZilla_2_2_8d_src.zip
 %FILE Internet/Transfert FTP/code source/codesource.txt
 le code source peut être obtenu ici :
-http://ovh.dl.sourceforge.net/sourceforge/filezilla/FileZilla_2_2_8b_src.zip
+http://ovh.dl.sourceforge.net/sourceforge/filezilla/FileZilla_2_2_8d_src.zip
 
 #% DIA
 %DIR Bureautique/Éditeur de diagrammes
@@ -545,16 +553,16 @@ le code source peut être obtenu ici : http://ovh.dl.sourceforge.net/sourceforge
 
 #% GAIM
 %DIR Internet/Messagerie instantanée (icq, jabber, msn, etc.)
-%URL http://ovh.dl.sourceforge.net/sourceforge/gaim/gaim-1.0.0.exe
+%URL http://ovh.dl.sourceforge.net/sourceforge/gaim/gaim-1.0.1.exe
 %DIR Internet/Messagerie instantanée (icq, jabber, msn, etc.)/code source
-%URL http://ovh.dl.sourceforge.net/sourceforge/gaim/gaim-1.0.0.tar.bz2
+%URL http://ovh.dl.sourceforge.net/sourceforge/gaim/gaim-1.0.1.tar.bz2
 %FILE Internet/Messagerie instantanée (icq, jabber, msn, etc.)/code source/codesource.txt
 le code source peut être obtenu ici :
-http://ovh.dl.sourceforge.net/sourceforge/gaim/gaim-1.0.0.tar.bz2
+http://ovh.dl.sourceforge.net/sourceforge/gaim/gaim-1.0.1.tar.bz2
 
 #% VLC MEDIA PLAYER
 %DIR Multimedia/Lecteur Vidéo et DVD
-%URL http://download.videolan.org/pub/videolan/vlc/0.7.2/win32/vlc-0.7.2-win32.exe
+%URL http://download.videolan.org/pub/testing/vlc-0.8.0-test2/win32/vlc-0.8.0-test2-win32.exe
 %DIR Multimedia/Lecteur Vidéo et DVD/code source
 %URL http://download.videolan.org/pub/videolan/vlc/0.7.2/vlc-0.7.2.tar.bz2
 %FILE Multimedia/Lecteur Vidéo et DVD/code source/codesource.txt
