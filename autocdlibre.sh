@@ -25,7 +25,7 @@
 #set -x
 
 # version de ce script
-autocdlibre_version=16
+autocdlibre_version=17
 # où récupérer les infos
 autocdlibre_server="http://ccomb.free.fr/autocdlibre"
 
@@ -258,12 +258,12 @@ http://ovh.dl.sourceforge.net/sourceforge/grisbi/grisbi-0.5.1.tar.bz2
 
 #% CLAMWIN
 %DIR Internet/Scanner à virus
-%URL http://ovh.dl.sourceforge.net/sourceforge/clamwin/clamwin-0.35.2-setup.exe
+%URL http://ovh.dl.sourceforge.net/sourceforge/clamwin/clamwin-0.35.3-setup.exe
 %DIR Internet/Scanner à virus/code source
-%URL http://ovh.dl.sourceforge.net/sourceforge/clamwin/clamwin-0.35.2-src.zip
+%URL http://ovh.dl.sourceforge.net/sourceforge/clamwin/clamwin-0.35.3-src.zip
 %FILE Internet/Scanner à virus/code source/codesource.txt
 le code source peut être obtenu ici :
-http://ovh.dl.sourceforge.net/sourceforge/clamwin/clamwin-0.35.2-src.zip
+http://ovh.dl.sourceforge.net/sourceforge/clamwin/clamwin-0.35.3-src.zip
 
 #% HTTRACK
 %DIR Internet/Aspirateur de site web
@@ -309,12 +309,12 @@ le code source peut être obtenu ici : http://ovh.dl.sourceforge.net/sourceforge
 
 #% CORNICE
 %DIR Multimedia/Visualiseur photos
-%URL http://wxglade.sourceforge.net/extra/cornice-0.5.1-setup.exe
+%URL http://wxglade.sourceforge.net/extra/cornice-0.5.2-setup.exe
 %DIR Multimedia/Visualiseur photos/code source
-%URL http://wxglade.sourceforge.net/extra/cornice-0.5.1.tar.gz
+%URL http://wxglade.sourceforge.net/extra/cornice-0.5.2.tar.gz
 %FILE Multimedia/Visualiseur photos/code source/codesource.txt
 le code source peut être obtenu ici :
-http://wxglade.sourceforge.net/extra/cornice-0.5.1.tar.gz
+http://wxglade.sourceforge.net/extra/cornice-0.5.2.tar.gz
 
 #% PDFCREATOR
 %DIR Bureautique/Création de fichiers PDF
@@ -411,12 +411,12 @@ http://download.blender.org/source/blender-2.33a.tar.bz2
 le code source peut être obtenu ici : http://python.org/ftp/python/2.3.4/Python-2.3.4.tgz
 
 #% OPENOFFICE.ORG
-%DIR Bureautique/Suite Bureautique Complète/OpenOffice.org 1.1.2
-%URLZIP http://ftp.club-internet.fr/pub/OpenOffice/localized/fr/1.1.2/OOo_1.1.2_Win32Intel_install_fr.zip
+%DIR Bureautique/Suite Bureautique Complète/OpenOffice.org 1.1.3
+%URLZIP http://ftp.club-internet.fr/pub/OpenOffice/localized/fr/1.1.3/OOo_1.1.3_Win32Intel_install_fr.zip
 %DIR Bureautique/Suite Bureautique Complète/code source
 %FILE Bureautique/Suite Bureautique Complète/code source/codesource.txt
-Le code source est énorme et peut être récupéré ici : ftp://openoffice.cict.fr/openoffice/stable/1.1.2/
-#%URL ftp://openoffice.cict.fr/openoffice/stable/1.1.2/OOo_1.1.2_source.tar.gz
+Le code source est énorme et peut être récupéré ici : ftp://openoffice.cict.fr/openoffice/stable/1.1.3/
+#%URL ftp://openoffice.cict.fr/openoffice/stable/1.1.3/OOo_1.1.3_source.tar.gz
 %DIR Bureautique/Suite Bureautique Complète/Manuels et documentation
 %URL http://fr.openoffice.org/Documentation/Guides/Manuel_install1.1_v2.pdf
 %URL http://fr.openoffice.org/Documentation/Guides/parcours_texte_ooo.pdf
@@ -553,12 +553,12 @@ le code source peut être obtenu ici : http://ovh.dl.sourceforge.net/sourceforge
 
 #% GAIM
 %DIR Internet/Messagerie instantanée (icq, jabber, msn, etc.)
-%URL http://ovh.dl.sourceforge.net/sourceforge/gaim/gaim-1.0.1.exe
+%URL http://ovh.dl.sourceforge.net/sourceforge/gaim/gaim-1.0.2.exe
 %DIR Internet/Messagerie instantanée (icq, jabber, msn, etc.)/code source
-%URL http://ovh.dl.sourceforge.net/sourceforge/gaim/gaim-1.0.1.tar.bz2
+%URL http://ovh.dl.sourceforge.net/sourceforge/gaim/gaim-1.0.2.tar.bz2
 %FILE Internet/Messagerie instantanée (icq, jabber, msn, etc.)/code source/codesource.txt
 le code source peut être obtenu ici :
-http://ovh.dl.sourceforge.net/sourceforge/gaim/gaim-1.0.1.tar.bz2
+http://ovh.dl.sourceforge.net/sourceforge/gaim/gaim-1.0.2.tar.bz2
 
 #% VLC MEDIA PLAYER
 %DIR Multimedia/Lecteur Vidéo et DVD
