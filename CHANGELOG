@@ -16,3 +16,16 @@
 - correction du décalage de version dans l'affichage du changelog
 - modifications d'options à wget
 - test de l'existence de expr
+
+## version 3
+
+- ajout d'une option -h
+- "déjà téléchargé" est maintenant affiché quand il faut
+- possibilité d'arrêter après création de l'arborescence
+- possibilité d'arrêter juste avant la gravure
+- possibilité de ne pas inclure les codes sources
+- ajout des logiciels httrack, Nvu, AbiWord, OpenVIP, VirtualDub
+- Modification de l'arborescence par création de catégories
+- ajout de fichiers textes pour les codes sources
+- ajout d'un fichier texte de sensibilisation pour eMule
+- modification du fichier "dans ce CD.txt"
