@@ -129,3 +129,23 @@
 - mise à jour clamwin 0.35.3
 - mise à jour cornice 0.5.2
 - mise à jour gaim 1.0.2
+
+## version 18
+
+- Mise à jour Firefox 1.0
+- ajout d'un avertissement sur l'UTF-8
+- ajout d'un ping pour le test de connexion
+- support des espaces dans les URL (firefox...)
+- Changement du nom de volume du CD
+- mise à jour grisbi 0.5.2
+- mise à jour clamwin 0.35.4
+- version française de NVU 0.5
+- mise à jour abiword 2.0.14
+- ajout dictionnaire abiword
+- mise à jour GPL Ghostscript 8.15
+- mise à jour Filezilla 2.2.9
+- mise à jour Thunderbird 0.9
+- mise à jour VLC 0.8 final
+- mise à jour cornice 0.5.2-wx24
+- changement d'URL pour OOo 1.1.3
+- corrections et changements mineurs
