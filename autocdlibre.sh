@@ -28,7 +28,7 @@
 unalias -a
 
 # version de ce script
-autocdlibre_version=20
+autocdlibre_version=21
 # où récupérer les infos
 autocdlibre_email="ccomb@free.fr"
 autocdlibre_server="ccomb.free.fr"
@@ -87,6 +87,7 @@ if [ -z "$utf8" ]; then
 	echo "Certains caractères peuvent mal s'afficher dans votre terminal GNU."
 	echo "Cependant, tout devrait s'afficher correctement sous Windows"
 	echo
+	sleep 2
 fi
 
 # on vérifie qu'on a les droits en écriture sur le répertoire actuel
@@ -132,7 +133,7 @@ if [ -e latest_version -a $reseau -eq 1 ]; then
 		done
 		echo "-------"
 		echo -n "Voulez-vous récupérer et utiliser cette nouvelle version ? (o/n) [o] "
-		if [ $AUTO -ne 1 ]; then read reponse; else echo; fi
+		if [ "$AUTO" != "1" ]; then read reponse; else echo; fi
 		# on télécharge et on exécute la nouvelle version
 		if [ "$reponse" = "o" -o "$reponse" = "O" -o "$reponse" = "" -o "$reponse" = "oui" -o "$reponse" = "OUI" ]; then
 			echo "  Récupération de la dernière version..."
@@ -157,7 +158,7 @@ demande_effacement() {
 	if [ -d $item ]; then
 		echo; echo "Le répertoire $item ne sert plus à rien. Voulez-vous l'effacer ?"
 		printf "rm -rf $item ? (o/n) [o] ?"
-		if [ $AUTO -ne 1 ]; then read reponse; else echo; fi
+		if [ "$AUTO" != "1" ]; then read reponse; else echo; fi
 		if [ "$reponse" = "o" -o "$reponse" = "O" -o "$reponse" = "" -o "$reponse" = "oui" -o "$reponse" = "OUI" ]; then
 			echo "Effacement de $item..."
 			rm -rf "$item"
@@ -165,7 +166,7 @@ demande_effacement() {
 	else if [ -e $item ]; then
 		echo; echo "Le fichier $item ne sert plus à rien. Voulez-vous l'effacer ?"
 		printf "rm -f $item ? (o/n) [o] ?"
-		if [ $AUTO -ne 1 ]; then read reponse; else echo; fi
+		if [ "$AUTO" != "1" ]; then read reponse; else echo; fi
 		if [ "$reponse" = "o" -o "$reponse" = "O" -o "$reponse" = "" -o "$reponse" = "oui" -o "$reponse" = "OUI" ]; then
 			echo "Effacement de $item..."
 			rm -f "$item"
@@ -179,7 +180,7 @@ sortie_propre() {
 	if [ -d $repcd -a -f $cdname -a -d $reptelech ]; then
 		echo "L'arborescence du CD ne sert plus à rien. Voulez vous l'effacer ?"
 		printf "rm -rf $repcd ? (o/n) [o] ?"
-		if [ $AUTO -ne 1 ]; then read reponse; else echo; fi
+		if [ "$AUTO" != "1" ]; then read reponse; else echo; fi
 		if [ "$reponse" = "o" -o "$reponse" = "O" -o "$reponse" = "" -o "$reponse" = "oui" -o "$reponse" = "OUI" ]; then
 			echo "Effacement de l'arborescence du CD..."
 			rm -rf $repcd
@@ -210,7 +211,7 @@ if [ -f $cdname ]; then
 	echo
 	echo "Une image ISO du cd $cdname semble déjà prête."
 	echo -n "Voulez-vous l'utiliser pour graver directement ? (o/n) [o] "
-	if [ $AUTO -ne 1 ]; then read reponse; else echo; fi
+	if [ "$AUTO" != "1" ]; then read reponse; else echo; fi
 fi
 if [ ! -f $cdname -o "$reponse" != "o" -a "$reponse" != "O" -a "$reponse" != "" -a "$reponse" != "oui" -a "$reponse" != "OUI" ]; then 
 	# on prépare le répertoire pour l'arborescence
@@ -236,8 +237,9 @@ BEGIN { ORS="\r\n"; insource=0; infile=0 }
 	if [ -e ERROR ]; then
 		rm -f ERROR
 		echo
-		echo "Au moins un fichier n'a pas pu être téléchargé"
-		echo "Merci de prévenir à l'adresse $autocdlibre_email"
+		echo "Au moins un fichier n'a pas pu être téléchargé."
+		echo "Veuillez relancer le script une ou deux fois et, si l'échec se répète, 
+		echo "merci de prévenir à l'adresse $autocdlibre_email"
 		exit
 	fi
 	echo "Téléchargement terminé, arborescence du CD terminée"
@@ -292,7 +294,7 @@ while [ $res -ne 0 ]; do
 	cdrecord dev=$device driveropts=burnfree -eject $cdname >/dev/null 2>&1
 	res=$?; let num++
 	if [ $num -eq 3 ]; then echo; printf "\e[7mERREUR\e[m : je n'arrive pas à graver. Je ne peux pas terminer"; sortie_propre; fi
-	if [ $res -ne 0 ]; then echo; echo "Veuillez insérer un CD vierge dans le graveur, et pressez ENTER"; echo "(ou Ctrl-C pour interrompre)"; if [ $AUTO -ne 1 ]; then read; fi; fi
+	if [ $res -ne 0 ]; then echo; echo "Veuillez insérer un CD vierge dans le graveur, et pressez ENTER"; echo "(ou Ctrl-C pour interrompre)"; if [ "$AUTO" != "1" ]; then read; fi; fi
 done
 echo OK
 echo "Gravure terminée. L'image ISO est conservée sous le nom $cdname."
@@ -501,21 +503,21 @@ Voir ici : http://cvs.sourceforge.net/viewcvs.py/cdexos/cdex_xp/
 
 #% 7-ZIP
 %DIR Bureautique/Compression de fichiers (zip, gz, bz2, etc.)
-%URL http://ovh.dl.sourceforge.net/sourceforge/sevenzip/7z412b.exe
+%URL http://ovh.dl.sourceforge.net/sourceforge/sevenzip/7z413b.exe
 %FILE Bureautique/Compression de fichiers (zip, gz, bz2, etc.)/lisez-moi.txt
-Après installation de seven-zip, voici ce qu'il faut faire pour avoir le programme en français et un usage plus agréable :
+Après installation de 7-zip, voici ce qu'il faut faire pour avoir le programme en français et un usage plus agréable :
 - Menu Démarrer -> Programmes -> 7-zip -> 7-zip File Manager
-- Dans "7-zip File Manager", ouvrir le menu Tools -> Options
-- Dans l'onglet System : cocher toutes les extensions pour les associer à 7-zip
-- Dans l'onglet Language : sélectionner français
-- Dans l'onglet Plugins, cliquer sur Options et cocher "Cascaded context menu"
+- Dans le "7-zip File Manager", ouvrir le menu Tools -> Options
+- Dans l'onglet "System" : cocher toutes les extensions pour les associer à 7-zip
+- Dans l'onglet "Language" : sélectionner français
+- Dans l'onglet "Plugins", cliquer sur "Options" et cocher "Cascaded context menu"
 Ensuite fermer 7-zip.
 Après ces réglages, 7-zip sera en français, le menu contextuel (clic droit) affichera un sous-menu global pour 7-zip, et tous les fichiers compressés seront automatiquement ouverts avec 7-zip.
 %DIR Bureautique/Compression de fichiers (zip, gz, bz2, etc.)/code source
-%URL http://ovh.dl.sourceforge.net/sourceforge/sevenzip/7z412b.tar.bz2
+%URL http://ovh.dl.sourceforge.net/sourceforge/sevenzip/7z413b.tar.bz2
 %FILE Bureautique/Compression de fichiers (zip, gz, bz2, etc.)/code source/codesource.txt
 le code source peut être obtenu ici :
-http://ovh.dl.sourceforge.net/sourceforge/sevenzip/7z412b.tar.bz2
+http://ovh.dl.sourceforge.net/sourceforge/sevenzip/7z413b.tar.bz2
 
 #% EMULE
 %DIR Internet/Téléchargement Peer2peer
@@ -574,7 +576,7 @@ http://ovh.dl.sourceforge.net/sourceforge/audacity/audacity-src-1.2.3.tar.gz
 %DIR Internet/Suite internet complète (navigateur, e-mail, éditeur web)/manuel
 %URL http://ovh.dl.sourceforge.net/sourceforge/frenchmozilla/mozman-1.35.fr.pdf
 %DIR Internet/Suite internet complète (navigateur, e-mail, éditeur web)/code source
-%URL  wget http://ftp.mozilla.org/pub/mozilla.org/mozilla/releases/mozilla1.7.3/src/mozilla-source-1.7.3.tar.bz2
+%URL http://ftp.mozilla.org/pub/mozilla.org/mozilla/releases/mozilla1.7.3/src/mozilla-source-1.7.3.tar.bz2
 #%FILE Internet/Suite internet complète (navigateur, e-mail, éditeur web)/Comment installer la langue française.txt
 #%- installez d'abord Mozilla lui-même 
 #%- démarrez Mozilla et ouvrez le CD-ROM avec Mozilla

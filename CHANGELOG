@@ -181,3 +181,10 @@
 - meilleur comportement en cas d'interruption
 - affichage des ECHECs plus visible
 - autres modifications mineures
+
+## version 21
+
+- correction d'un bogue pour la variable AUTO
+- correction de l'URL pour mozilla-source
+- mise à jour 7-zip 4.13 beta
+- modification du message en cas d'échec de téléchargement
