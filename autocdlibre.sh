@@ -25,7 +25,7 @@
 #set -x
 
 # version de ce script
-autocdlibre_version=8
+autocdlibre_version=9
 # où récupérer les infos
 autocdlibre_server="http://ccomb.free.fr/autocdlibre"
 
@@ -307,8 +307,8 @@ le code source peut être obtenu ici : http://belnet.dl.sourceforge.net/sourcefo
 #% THE GIMP
 %DIR Multimedia/Éditeur photo
 %URLZIP ftp://ftp.arnes.si/software/gimp-win/gtk+-2.4.3-setup.zip
-%URLZIP ftp://ftp.arnes.si/software/gimp-win/gimp-2.0.2-i586-setup-1.zip
-%URLZIP ftp://ftp.arnes.si/software/gimp-win/gimp-help-2-0.2-setup.zip
+%URLZIP ftp://ftp.arnes.si/software/gimp-win/gimp-2.0.3-i586-setup.zip
+%URLZIP ftp://ftp.arnes.si/software/gimp-win/gimp-help-2-0.3-setup.zip
 %FILE Multimedia/Éditeur photo/comment installer GIMP.txt
 Dans l'ordre, il faut installer :
 - gtk+
@@ -448,11 +448,11 @@ il est gratuit, compatible, ouvert, facile à utiliser, plus stable, et il évol
 
 #% INKSCAPE
 %DIR Multimedia/Dessin vectoriel
-%URL http://belnet.dl.sourceforge.net/sourceforge/inkscape/inkscape-0.38-1.win32.exe
+%URL http://belnet.dl.sourceforge.net/sourceforge/inkscape/Inkscape-0.39-1.win32.exe
 %DIR Multimedia/Dessin vectoriel/code source
-%URL http://belnet.dl.sourceforge.net/sourceforge/inkscape/inkscape-0.38.1.tar.bz2
+%URL http://belnet.dl.sourceforge.net/sourceforge/inkscape/inkscape-0.39.tar.bz2
 %FILE Multimedia/Dessin vectoriel/code source/codesource.txt
-le code source peut être obtenu ici : http://belnet.dl.sourceforge.net/sourceforge/inkscape/inkscape-0.38.1.tar.bz2
+le code source peut être obtenu ici : http://belnet.dl.sourceforge.net/sourceforge/inkscape/inkscape-0.39.tar.bz2
 
 #% AUDACITY
 %DIR Multimedia/Enregistreur et éditeur de sons
