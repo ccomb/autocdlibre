@@ -24,12 +24,16 @@
 # pour déboguer ce script, décommentez la ligne suivante
 #set -x
 
+# on vire les alias
+unalias -a
+
 # version de ce script
-autocdlibre_version=19
+autocdlibre_version=20
 # où récupérer les infos
 autocdlibre_email="ccomb@free.fr"
 autocdlibre_server="ccomb.free.fr"
 autocdlibre_url="http://$autocdlibre_server/autocdlibre"
+autocdlibre_home="http://$autocdlibre_server/wiki/wakka.php?wiki=AutoCdLibre"
 
 # analyse des arguments
 while [ $# -gt 0 ]; do
@@ -38,18 +42,20 @@ while [ $# -gt 0 ]; do
 		echo
 		echo "AutoCdLibre v$autocdlibre_version : pour créer un CD de logiciels libres pour Windows"
 		echo "Lancez simplement ce script sans argument, et il s'occupera de tout."
-		echo "Pour plus d'infos consultez http://$autocdlibre_server/wiki/wakka.php?wiki=AutoCdLibre"
+		echo "Pour plus d'infos consultez $autocdlibre_home"
 		echo
 		echo "Syntaxe : $0 [-h][-nosrc][-arbre][-noburn]"
-		echo "-h : ce petit texte d'aide"
-		echo "-nosrc : ne pas inclure les codes source"
-		echo "-arbre : stopper après la creation de l'arborescence du CD"
+		echo "-h      : ce petit texte d'aide"
+		echo "-nosrc  : ne pas inclure les codes sources"
+		echo "-arbre  : stopper après la creation de l'arborescence du CD"
 		echo "-noburn : stopper juste avant la gravure."
+		echo "-auto   : valider toutes les questions par défaut"
 		echo
 		exit ;;
 	"-nosrc") NOSRC=1;;
 	"-arbre") ARBRE=1;;
 	"-noburn") NOBURN=1;;
+	"-auto") AUTO=1;;
 	esac
 	shift
 done
@@ -126,9 +132,9 @@ if [ -e latest_version -a $reseau -eq 1 ]; then
 		done
 		echo "-------"
 		echo -n "Voulez-vous récupérer et utiliser cette nouvelle version ? (o/n) [o] "
-		read rep;
+		if [ $AUTO -ne 1 ]; then read reponse; else echo; fi
 		# on télécharge et on exécute la nouvelle version
-		if [ "$rep" = "o" -o "$rep" = "O" -o "$rep" = "" ]; then
+		if [ "$reponse" = "o" -o "$reponse" = "O" -o "$reponse" = "" -o "$reponse" = "oui" -o "$reponse" = "OUI" ]; then
 			echo "  Récupération de la dernière version..."
 			wget -c -q $autocdlibre_url/autocdlibre_v$latest_version.sh
 			chmod +x autocdlibre_v$latest_version.sh
@@ -146,106 +152,152 @@ repcd="autocdlibre_v$autocdlibre_version"
 cdname=autocdlibre_v$autocdlibre_version.iso
 reptelech=fichiers_telecharges_v$autocdlibre_version
 
+demande_effacement() {
+	item=$1
+	if [ -d $item ]; then
+		echo; echo "Le répertoire $item ne sert plus à rien. Voulez-vous l'effacer ?"
+		printf "rm -rf $item ? (o/n) [o] ?"
+		if [ $AUTO -ne 1 ]; then read reponse; else echo; fi
+		if [ "$reponse" = "o" -o "$reponse" = "O" -o "$reponse" = "" -o "$reponse" = "oui" -o "$reponse" = "OUI" ]; then
+			echo "Effacement de $item..."
+			rm -rf "$item"
+		fi
+	else if [ -e $item ]; then
+		echo; echo "Le fichier $item ne sert plus à rien. Voulez-vous l'effacer ?"
+		printf "rm -f $item ? (o/n) [o] ?"
+		if [ $AUTO -ne 1 ]; then read reponse; else echo; fi
+		if [ "$reponse" = "o" -o "$reponse" = "O" -o "$reponse" = "" -o "$reponse" = "oui" -o "$reponse" = "OUI" ]; then
+			echo "Effacement de $item..."
+			rm -f "$item"
+		fi
+	fi; fi  
+}
+
+sortie_propre() {
+	echo
+	echo "Les fichiers téléchargés sont conservés dans $reptelech."
+	if [ -d $repcd -a -f $cdname -a -d $reptelech ]; then
+		echo "L'arborescence du CD ne sert plus à rien. Voulez vous l'effacer ?"
+		printf "rm -rf $repcd ? (o/n) [o] ?"
+		if [ $AUTO -ne 1 ]; then read reponse; else echo; fi
+		if [ "$reponse" = "o" -o "$reponse" = "O" -o "$reponse" = "" -o "$reponse" = "oui" -o "$reponse" = "OUI" ]; then
+			echo "Effacement de l'arborescence du CD..."
+			rm -rf $repcd
+		fi
+	fi
+	# on efface les anciens autocdlibres
+	if [ -d $reptelech ]; then
+		i=0
+		while [ $i -lt $autocdlibre_version ]; do
+				demande_effacement autocdlibre_v$i
+				demande_effacement autocdlibre_v${i}.iso
+				demande_effacement fichiers_telecharges_v$i
+				i=$((i+1))
+		done
+	fi
+
+	echo "Si vous pensez que ce CD n'est pas à jour avec les dernières versions, ou pour toute autre remarque ou question,"
+	echo "veuillez envoyer un mail à $autocdlibre_email, ou rendez-vous à $autocdlibre_home"
+	exit
+}
+trap sortie_propre INT
+trap sortie_propre TERM
+trap sortie_propre QUIT
+trap sortie_propre HUP
+
 # si une image iso est prête
 if [ -f $cdname ]; then
-  echo
-  echo "Une image ISO du cd $cdname semble déjà prête."
-  echo -n "Voulez-vous l'utiliser pour graver directement ? (o/n) [o] "
-  read rep
+	echo
+	echo "Une image ISO du cd $cdname semble déjà prête."
+	echo -n "Voulez-vous l'utiliser pour graver directement ? (o/n) [o] "
+	if [ $AUTO -ne 1 ]; then read reponse; else echo; fi
 fi
-if [ ! -f $cdname -o "$rep" != "o" -a "$rep" != "O" -a "$rep" != "" ]; then 
-  # on prépare le répertoire pour l'arborescence
-  mv_to_old() { if [ -e $*.old ]; then mv_to_old $*.old; fi; mv $* $*.old; }
-  if [ -d $repcd ]; then mv_to_old $repcd ; fi
-  mkdir $repcd
-  # on crée un répertoire de téléchargement
-  mkdir -p $reptelech
-  # on démarre l'analyse des commandes en fin de script
-  rm -f ERROR
-  awk -v repcd=$repcd -v reseau=$reseau -v reptelech=$reptelech -v nosrc=$NOSRC '
+if [ ! -f $cdname -o "$reponse" != "o" -a "$reponse" != "O" -a "$reponse" != "" -a "$reponse" != "oui" -a "$reponse" != "OUI" ]; then 
+	# on prépare le répertoire pour l'arborescence
+	mv_to_old() { if [ -e $*.old ]; then mv_to_old $*.old; fi; mv $* $*.old; }
+	if [ -d $repcd ]; then mv_to_old $repcd ; fi
+	mkdir $repcd
+	# on crée un répertoire de téléchargement
+	mkdir -p $reptelech
+	# on démarre l'analyse des commandes en fin de script
+	rm -f ERROR
+	awk -v repcd=$repcd -v reseau=$reseau -v reptelech=$reptelech -v nosrc=$NOSRC '
 BEGIN { ORS="\r\n"; insource=0; infile=0 }
 /^%#/ { next }
 /^#%/ { next }
 /^$/ { if(infile==0) next }
 /^%DIR/  { insource=0; infile=0; sub("%DIR ",""); system("mkdir -p \"" repcd "/" $0 "\""); dir=repcd "/" $0; if($NF=="source") { if(nosrc==1) { insource=1; next }}}
 /^%FILE/ { if(insource==1) next; infile=1; sub("%FILE ",""); file=$0; next }
-/^%URL/  { if(insource==1) next; infile=0; if($1=="%URLZIP") { unzip=1; sub("%URLZIP ","")} else {unzip=0; sub("%URL ","")}; system("echo -n \"Récupération de `basename \"" $0 "\"`...\"; nom=`basename \"" $0 "\"`; ailleurs=\"`find . -name \"$nom\"| head -1`\"; if [ ! -z \"$ailleurs\" ]; then echo -n \"déjà téléchargé, \"; fi; if [ ! -z \"$ailleurs\" -a \"" reptelech "/$nom\" != \"$ailleurs\" -a ! -e \"" reptelech "/$nom\" ]; then ln \"$ailleurs\" " reptelech "; fi; if [ \"" reseau "\" = \"1\" ]; then wget -q -c \"" $0 "\" -P " reptelech "; fi; if [ -e \"" reptelech "/$nom\" ]; then ln \"" reptelech "/$nom\" \"" dir "\"; echo \"OK\"; else echo \"ECHEC\"; touch ERROR; fi; if [ \"" unzip "\" = \"1\" ]; then echo \"  Décompression de $nom...\"; unzip \"" dir "/$nom\" -d \"" dir "\" >/dev/null 2>&1; rm -f \"" dir "/$nom\"; fi"); }
+/^%URL/  { if(insource==1) next; infile=0; if($1=="%URLZIP") { unzip=1; sub("%URLZIP ","")} else {unzip=0; sub("%URL ","")}; system("echo -n \"Récupération de `basename \"" $0 "\"`...\"; nom=`basename \"" $0 "\"`; ailleurs=\"`find . -name \"$nom\"| head -1`\"; if [ ! -z \"$ailleurs\" ]; then echo -n \"déjà téléchargé, \"; fi; if [ ! -z \"$ailleurs\" -a \"" reptelech "/$nom\" != \"$ailleurs\" -a ! -e \"" reptelech "/$nom\" ]; then ln \"$ailleurs\" " reptelech "; fi; if [ \"" reseau "\" = \"1\" ]; then wget -q -c \"" $0 "\" -P " reptelech "; fi; if [ -e \"" reptelech "/$nom\" ]; then ln \"" reptelech "/$nom\" \"" dir "\"; echo \"OK\"; else printf \"\\e[7mECHEC\\e[m\n\"; touch ERROR; fi; if [ \"" unzip "\" = \"1\" ]; then echo \"  Décompression de $nom...\"; unzip \"" dir "/$nom\" -d \"" dir "\" >/dev/null 2>&1; rm -f \"" dir "/$nom\"; fi"); }
 { if(insource==1) next; if(infile==1) { print $0 >> repcd "/" file }
 }' $script 
-  # on écrit le numéro de version dans le cd
-  echo -n "CD-ROM généré le `date '+%A %d %B %Y'` par le script \"autocdlibre\" version $autocdlibre_version ($autocdlibre_url)" > $repcd/info
-  if [ -e ERROR ]; then
-    rm -f ERROR
-    echo
-    echo "Au moins un fichier n'a pas pu être téléchargé"
-    echo "Merci de prévenir à l'adresse $autocdlibre_email"
-    exit
-  fi
-  echo "Téléchargement terminé, arborescence du CD terminée"
+	# on écrit le numéro de version dans le cd
+	echo -n "CD-ROM généré le `date '+%A %d %B %Y'` par le script \"autocdlibre\" version $autocdlibre_version ($autocdlibre_url)" > $repcd/info
+	if [ -e ERROR ]; then
+		rm -f ERROR
+		echo
+		echo "Au moins un fichier n'a pas pu être téléchargé"
+		echo "Merci de prévenir à l'adresse $autocdlibre_email"
+		exit
+	fi
+	echo "Téléchargement terminé, arborescence du CD terminée"
 
-  # si demandé, on s'arrête
-  if [ "$ARBRE" = "1" ]; then echo "arrêt demandé après création de l'arborescence"; exit; fi
+	# si demandé, on s'arrête
+	if [ "$ARBRE" = "1" ]; then echo "arrêt demandé après création de l'arborescence"; sortie_propre; fi
 
-  # on construit l'image du cd
-  echo -n "Construction de l'image ISO du cd..."
-  mkisofs -quiet -rJ -V L.\ Libres\ v$autocdlibre_version -o $cdname $repcd >/dev/null 2>&1
-  if [ $? -eq 0 ]; then echo OK; else echo ECHEC; exit; fi
+	# on construit l'image du cd
+	echo -n "Construction de l'image ISO du cd..."
+	mkisofs -quiet -rJ -V L.\ Libres\ v$autocdlibre_version -o $cdname $repcd >/dev/null 2>&1
+	if [ $? -eq 0 ]; then echo OK; else printf "\e[7mECHEC\e[m\n"; sortie_propre; fi
 fi
 
 
 # on cherche le premier graveur disponible (k2.6)
 echo -n "Recherche du premier graveur..."
 for protocole in `cdrecord dev=help 2>&1 |grep Transport\ name | cut -f3 | grep -v RSCSI | uniq`; do
-  for graveur in `cdrecord dev=$protocole -scanbus 2>&1 |grep '.,.,.'|grep -v '*'|cut -f2`; do
+	for graveur in `cdrecord dev=$protocole -scanbus 2>&1 |grep '.,.,.'|grep -v '*'|cut -f2`; do
 	cdrecord dev=$protocole:$graveur -prcap -prcap 2>&1 | grep -q 'Does write CD-R media'
 	if [ $? -eq 0 ]; then device=$protocole:$graveur; break; fi
-  done
-  if [ ! -z "$device" ]; then break; fi
+	done
+	if [ ! -z "$device" ]; then break; fi
 done
 
 # si pas de graveur, on essaye l'ancienne méthode (k2.4)
 if [ -z "$device" ]; then
 	for graveur in `cdrecord -scanbus 2>&1 |grep '.,.,.'|grep -v '*'|cut -f2`; do
-	        cdrecord dev=$graveur -prcap -prcap 2>&1 | grep -q 'Does write CD-R media'
-	        if [ $? -eq 0 ]; then device=$graveur; break; fi
+		cdrecord dev=$graveur -prcap -prcap 2>&1 | grep -q 'Does write CD-R media'
+		if [ $? -eq 0 ]; then device=$graveur; break; fi
 	done
 fi
 
 # pas de graveur, pas la peine d'aller plus loin.
 if [ -z "$device" ]; then
-  echo ECHEC
-  echo "Aucun graveur trouvé. Je ne peux pas continuer."
-  exit
+	printf "\e[7mECHEC\e[m\n"
+	echo "Aucun graveur trouvé. Je ne peux pas continuer."
+	sortie_propre
 else echo "graveur trouvé : $device"
 fi
 
 # si demandé, on s'arrête
-if [ "$NOBURN" = "1" ]; then echo "arrêt demandé avant la gravure"; exit; fi
+if [ "$NOBURN" = "1" ]; then
+	echo "Arrêt demandé avant la gravure"
+	echo "L'image ISO est conservée sous le nom $cdname."
+	sortie_propre
+fi
 
 # on grave
 echo -n "Démarrage de la gravure..."
 res=1; num=0
 while [ $res -ne 0 ]; do
-  cdrecord dev=$device driveropts=burnfree -eject $cdname >/dev/null 2>&1
-  res=$?; let num++
-  if [ $num -eq 3 ]; then echo; echo "Je n'arrive pas à graver. Je ne peux pas terminer"; exit; fi
-  if [ $res -ne 0 ]; then echo; echo "Veuillez insérer un CD vierge dans le graveur, et pressez ENTER"; echo "(ou Ctrl-C pour interrompre)"; read; fi
+	cdrecord dev=$device driveropts=burnfree -eject $cdname >/dev/null 2>&1
+	res=$?; let num++
+	if [ $num -eq 3 ]; then echo; printf "\e[7mERREUR\e[m : je n'arrive pas à graver. Je ne peux pas terminer"; sortie_propre; fi
+	if [ $res -ne 0 ]; then echo; echo "Veuillez insérer un CD vierge dans le graveur, et pressez ENTER"; echo "(ou Ctrl-C pour interrompre)"; if [ $AUTO -ne 1 ]; then read; fi; fi
 done
 echo OK
 echo "Gravure terminée. L'image ISO est conservée sous le nom $cdname."
-echo "Les fichiers téléchargés sont conservés dans $reptelech."
-if [ -d $repcd ]; then
-  echo "L'arborescence du CD ne sert plus à rien. Voulez vous l'effacer ?"
-  echo "rm -rf $repcd ? (o/n) [o] ?"
-  read rep
-  if [ "$rep" = "o" -o "$rep" = "O" -o "$rep" = "" ]; then
-    echo "Effacement de l'arborescence du CD..."
-    rm -rf $repcd
-  fi
-fi
 
-echo "Si vous pensez que ce CD n'est pas à jour avec les dernières versions, ou pour toute autre remarque ou question,"
-echo "veuillez envoyer un mail à $autocdlibre_email, ou rendez-vous à http://$autocdlibre_server/wiki/wakka.php?wiki=AutoCdLibre"
+sortie_propre
 
 
 
@@ -256,12 +308,10 @@ exit
 # une commande DIR suivi d'un nombre arbitraire de commandes URL et FILE
 # %DIR : sert à créer un répertoire
 # %URL : sert à télécharger quelque chose dans le dernier répertoire créé
-# %URLZIP : idem sauf qu'on décompresse avant de graver
+# %URLZIP : idem sauf qu'on décompresse (unzip seulement) avant de graver
 # %FILE : sert à créer un fichier texte (attention à créer le répertoire avant le fichier)
 # %# ou #% : sert à mettre un commentaire
-# conseil : il est plus pratique de mettre les %DIR et %URL au début, et les %FILE à la fin.
-# ATTENTION : pour que -nosrc fonctionne, les répertoires contenant
-# les codes sources doivent s'appeler "code source"
+# ATTENTION : pour que -nosrc fonctionne, les répertoires contenant les codes sources doivent s'appeler "code source"
 ################################"
 
 #% GRISBI
@@ -415,7 +465,7 @@ http://ovh.dl.sourceforge.net/sourceforge/dia-installer/dia-0.94.tar.bz2
 %URL http://download.blender.org/demo/movies/rotateedge_demo.avi
 %URL http://download.blender.org/demo/movies/snowman.avi
 %URL http://download.blender.org/demo/movies/stretchto_demo.avi
-%URL http://download.blender.org/demo/movies/artintro_final.avi
+#%URL http://download.blender.org/demo/movies/artintro_final.avi
 %DIR Multimedia/Animation et rendu 3D/Manuel (anglais)
 %URLZIP http://download.blender.org/documentation/BlenderManualIen.23.pdf.zip
 %URLZIP http://download.blender.org/documentation/BlenderManualIIen.23.pdf.zip

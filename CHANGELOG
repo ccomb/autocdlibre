@@ -173,3 +173,11 @@
 - mise à jour scorched3D38
 - ajout de TORCS 1.2.2
 - ajout de Battle for Wesnoth 0.8
+
+## version 20
+
+- demande d'effacement des anciens autocdlibres
+- ajout d'un mode automatique (-auto)
+- meilleur comportement en cas d'interruption
+- affichage des ECHECs plus visible
+- autres modifications mineures
