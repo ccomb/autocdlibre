@@ -29,3 +29,10 @@
 - ajout de fichiers textes pour les codes sources
 - ajout d'un fichier texte de sensibilisation pour eMule
 - modification du fichier "dans ce CD.txt"
+
+## version 4
+
+- passage des parametres du script en cas de mise à jour
+- ajout de la recherche du graveur pour noyau 2.4
+- mise à jour mozilla 1.7.1 (traduction française séparée en xpi)
+- petites modifications de noms de rubriques

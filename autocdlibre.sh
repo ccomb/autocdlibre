@@ -24,7 +24,7 @@
 #set -x
 
 # version de ce script
-autocdlibre_version=3
+autocdlibre_version=4
 # où récupérer les infos
 autocdlibre_server="http://ccomb.free.fr/autocdlibre"
 
@@ -125,7 +125,7 @@ if [ -e latest_version -a $reseau -eq 1 ]; then
 			wget -c -q $autocdlibre_server/autocdlibre_v$latest_version.sh
 			chmod +x autocdlibre_v$latest_version.sh
 			echo "Execution de la nouvelle version :"
-			./autocdlibre_v$latest_version.sh
+			./autocdlibre_v$latest_version.sh $@
 			exit
 		else echo "  OK, on garde la version actuelle."
 		fi
@@ -178,7 +178,7 @@ BEGIN { ORS="\r\n"; insource=0; infile=0 }
 fi
 
 
-# on cherche le premier graveur disponible
+# on cherche le premier graveur disponible (k2.6)
 printf "Recherche du premier graveur..."
 for protocole in `cdrecord dev=help 2>&1 |grep Transport\ name | cut -f3 | grep -v RSCSI | uniq`; do
   for graveur in `cdrecord dev=$protocole -scanbus 2>&1 |grep '.,.,.'|grep -v '*'|cut -f2`; do
@@ -187,6 +187,14 @@ for protocole in `cdrecord dev=help 2>&1 |grep Transport\ name | cut -f3 | grep 
   done
   if [ ! -z "$device" ]; then break; fi
 done
+
+# si pas de graveur, on essaye l'ancienne méthode (k2.4)
+if [ -z "$device" ]; then
+	for graveur in `cdrecord -scanbus 2>&1 |grep '.,.,.'|grep -v '*'|cut -f2`; do
+	        cdrecord dev=$graveur -prcap -prcap 2>&1 | grep -q 'Does write CD-R media'
+	        if [ $? -eq 0 ]; then device=$graveur; break; fi
+	done
+fi
 
 # pas de graveur, pas la peine d'aller plus loin.
 if [ -z "$device" ]; then
@@ -206,7 +214,7 @@ while [ $res -ne 0 ]; do
   cdrecord dev=$device driveropts=burnfree -eject $cdname >/dev/null 2>&1
   res=$?; let num++
   if [ $num -eq 3 ]; then printf "\nJe n'arrive pas à graver. Je ne peux pas terminer\n"; exit; fi
-  if [ $res -ne 0 ]; then printf "\nVeuillez insérer un CD vierge dans le graveur, et pressez ENTER\n"; read; fi
+  if [ $res -ne 0 ]; then printf "\nVeuillez insérer un CD vierge dans le graveur, et pressez ENTER\n(ou Ctrl-C pour interrompre)\n"; read; fi
 done
 echo OK
 echo "Gravure terminée. L'image ISO est conservée sous le nom $cdname."
@@ -273,11 +281,11 @@ le code source peut être obtenu ici : http://belnet.dl.sourceforge.net/sourcefo
 Le code source de OpenVIP peut être consulté ici : http://cvs.sourceforge.net/viewcvs.py/openvip/
 
 #% VIRTUALDUB
-%DIR Multimedia/Capture vidéo
+%DIR Multimedia/Capture et traitement de vidéo
 %URLZIP http://puzzle.dl.sourceforge.net/sourceforge/virtualdub/VirtualDub-1.5.10.zip
-%DIR Multimedia/Capture vidéo/code source
+%DIR Multimedia/Capture et traitement de vidéo/code source
 %URL http://belnet.dl.sourceforge.net/sourceforge/virtualdub/VirtualDub-1.5.10-src.zip.bz2
-%FILE Multimedia/Capture vidéo/code source/codesource.txt
+%FILE Multimedia/Capture et traitement de vidéo/code source/codesource.txt
 le code source peut être obtenu ici : http://belnet.dl.sourceforge.net/sourceforge/virtualdub/VirtualDub-1.5.10-src.zip.bz2
 
 #% CORNICE
@@ -354,24 +362,24 @@ http://belnet.dl.sourceforge.net/sourceforge/dia-installer/dia-0.92.2.tar.bz2
 http://belnet.dl.sourceforge.net/sourceforge/dia-installer/dia-installer-src-0.92.2-1.zip
 
 #% BLENDER
-%DIR Multimedia/Animation 3D
+%DIR Multimedia/Animation et rendu 3D
 %URL http://download.blender.org/release/Blender2.33a/blender-2.33a-windows.exe
 %URL http://download.blender.org/release/yafray.0.0.6/YafRay-0.0.6-2-win.exe
-%DIR Multimedia/Animation 3D/Manuel (anglais)
+%DIR Multimedia/Animation et rendu 3D/Manuel (anglais)
 %URLZIP http://download.blender.org/documentation/BlenderManualIen.23.pdf.zip
 %URLZIP http://download.blender.org/documentation/BlenderManualIIen.23.pdf.zip
-%DIR Multimedia/Animation 3D/code source
+%DIR Multimedia/Animation et rendu 3D/code source
 %URL http://download.blender.org/release/yafray.0.0.6/yafray-0.0.6-2-src.tar.gz
 %URL http://download.blender.org/source/blender-2.33a.tar.bz2
-%FILE Multimedia/Animation 3D/code source/codesource.txt
+%FILE Multimedia/Animation et rendu 3D/code source/codesource.txt
 le code source peut être obtenu ici :
 http://download.blender.org/release/yafray.0.0.6/yafray-0.0.6-2-src.tar.gz
 http://download.blender.org/source/blender-2.33a.tar.bz2
-%DIR Multimedia/Animation 3D/Python (optionnel)
+%DIR Multimedia/Animation et rendu 3D/Python (optionnel)
 %URL http://python.org/ftp/python/2.3.4/Python-2.3.4.exe
-%DIR Multimedia/Animation 3D/Python (optionnel)/code source
+%DIR Multimedia/Animation et rendu 3D/Python (optionnel)/code source
 %URL http://python.org/ftp/python/2.3.4/Python-2.3.4.tgz
-%FILE Multimedia/Animation 3D/Python (optionnel)/code source/codesource.txt
+%FILE Multimedia/Animation et rendu 3D/Python (optionnel)/code source/codesource.txt
 le code source peut être obtenu ici : http://python.org/ftp/python/2.3.4/Python-2.3.4.tgz
 
 #% OPENOFFICE.ORG
@@ -447,11 +455,21 @@ le code source peut être obtenu ici : http://belnet.dl.sourceforge.net/sourcefo
 
 #% MOZILLA
 %DIR Internet/Suite internet complète
-%URL http://belnet.dl.sourceforge.net/sourceforge/frenchmozilla/mozilla-win32-1.6-fr-FR-installer.exe
+%URL http://ftp.mozilla.org/pub/mozilla.org/mozilla/releases/mozilla1.7.1/mozilla-win32-1.7.1-installer.exe
+%URL http://frenchmozilla.sourceforge.net/FTP/1.7.1/mozilla-l10n-fr-FR-1.7.1.xpi
 %DIR Internet/Suite internet complète/code source
-%URL http://ftp.eu.mozilla.org/pub/mozilla.org/mozilla/releases/mozilla1.6/src/mozilla-source-1.6.tar.bz2
+%URL http://ftp.mozilla.org/pub/mozilla.org/mozilla/releases/mozilla1.7.1/src/mozilla-source-1.7.1.tar.bz2
+%FILE Internet/Suite internet complète/Comment installer la langue française.txt
+- installez d'abord Mozilla lui-même 
+- démarrez Mozilla et ouvrez le CD-ROM avec Mozilla
+  (tapez D: ou la lettre correspondant à votre lecteur CD-ROM au lieu d'une adresse internet)
+- retrouvez dans le CD-ROM le fichier mozilla-l10n-fr-FR-1.7.1.xpi et CLIQUEZ DESSUS depuis Mozilla
+- confirmez l'installation
+- allez dans le menu Edit->Preferences->Appearance->Languages/Content
+- sélectionnez "Français" en haut, et "Région FR" en bas.
+- cliquez sur OK et redémarrez Mozilla
 %FILE Internet/Suite internet complète/code source/codesource.txt
-le code source peut être obtenu ici : http://ftp.eu.mozilla.org/pub/mozilla.org/mozilla/releases/mozilla1.6/src/mozilla-source-1.6.tar.bz2
+le code source peut être obtenu ici : http://ftp.mozilla.org/pub/mozilla.org/mozilla/releases/mozilla1.7.1/src/mozilla-source-1.7.1.tar.bz2
 
 #% FIREFOX
 %DIR Internet/Navigateur seul
