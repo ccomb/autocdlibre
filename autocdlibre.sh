@@ -28,7 +28,7 @@
 unalias -a
 
 # version de ce script
-autocdlibre_version=23
+autocdlibre_version=24
 # où récupérer les infos
 autocdlibre_email="ccomb@free.fr"
 autocdlibre_server="ccomb.free.fr"
@@ -499,11 +499,11 @@ http://download.blender.org/release/yafray.0.0.6/yafray-0.0.6-2-src.tar.gz
 http://download.blender.org/source/blender-2.33a.tar.bz2
 
 #% OPENOFFICE.ORG
-%DIR Bureautique/Suite Bureautique Complète/OpenOffice.org 1.1.3
-%URLZIP ftp://openoffice.cict.fr/openoffice/localized/fr/1.1.3/OOo_1.1.3_Win32Intel_install_fr.zip
+%DIR Bureautique/Suite Bureautique Complète/OpenOffice.org 1.1.4
+%URLZIP http://ftp.club-internet.fr/pub/OpenOffice/localized/fr/1.1.4/OOo_1.1.4_Win32Intel_install_fr.zip
 %DIR Bureautique/Suite Bureautique Complète/code source
 %FILE Bureautique/Suite Bureautique Complète/code source/codesource.txt
-Le code source est énorme et peut être récupéré ici : ftp://openoffice.cict.fr/openoffice/stable/1.1.3/
+Le code source est énorme et peut être récupéré ici : http://www.openoffice.org/dev_docs/source/get_source.html
 #%URL ftp://openoffice.cict.fr/openoffice/stable/1.1.3/OOo_1.1.3_source.tar.gz
 %DIR Bureautique/Suite Bureautique Complète/Manuels et documentation
 %URL http://fr.openoffice.org/Documentation/Guides/Manuel_install1.1_v2.pdf
