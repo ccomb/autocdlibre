@@ -24,7 +24,7 @@
 #set -x
 
 # version de ce script
-autocdlibre_version=0
+autocdlibre_version=1
 # où récupérer les infos
 autocdlibre_server="http://ccomb.free.fr/autocdlibre"
 
@@ -86,7 +86,14 @@ if [ -e latest_version -a $reseau -eq 1 ]; then
 	rm -f latest_version
 	# on vérifie qu'on a la dernière version
 	if [ $latest_version -gt $autocdlibre_version ]; then
-		printf "  La nouvelle version (v$latest_version) de ce script est disponible.\n  Voulez vous la récupérer et l'utiliser ? (o/n) [o] "
+		# on télécharge et on affiche le changelog
+		wget -T 4 -q $autocdlibre_server/changelog_v$autocdlibre_version
+		echo "  La nouvelle version (v$latest_version) de ce script est disponible."
+		echo "-------"
+		echo "  Modifications depuis la version $(($latest_version-1)) :"
+		cat changelog_v$autocdlibre_version 2>/dev/null
+		echo "-------"
+		printf "Voulez-vous récupérer et utiliser cette nouvelle version ? (o/n) [o] "
 		read rep;
 		# on télécharge et on exécute la nouvelle version
 		if [ "$rep" = "o" -o "$rep" = "O" -o "$rep" = "" ]; then
@@ -199,6 +206,16 @@ exit
 # %# ou #% : sert à mettre un commentaire
 # conseil : il est plus pratique de mettre les %DIR et %URL au début, et les %FILE à la fin.
 #######COMMANDES####### (ne pas modifier cette ligne)
+%DIR Visualiseur photos
+%URL http://wxglade.sourceforge.net/extra/Cornice-0.4-setup.exe
+%DIR Visualiseur photos/code source
+%URL http://wxglade.sourceforge.net/extra/Cornice-0.4.tgz
+
+%DIR Création de fichiers PDF
+%URL http://belnet.dl.sourceforge.net/sourceforge/pdfcreator/PDFCreator-0_8_0_GNUGhostscript.exe
+%DIR Création de fichiers PDF/code source
+%URL http://belnet.dl.sourceforge.net/sourceforge/pdfcreator/PDFCreator-Source-0_8_0.zip
+
 %DIR Éditeur photo
 %URLZIP ftp://ftp.arnes.si/software/gimp-win/gtk+-2.4.3-setup.zip
 %URLZIP ftp://ftp.arnes.si/software/gimp-win/gimp-2.0.2-i586-setup-1.zip
@@ -282,7 +299,7 @@ Voir ici : http://cvs.sourceforge.net/viewcvs.py/cdexos/cdex_xp/
 %DIR Dessin vectoriel/code source
 %URL http://belnet.dl.sourceforge.net/sourceforge/inkscape/inkscape-0.38.1.tar.bz2
 
-%DIR Editeur audio
+%DIR Éditeur audio
 %URL http://unc.dl.sourceforge.net/sourceforge/audacity/audacity-win-1.2.1.exe
 %DIR Editeur audio/code source
 %URL http://belnet.dl.sourceforge.net/sourceforge/audacity/audacity-src-1.2.1.tar.bz2
