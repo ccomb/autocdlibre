@@ -8,3 +8,11 @@
 - ajout de PDFcreator
 - Correction : Editeur audio -> Éditeur audio
 - affichage du changelog à la mise à jour
+
+## version 2
+
+- remplacement /bin/sh -> /bin/bash
+- remplacement $((xxxx) -> `expr xxxx`
+- correction du décalage de version dans l'affichage du changelog
+- modifications d'options à wget
+- test de l'existence de expr

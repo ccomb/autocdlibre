@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # name: autocdlibre
 # Ce script permet de télécharger automatiquement les dernières versions
 # de certains logiciels libres et de les graver sur un cd
@@ -24,7 +24,7 @@
 #set -x
 
 # version de ce script
-autocdlibre_version=1
+autocdlibre_version=2
 # où récupérer les infos
 autocdlibre_server="http://ccomb.free.fr/autocdlibre"
 
@@ -52,6 +52,7 @@ aton uniq
 aton date
 aton unzip
 aton dig
+aton expr
 
 # chemin du script
 script=`pwd`/$0
@@ -80,25 +81,25 @@ if [ $? -eq 0 ]; then reseau=1; echo OK; else reseau=0; echo ECHEC; fi
 # on récupère le numéro de la dernière version (si on a la connexion au net)
 echo "vérification de la dernière version..."
 rm -f latest_version
-if [ $reseau -eq 1 ]; then wget -T 4 -q $autocdlibre_server/latest_version; fi
+if [ $reseau -eq 1 ]; then wget -O latest_version -T 4 -q $autocdlibre_server/latest_version; fi
 if [ -e latest_version -a $reseau -eq 1 ]; then
 	latest_version=`cat latest_version`
 	rm -f latest_version
 	# on vérifie qu'on a la dernière version
 	if [ $latest_version -gt $autocdlibre_version ]; then
 		# on télécharge et on affiche le changelog
-		wget -T 4 -q $autocdlibre_server/changelog_v$autocdlibre_version
+		wget -c -T 4 -q $autocdlibre_server/changelog_v$latest_version
 		echo "  La nouvelle version (v$latest_version) de ce script est disponible."
 		echo "-------"
-		echo "  Modifications depuis la version $(($latest_version-1)) :"
-		cat changelog_v$autocdlibre_version 2>/dev/null
+		echo "  Modifications depuis la version `expr $latest_version - 1` :"
+		cat changelog_v$latest_version 2>/dev/null
 		echo "-------"
 		printf "Voulez-vous récupérer et utiliser cette nouvelle version ? (o/n) [o] "
 		read rep;
 		# on télécharge et on exécute la nouvelle version
 		if [ "$rep" = "o" -o "$rep" = "O" -o "$rep" = "" ]; then
 			echo "  Récupération de la dernière version..."
-			wget -q $autocdlibre_server/autocdlibre_v$latest_version.sh
+			wget -c -q $autocdlibre_server/autocdlibre_v$latest_version.sh
 			chmod +x autocdlibre_v$latest_version.sh
 			echo "Execution de la nouvelle version :"
 			./autocdlibre_v$latest_version.sh
