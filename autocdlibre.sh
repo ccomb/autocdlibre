@@ -25,7 +25,7 @@
 #set -x
 
 # version de ce script
-autocdlibre_version=11
+autocdlibre_version=12
 # où récupérer les infos
 autocdlibre_server="http://ccomb.free.fr/autocdlibre"
 
@@ -241,11 +241,12 @@ exit
 
 #% CLAMAV
 %DIR Internet/Antivirus
-%URL http://ovh.dl.sourceforge.net/sourceforge/clamwin/clamwin-0.35.1-setup.exe
+%URL http://ovh.dl.sourceforge.net/sourceforge/clamwin/clamwin-0.35.2-setup.exe
 %DIR Internet/Antivirus/code source
-%URL http://ovh.dl.sourceforge.net/sourceforge/clamwin/clamwin-0.35-src.zip
+%URL http://ovh.dl.sourceforge.net/sourceforge/clamwin/clamwin-0.35.2-src.zip
 %FILE Internet/Antivirus/code source/codesource.txt
-le code source peut être obtenu ici : http://ovh.dl.sourceforge.net/sourceforge/clamwin/clamwin-0.35-src.zip
+le code source peut être obtenu ici :
+http://ovh.dl.sourceforge.net/sourceforge/clamwin/clamwin-0.35.2-src.zip
 
 #% HTTRACK
 %DIR Internet/Aspirateur de site web
@@ -353,20 +354,21 @@ ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/ghostgum/gsv46src.zip
 
 #% FILEZILLA
 %DIR Internet/Transfert FTP
-%URL http://ovh.dl.sourceforge.net/sourceforge/filezilla/FileZilla_2_2_8a_setup.exe
+%URL http://ovh.dl.sourceforge.net/sourceforge/filezilla/FileZilla_2_2_8b_setup.exe
 %DIR Internet/Transfert FTP/code source
-%URL http://ovh.dl.sourceforge.net/sourceforge/filezilla/FileZilla_2_2_8a_src.zip
+%URL http://ovh.dl.sourceforge.net/sourceforge/filezilla/FileZilla_2_2_8b_src.zip
 %FILE Internet/Transfert FTP/code source/codesource.txt
-le code source peut être obtenu ici : http://ovh.dl.sourceforge.net/sourceforge/filezilla/FileZilla_2_2_8a_src.zip
+le code source peut être obtenu ici :
+http://ovh.dl.sourceforge.net/sourceforge/filezilla/FileZilla_2_2_8b_src.zip
 
 #% DIA
 %DIR Bureautique/Éditeur de diagrammes
-%URLZIP http://ovh.dl.sourceforge.net/sourceforge/dia-installer/dia-0.94-pre1-setup.zip
+%URLZIP http://ovh.dl.sourceforge.net/sourceforge/dia-installer/dia-setup-0.94.zip
 %DIR Bureautique/Éditeur de diagrammes/code source
-%URL http://ovh.dl.sourceforge.net/sourceforge/dia-installer/dia-0.94-pre1.tar.bz2
+%URL http://ovh.dl.sourceforge.net/sourceforge/dia-installer/dia-0.94.tar.bz2
 %FILE Bureautique/Éditeur de diagrammes/code source/codesource.txt
 le code source peut être obtenu ici :
-http://ovh.dl.sourceforge.net/sourceforge/dia-installer/dia-0.94-pre1.tar.bz2
+http://ovh.dl.sourceforge.net/sourceforge/dia-installer/dia-0.94.tar.bz2
 
 #% BLENDER
 %DIR Multimedia/Animation et rendu 3D
@@ -412,11 +414,11 @@ Le code source est énorme et peut être récupéré ici : ftp://openoffice.cict
 Voir ici : http://cvs.sourceforge.net/viewcvs.py/cdexos/cdex_xp/
 
 #% 7-ZIP
-%DIR Compression de fichiers (zip, gz, bz2, etc.)
+%DIR Bureautique/Compression de fichiers (zip, gz, bz2, etc.)
 %URL http://ovh.dl.sourceforge.net/sourceforge/sevenzip/7z313.exe
-%DIR Compression de fichiers (zip, gz, bz2, etc.)/code source
+%DIR Bureautique/Compression de fichiers (zip, gz, bz2, etc.)/code source
 %URL http://ovh.dl.sourceforge.net/sourceforge/sevenzip/7z313.tar.bz2
-%FILE Compression de fichiers (zip, gz, bz2, etc.)/code source/codesource.txt
+%FILE Bureautique/Compression de fichiers (zip, gz, bz2, etc.)/code source/codesource.txt
 le code source peut être obtenu ici : http://ovh.dl.sourceforge.net/sourceforge/sevenzip/7z313.tar.bz2
 
 #% EMULE
@@ -454,11 +456,12 @@ le code source peut être obtenu ici : http://ovh.dl.sourceforge.net/sourceforge
 
 #% AUDACITY
 %DIR Multimedia/Enregistreur et éditeur de sons
-%URL http://unc.dl.sourceforge.net/sourceforge/audacity/audacity-win-1.2.1.exe
+%URL http://ovh.dl.sourceforge.net/sourceforge/audacity/audacity-win-1.2.2.exe
+%URLZIP http://audacity.sourceforge.net/audacity-manual-1.2.zip
 %DIR Multimedia/Enregistreur et éditeur de sons/code source
-%URL http://ovh.dl.sourceforge.net/sourceforge/audacity/audacity-src-1.2.1.tar.bz2
+%URL http://ovh.dl.sourceforge.net/sourceforge/audacity/audacity-src-1.2.2.tar.gz
 %FILE Multimedia/Enregistreur et éditeur de sons/code source/codesource.txt
-le code source peut être obtenu ici : http://ovh.dl.sourceforge.net/sourceforge/audacity/audacity-src-1.2.1.tar.bz2
+le code source peut être obtenu ici : http://ovh.dl.sourceforge.net/sourceforge/audacity/audacity-src-1.2.2.tar.gz
 
 #% MOZILLA
 %DIR Internet/Suite internet complète (navigateur, e-mail, éditeur web)
@@ -517,11 +520,12 @@ le code source peut être obtenu ici : http://ovh.dl.sourceforge.net/sourceforge
 
 #% GAIM
 %DIR Internet/Messagerie instantanée (icq, jabber, msn, etc.)
-%URL http://ovh.dl.sourceforge.net/sourceforge/gaim/gaim-0.81.exe
+%URL http://ovh.dl.sourceforge.net/sourceforge/gaim/gaim-0.82.1.exe
 %DIR Internet/Messagerie instantanée (icq, jabber, msn, etc.)/code source
-%URL http://ovh.dl.sourceforge.net/sourceforge/gaim/gaim-0.81.tar.bz2
+%URL http://ovh.dl.sourceforge.net/sourceforge/gaim/gaim-0.82.tar.gz
 %FILE Internet/Messagerie instantanée (icq, jabber, msn, etc.)/code source/codesource.txt
-le code source peut être obtenu ici : http://ovh.dl.sourceforge.net/sourceforge/gaim/gaim-0.80.tar.bz2
+le code source peut être obtenu ici :
+http://ovh.dl.sourceforge.net/sourceforge/gaim/gaim-0.82.tar.gz
 
 #% VLC MEDIA PLAYER
 %DIR Multimedia/Lecteur Vidéo et DVD
@@ -533,11 +537,12 @@ le code source peut être obtenu ici : http://download.videolan.org/pub/videolan
 
 #% CELESTIA
 %DIR Divertissement/Visite univers en 3D
-%URL http://ovh.dl.sourceforge.net/sourceforge/celestia/celestia-win32-1.3.1-1.exe
+%URL http://ovh.dl.sourceforge.net/sourceforge/celestia/celestia-win32-1.3.2.exe
 %DIR Divertissement/Visite univers en 3D/code source
-%URL http://ovh.dl.sourceforge.net/sourceforge/celestia/celestia-1.3.1.tar.gz
+%URL http://ovh.dl.sourceforge.net/sourceforge/celestia/celestia-1.3.2.tar.gz
 %FILE Divertissement/Visite univers en 3D/code source/codesource.txt
-le code source peut être obtenu ici : http://ovh.dl.sourceforge.net/sourceforge/celestia/celestia-1.3.1.tar.gz
+le code source peut être obtenu ici :
+http://ovh.dl.sourceforge.net/sourceforge/celestia/celestia-1.3.2.tar.gz
 
 #% BILLARD 3D
 %DIR Divertissement/Billard en 3D
