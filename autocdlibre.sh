@@ -25,7 +25,7 @@
 #set -x
 
 # version de ce script
-autocdlibre_version=6
+autocdlibre_version=7
 # où récupérer les infos
 autocdlibre_server="http://ccomb.free.fr/autocdlibre"
 
@@ -308,6 +308,15 @@ le code source peut être obtenu ici : http://belnet.dl.sourceforge.net/sourcefo
 %DIR Multimedia/Éditeur photo
 %URLZIP ftp://ftp.arnes.si/software/gimp-win/gtk+-2.4.3-setup.zip
 %URLZIP ftp://ftp.arnes.si/software/gimp-win/gimp-2.0.2-i586-setup-1.zip
+%URLZIP ftp://ftp.arnes.si/software/gimp-win/gimp-help-2-0.2-setup.zip
+%FILE Multimedia/Éditeur photo/comment installer GIMP.txt
+Dans l'ordre, il faut installer :
+- gtk+
+- gimp
+- gimp-help
+- optionnellement les plugins
+Consultez ensuite les tutoriels dans le dossier : Débuter avec GIMP
+
 %URL ftp://ftp.arnes.si/software/gimp-win/gimp-plugins.zip
 %DIR Multimedia/Éditeur photo/Débuter avec GIMP
 %URLZIP http://www.aljacom.com/%7Egimp/debuter_avec_gimp_v2.zip

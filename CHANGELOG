@@ -49,3 +49,8 @@
 - mise à jour Gaim 0.80
 - indication dans les commentaires de l'encodage utilisé (UTF-8)
 - modifications mineures de l'arborescence
+
+## version 7
+
+- ajout de gimp-help
+- ajout d'un petit fichier texte pour donner l'ordre d'installation pour gimp
