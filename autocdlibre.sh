@@ -25,7 +25,7 @@
 #set -x
 
 # version de ce script
-autocdlibre_version=12
+autocdlibre_version=13
 # où récupérer les infos
 autocdlibre_server="http://ccomb.free.fr/autocdlibre"
 
@@ -306,11 +306,11 @@ le code source peut être obtenu ici : http://wxglade.sourceforge.net/extra/Corn
 le code source peut être obtenu ici : http://ovh.dl.sourceforge.net/sourceforge/pdfcreator/PDFCreator-Source-0_8_0.zip
 
 #% THE GIMP
-%DIR Multimedia/Éditeur photo
+%DIR Multimedia/Retouche photo
 %URLZIP ftp://ftp.arnes.si/software/gimp-win/gtk+-2.4.3-setup.zip
 %URLZIP ftp://ftp.arnes.si/software/gimp-win/gimp-2.0.3-i586-setup.zip
 %URLZIP ftp://ftp.arnes.si/software/gimp-win/gimp-help-2-0.3-setup.zip
-%FILE Multimedia/Éditeur photo/comment installer GIMP.txt
+%FILE Multimedia/Retouche photo/comment installer GIMP.txt
 Dans l'ordre, il faut installer :
 - gtk+
 - gimp
@@ -319,10 +319,10 @@ Dans l'ordre, il faut installer :
 Consultez ensuite les tutoriels dans le dossier : Débuter avec GIMP
 
 %URL ftp://ftp.arnes.si/software/gimp-win/gimp-plugins.zip
-%DIR Multimedia/Éditeur photo/Débuter avec GIMP
+%DIR Multimedia/Retouche photo/Débuter avec GIMP
 %URLZIP http://www.aljacom.com/%7Egimp/debuter_avec_gimp_v2.zip
 %URLZIP http://www.aljacom.com/%7Egimp/debuter_avec_gimp_2_v2.zip
-%DIR Multimedia/Éditeur photo/code source
+%DIR Multimedia/Retouche photo/code source
 %URL ftp://ftp.gimp.org/pub/gimp/v2.0/gimp-2.0.2.tar.bz2
 %URL http://www.freedesktop.org/software/pkgconfig/releases/pkgconfig-0.15.0.tar.gz
 %URL ftp://ftp.gimp.org/pub/gtk/v2.4/gtk+-2.4.3.tar.bz2
@@ -330,7 +330,7 @@ Consultez ensuite les tutoriels dans le dossier : Débuter avec GIMP
 %URL ftp://ftp.gimp.org/pub/gtk/v2.4/glib-2.4.2.tar.bz2
 %URL ftp://ftp.gimp.org/pub/gtk/v2.4/atk-1.6.0.tar.bz2
 %URL ftp://ftp.arnes.si/software/gimp-win/gimp-plugins-src.zip
-%FILE Multimedia/Éditeur photo/code source/codesource.txt
+%FILE Multimedia/Retouche photo/code source/codesource.txt
 le code source peut être obtenu ici :
 ftp://ftp.gimp.org/pub/gimp/v2.0/gimp-2.0.2.tar.bz2
 http://www.freedesktop.org/software/pkgconfig/releases/pkgconfig-0.15.0.tar.gz
@@ -423,11 +423,12 @@ le code source peut être obtenu ici : http://ovh.dl.sourceforge.net/sourceforge
 
 #% EMULE
 %DIR Internet/Téléchargement Peer2peer
-%URL http://ovh.dl.sourceforge.net/sourceforge/emule/eMule0.43b-Installer.exe
+%URL http://ovh.dl.sourceforge.net/sourceforge/emule/eMule0.44b_Installer.exe
 %DIR Internet/Téléchargement Peer2peer/code source
-%URL http://ovh.dl.sourceforge.net/sourceforge/emule/eMule0.43b-Sources.zip
+%URL http://ovh.dl.sourceforge.net/sourceforge/emule/eMule0.44b-Sources.zip
 %FILE Internet/Téléchargement Peer2peer/code source/codesource.txt
-le code source peut être obtenu ici : http://ovh.dl.sourceforge.net/sourceforge/emule/eMule0.43b-Sources.zip
+le code source peut être obtenu ici :
+http://ovh.dl.sourceforge.net/sourceforge/emule/eMule0.44b-Sources.zip
 %FILE Internet/Téléchargement Peer2peer/conseil.txt
 Évidemment, tout le monde sait que le téléchargement de certains logiciels propriétaires et payants est illégal...
 Mais il faut penser à quelque chose de beaucoup plus important et plus néfaste : 
@@ -467,6 +468,8 @@ le code source peut être obtenu ici : http://ovh.dl.sourceforge.net/sourceforge
 %DIR Internet/Suite internet complète (navigateur, e-mail, éditeur web)
 %URL http://ovh.dl.sourceforge.net/sourceforge/frenchmozilla/mozilla-win32-1.7.2-installer-fr-FR.exe
 #%URL http://frenchmozilla.sourceforge.net/FTP/1.7.1/mozilla-l10n-fr-FR-1.7.1.xpi
+%DIR Internet/Suite internet complète (navigateur, e-mail, éditeur web)/manuel
+%URL http://ovh.dl.sourceforge.net/sourceforge/frenchmozilla/mozman-1.35.fr.pdf
 %DIR Internet/Suite internet complète (navigateur, e-mail, éditeur web)/code source
 %URL http://ftp.mozilla.org/pub/mozilla.org/mozilla/releases/mozilla1.7.2/src/mozilla-source-1.7.2.tar.bz2
 #%FILE Internet/Suite internet complète (navigateur, e-mail, éditeur web)/Comment installer la langue française.txt
@@ -520,12 +523,12 @@ le code source peut être obtenu ici : http://ovh.dl.sourceforge.net/sourceforge
 
 #% GAIM
 %DIR Internet/Messagerie instantanée (icq, jabber, msn, etc.)
-%URL http://ovh.dl.sourceforge.net/sourceforge/gaim/gaim-0.82.1.exe
+%URL http://ovh.dl.sourceforge.net/sourceforge/gaim/gaim-1.0.0.exe
 %DIR Internet/Messagerie instantanée (icq, jabber, msn, etc.)/code source
-%URL http://ovh.dl.sourceforge.net/sourceforge/gaim/gaim-0.82.tar.gz
+%URL http://ovh.dl.sourceforge.net/sourceforge/gaim/gaim-1.0.0.tar.bz2
 %FILE Internet/Messagerie instantanée (icq, jabber, msn, etc.)/code source/codesource.txt
 le code source peut être obtenu ici :
-http://ovh.dl.sourceforge.net/sourceforge/gaim/gaim-0.82.tar.gz
+http://ovh.dl.sourceforge.net/sourceforge/gaim/gaim-1.0.0.tar.bz2
 
 #% VLC MEDIA PLAYER
 %DIR Multimedia/Lecteur Vidéo et DVD
