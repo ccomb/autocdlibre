@@ -25,7 +25,7 @@
 #set -x
 
 # version de ce script
-autocdlibre_version=7
+autocdlibre_version=8
 # où récupérer les infos
 autocdlibre_server="http://ccomb.free.fr/autocdlibre"
 
@@ -423,11 +423,11 @@ le code source peut être obtenu ici : http://belnet.dl.sourceforge.net/sourcefo
 
 #% EMULE
 %DIR Internet/Téléchargement Peer2peer
-%URL http://www.emule-france.org/files/eMule0.42g-Installer.exe
+%URL http://ovh.dl.sourceforge.net/sourceforge/emule/eMule0.43b-Installer.exe
 %DIR Internet/Téléchargement Peer2peer/code source
-%URL http://www.emule-france.org/files/eMule0.42g-Sources.zip
+%URL http://ovh.dl.sourceforge.net/sourceforge/emule/eMule0.43b-Sources.zip
 %FILE Internet/Téléchargement Peer2peer/code source/codesource.txt
-le code source peut être obtenu ici : http://www.emule-france.org/files/eMule0.42g-Sources.zip
+le code source peut être obtenu ici : http://ovh.dl.sourceforge.net/sourceforge/emule/eMule0.43b-Sources.zip
 %FILE Internet/Téléchargement Peer2peer/conseil.txt
 Évidemment, tout le monde sait que le téléchargement de certains logiciels propriétaires et payants est illégal...
 Mais il faut penser à quelque chose de beaucoup plus important et plus néfaste : 
