@@ -25,7 +25,7 @@
 #set -x
 
 # version de ce script
-autocdlibre_version=13
+autocdlibre_version=14
 # où récupérer les infos
 autocdlibre_server="http://ccomb.free.fr/autocdlibre"
 
@@ -342,15 +342,15 @@ ftp://ftp.arnes.si/software/gimp-win/gimp-plugins-src.zip
 
 #% GHOSTSCRIPT ET GSVIEW
 %DIR Bureautique/Visualiseur de fichiers PDF et Postscript
-%URL http://puzzle.dl.sourceforge.net/sourceforge/ghostscript/gs706w32.exe
-%URL ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/ghostgum/gsv46w32.exe
+%URL ftp://sunsite.cnlab-switch.ch/mirror/ghost/gnu/gs706/gs706w32.exe
+%URL ftp://sunsite.cnlab-switch.ch/mirror/ghost/ghostgum/gsv46w32.exe
 %DIR Bureautique/Visualiseur de fichiers PDF et Postscript/code source
-%URL ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/gnu/gs707/ghostscript-7.07.tar.bz2
-%URL ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/ghostgum/gsv46src.zip
+%URL ftp://sunsite.cnlab-switch.ch/mirror/ghost/gnu/gs706/ghostscript-7.06.tar.bz2
+%URL ftp://sunsite.cnlab-switch.ch/mirror/ghost/ghostgum/gsv46src.zip
 %FILE Bureautique/Visualiseur de fichiers PDF et Postscript/code source/codesource.txt
 le code source peut être obtenu ici :
-ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/gnu/gs707/ghostscript-7.07.tar.bz2
-ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/ghostgum/gsv46src.zip
+ftp://sunsite.cnlab-switch.ch/mirror/ghost/gnu/gs706/ghostscript-7.06.tar.bz2
+ftp://sunsite.cnlab-switch.ch/mirror/ghost/ghostgum/gsv46src.zip
 
 #% FILEZILLA
 %DIR Internet/Transfert FTP
@@ -404,7 +404,7 @@ Le code source est énorme et peut être récupéré ici : ftp://openoffice.cict
 %URL http://fr.openoffice.org/Documentation/Guides/guideDraw.pdf
 %URL http://fr.openoffice.org/Documentation/Guides/Andrew5.pdf
 %URL http://fr.openoffice.org/Documentation/Guides/Guide_comparatif_1.0.1.pdf
-%URLZIP http://fr.openoffice.org/Documentation/Livres/Livre_pdf.zip
+%URLZIP http://essai.pba.fr/Livre_pdf.zip
 
 #% CDEX
 %DIR Multimedia/Compression CD audio vers MP3 ou Ogg-Vorbis
@@ -466,12 +466,12 @@ le code source peut être obtenu ici : http://ovh.dl.sourceforge.net/sourceforge
 
 #% MOZILLA
 %DIR Internet/Suite internet complète (navigateur, e-mail, éditeur web)
-%URL http://ovh.dl.sourceforge.net/sourceforge/frenchmozilla/mozilla-win32-1.7.2-installer-fr-FR.exe
+%URL http://ovh.dl.sourceforge.net/sourceforge/frenchmozilla/mozilla-win32-1.7.3-installer-fr-FR.exe
 #%URL http://frenchmozilla.sourceforge.net/FTP/1.7.1/mozilla-l10n-fr-FR-1.7.1.xpi
 %DIR Internet/Suite internet complète (navigateur, e-mail, éditeur web)/manuel
 %URL http://ovh.dl.sourceforge.net/sourceforge/frenchmozilla/mozman-1.35.fr.pdf
 %DIR Internet/Suite internet complète (navigateur, e-mail, éditeur web)/code source
-%URL http://ftp.mozilla.org/pub/mozilla.org/mozilla/releases/mozilla1.7.2/src/mozilla-source-1.7.2.tar.bz2
+%URL http://ftp.mozilla.org/pub/mozilla.org/mozilla/releases/mozilla1.7.3/src/mozilla-source-1.7.3.tar.bz2
 #%FILE Internet/Suite internet complète (navigateur, e-mail, éditeur web)/Comment installer la langue française.txt
 #%- installez d'abord Mozilla lui-même 
 #%- démarrez Mozilla et ouvrez le CD-ROM avec Mozilla
@@ -482,7 +482,8 @@ le code source peut être obtenu ici : http://ovh.dl.sourceforge.net/sourceforge
 #%- sélectionnez "Français" en haut, et "Région FR" en bas.
 #%- cliquez sur OK et redémarrez Mozilla
 %FILE Internet/Suite internet complète (navigateur, e-mail, éditeur web)/code source/codesource.txt
-le code source peut être obtenu ici : http://ftp.mozilla.org/pub/mozilla.org/mozilla/releases/mozilla1.7.2/src/mozilla-source-1.7.2.tar.bz2
+le code source peut être obtenu ici :
+http://ftp.mozilla.org/pub/mozilla.org/mozilla/releases/mozilla1.7.3/src/mozilla-source-1.7.3.tar.bz2
 
 #% FIREFOX
 %DIR Internet/Navigateur Internet
