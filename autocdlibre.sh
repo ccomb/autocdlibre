@@ -28,7 +28,7 @@
 unalias -a
 
 # version de ce script
-autocdlibre_version=22
+autocdlibre_version=23
 # où récupérer les infos
 autocdlibre_email="ccomb@free.fr"
 autocdlibre_server="ccomb.free.fr"
@@ -140,10 +140,6 @@ if [ -e latest_version -a $reseau -eq 1 ]; then
 			wget -c -q $autocdlibre_url/autocdlibre_v$latest_version.sh
 			chmod +x autocdlibre_v$latest_version.sh
 			echo "Exécution de la nouvelle version :"
-			trap exit INT
-			trap exit TERM
-			trap exit QUIT
-			trap exit HUP
 			./autocdlibre_v$latest_version.sh $@
 			exit
 		else echo "  OK, on garde la version actuelle."
@@ -181,20 +177,33 @@ demande_effacement() {
 sortie_propre() {
 	echo
 	echo "Les fichiers téléchargés sont conservés dans $reptelech."
-	if [ -d $repcd -a -f $cdname -a -d $reptelech ]; then
-		echo "L'arborescence du CD ne sert plus à rien. Voulez vous l'effacer ?"
-		printf "rm -rf $repcd ? (o/n) [o] ?"
-		if [ "$AUTO" != "1" ]; then read reponse; else echo; fi
-		if [ "$reponse" = "o" -o "$reponse" = "O" -o "$reponse" = "" -o "$reponse" = "oui" -o "$reponse" = "OUI" ]; then
-			echo "Effacement de l'arborescence du CD..."
-			rm -rf $repcd
+	if [ -d $repcd -a -d $reptelech ]; then
+		if [ "$1" = "interruption" -o -f $cdname ]; then
+			echo "L'arborescence du CD ne sert plus à rien. Voulez vous l'effacer ?"
+			printf "rm -rf $repcd ? (o/n) [o] ?"
+			if [ "$AUTO" != "1" ]; then read reponse; else echo; fi
+			if [ "$reponse" = "o" -o "$reponse" = "O" -o "$reponse" = "" -o "$reponse" = "oui" -o "$reponse" = "OUI" ]; then
+				echo "Effacement de l'arborescence du CD..."
+				rm -rf $repcd
+			fi
 		fi
 	fi
-	# on efface les anciens autocdlibres
-	if [ -d $reptelech ]; then
+	# on efface les anciens autocdlibres,
+	# si on n'a pas été interrompu
+	if [ -d $reptelech -a "$1" != "interruption" ]; then
+		if [ -d autocdlibre_v$autocdlibre_version.old ]; then
+			for old in autocdlibre_v$autocdlibre_version.old*; do
+				demande_effacement $old
+			done
+		fi
 		i=0
 		while [ $i -lt $autocdlibre_version ]; do
 				demande_effacement autocdlibre_v$i
+				if [ -d autocdlibre_v$i.old ]; then
+					for old in autocdlibre_v$i.old*; do 
+						demande_effacement $old
+					done
+				fi
 				demande_effacement autocdlibre_v${i}.iso
 				demande_effacement fichiers_telecharges_v$i
 				i=$((i+1))
@@ -205,10 +214,15 @@ sortie_propre() {
 	echo "veuillez envoyer un mail à $autocdlibre_email, ou rendez-vous à $autocdlibre_home"
 	exit
 }
-trap sortie_propre INT
-trap sortie_propre TERM
-trap sortie_propre QUIT
-trap sortie_propre HUP
+
+interruption() {
+sortie_propre "interruption"
+}
+
+trap interruption INT
+trap interruption TERM
+trap interruption QUIT
+trap interruption HUP
 
 # si une image iso est prête
 if [ -f $cdname ]; then
@@ -298,7 +312,8 @@ while [ $res -ne 0 ]; do
 	cdrecord dev=$device driveropts=burnfree -eject $cdname >/dev/null 2>&1
 	res=$?; let num++
 	if [ $num -eq 3 ]; then echo; printf "\e[7mERREUR\e[m : je n'arrive pas à graver. Je ne peux pas terminer"; sortie_propre; fi
-	if [ $res -ne 0 ]; then echo; echo "Veuillez insérer un CD vierge dans le graveur, et pressez ENTER"; echo "(ou Ctrl-C pour interrompre)"; if [ "$AUTO" != "1" ]; then read; fi; fi
+	if [ $res -ne 0 ]; then echo; echo "Veuillez insérer un CD vierge dans le graveur, et pressez ENTER"; echo "(sinon, tapez \"q\" puis ENTER pour annuler la gravure)"; if [ "$AUTO" != "1" ]; then read reponse; fi; fi
+if [ "$reponse" != "" ]; then sortie_propre; fi
 done
 echo OK
 echo "Gravure terminée. L'image ISO est conservée sous le nom $cdname."

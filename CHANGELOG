@@ -192,3 +192,8 @@
 ## version 22
 
 - correction du guillemet manquant dans la v21
+
+## version 23
+
+- meilleur comportement en cas d'interruption
+- demandes plus adaptées pour les effacements
