@@ -25,7 +25,7 @@
 #set -x
 
 # version de ce script
-autocdlibre_version=14
+autocdlibre_version=15
 # où récupérer les infos
 autocdlibre_server="http://ccomb.free.fr/autocdlibre"
 
@@ -239,6 +239,17 @@ exit
 # les codes sources doivent s'appeler "code source"
 ################################"
 
+#% GRISBI
+%DIR Bureautique/Comptabilité personnelle
+%URL http://ovh.dl.sourceforge.net/sourceforge/grisbi4win/grisbi-0.5.1-win32-gcc-040730-full.exe
+%DIR Bureautique/Comptabilité personnelle/code source
+%URL http://ovh.dl.sourceforge.net/sourceforge/grisbi/grisbi-0.5.1.tar.bz2
+%DIR Bureautique/Comptabilité personnelle/Manuel utilisateur
+%URL http://ovh.dl.sourceforge.net/sourceforge/grisbi/grisbi-manuel-img-0.5.1.pdf
+%FILE Bureautique/Comptabilité personnelle/code source/codesource.txt
+le code source peut être obtenu ici :
+http://ovh.dl.sourceforge.net/sourceforge/grisbi/grisbi-0.5.1.tar.bz2
+
 #% CLAMAV
 %DIR Internet/Antivirus
 %URL http://ovh.dl.sourceforge.net/sourceforge/clamwin/clamwin-0.35.2-setup.exe
@@ -307,8 +318,8 @@ le code source peut être obtenu ici : http://ovh.dl.sourceforge.net/sourceforge
 
 #% THE GIMP
 %DIR Multimedia/Retouche photo
-%URLZIP ftp://ftp.arnes.si/software/gimp-win/gtk+-2.4.3-setup.zip
-%URLZIP ftp://ftp.arnes.si/software/gimp-win/gimp-2.0.3-i586-setup.zip
+%URLZIP ftp://ftp.arnes.si/software/gimp-win/gtk+-2.4.7-setup.zip
+%URLZIP ftp://ftp.arnes.si/software/gimp-win/gimp-2.0.4-i586-setup.zip
 %URLZIP ftp://ftp.arnes.si/software/gimp-win/gimp-help-2-0.3-setup.zip
 %FILE Multimedia/Retouche photo/comment installer GIMP.txt
 Dans l'ordre, il faut installer :
@@ -323,21 +334,21 @@ Consultez ensuite les tutoriels dans le dossier : Débuter avec GIMP
 %URLZIP http://www.aljacom.com/%7Egimp/debuter_avec_gimp_v2.zip
 %URLZIP http://www.aljacom.com/%7Egimp/debuter_avec_gimp_2_v2.zip
 %DIR Multimedia/Retouche photo/code source
-%URL ftp://ftp.gimp.org/pub/gimp/v2.0/gimp-2.0.2.tar.bz2
+ftp://ftp.arnes.si/software/gimp-win/gimp-2.0.4-src.zip
 %URL http://www.freedesktop.org/software/pkgconfig/releases/pkgconfig-0.15.0.tar.gz
-%URL ftp://ftp.gimp.org/pub/gtk/v2.4/gtk+-2.4.3.tar.bz2
-%URL ftp://ftp.gimp.org/pub/gtk/v2.4/pango-1.4.0.tar.bz2
-%URL ftp://ftp.gimp.org/pub/gtk/v2.4/glib-2.4.2.tar.bz2
-%URL ftp://ftp.gimp.org/pub/gtk/v2.4/atk-1.6.0.tar.bz2
+%URL ftp://ftp.gimp.org/pub/gtk/v2.4/gtk+-2.4.10.tar.bz2
+%URL ftp://ftp.gimp.org/pub/gtk/v2.4/pango-1.4.1.tar.bz2
+%URL ftp://ftp.gimp.org/pub/gtk/v2.4/glib-2.4.6.tar.bz2
+%URL ftp://ftp.gimp.org/pub/gtk/v2.4/atk-1.6.1.tar.bz2
 %URL ftp://ftp.arnes.si/software/gimp-win/gimp-plugins-src.zip
 %FILE Multimedia/Retouche photo/code source/codesource.txt
 le code source peut être obtenu ici :
-ftp://ftp.gimp.org/pub/gimp/v2.0/gimp-2.0.2.tar.bz2
+ftp://ftp.arnes.si/software/gimp-win/gimp-2.0.4-src.zip
 http://www.freedesktop.org/software/pkgconfig/releases/pkgconfig-0.15.0.tar.gz
-ftp://ftp.gimp.org/pub/gtk/v2.4/gtk+-2.4.3.tar.bz2
-ftp://ftp.gimp.org/pub/gtk/v2.4/pango-1.4.0.tar.bz2
-ftp://ftp.gimp.org/pub/gtk/v2.4/glib-2.4.2.tar.bz2
-ftp://ftp.gimp.org/pub/gtk/v2.4/atk-1.6.0.tar.bz2
+ftp://ftp.gimp.org/pub/gtk/v2.4/gtk+-2.4.10.tar.bz2
+ftp://ftp.gimp.org/pub/gtk/v2.4/pango-1.4.1.tar.bz2
+ftp://ftp.gimp.org/pub/gtk/v2.4/glib-2.4.6.tar.bz2
+ftp://ftp.gimp.org/pub/gtk/v2.4/atk-1.6.1.tar.bz2
 ftp://ftp.arnes.si/software/gimp-win/gimp-plugins-src.zip
 
 #% GHOSTSCRIPT ET GSVIEW
@@ -416,6 +427,15 @@ Voir ici : http://cvs.sourceforge.net/viewcvs.py/cdexos/cdex_xp/
 #% 7-ZIP
 %DIR Bureautique/Compression de fichiers (zip, gz, bz2, etc.)
 %URL http://ovh.dl.sourceforge.net/sourceforge/sevenzip/7z313.exe
+%FILE Bureautique/Compression de fichiers (zip, gz, bz2, etc.)/lisez-moi.txt
+Après installation de seven-zip, voici ce qu'il faut faire pour avoir le programme en français et un usage plus agréable :
+- Menu Démarrer -> Programmes -> 7-zip -> 7-zip File Manager
+- Dans "7-zip File Manager", ouvrir le menu Tools -> Options
+- Dans l'onglet System : cocher toutes les extensions pour les associer à 7-zip
+- Dans l'onglet Language : sélectionner français
+- Dans l'onglet Plugins, cliquer sur Options et cocher "Cascaded context menu"
+Ensuite fermer 7-zip.
+Après ces réglages, 7-zip sera en français, le menu contextuel (clic droit) affichera un sous-menu global pour 7-zip, et tous les fichiers compressés seront automatiquement ouverts avec 7-zip.
 %DIR Bureautique/Compression de fichiers (zip, gz, bz2, etc.)/code source
 %URL http://ovh.dl.sourceforge.net/sourceforge/sevenzip/7z313.tar.bz2
 %FILE Bureautique/Compression de fichiers (zip, gz, bz2, etc.)/code source/codesource.txt
@@ -495,11 +515,12 @@ le code source peut être obtenu ici : http://ftp.eu.mozilla.org/pub/mozilla.org
 
 #% THUNDERBIRD
 %DIR Internet/Logiciel de courrier électronique
-%URL http://ovh.dl.sourceforge.net/sourceforge/frenchmozilla/ThunderbirdSetup-0.7.3-fr-FR.exe
+%URL http://ovh.dl.sourceforge.net/sourceforge/frenchmozilla/ThunderbirdSetup-0.8-fr-FR.exe
 %DIR Internet/Logiciel de courrier électronique/code source
-%URL http://ftp.eu.mozilla.org/pub/mozilla.org/thunderbird/releases/0.7.3/thunderbird-0.7.3-source.tar.bz2
+%URL http://ftp.eu.mozilla.org/pub/mozilla.org/thunderbird/releases/0.8/thunderbird-source-0.8.tar.bz2
 %FILE Internet/Logiciel de courrier électronique/code source/codesource.txt
-le code source peut être obtenu ici : http://ftp.eu.mozilla.org/pub/mozilla.org/thunderbird/releases/0.7.3/thunderbird-0.7.3-source.tar.bz2
+le code source peut être obtenu ici :
+http://ftp.eu.mozilla.org/pub/mozilla.org/thunderbird/releases/0.8/thunderbird-source-0.8.tar.bz2
 
 #% PRIVOXY
 %DIR Internet/Filtrage pubs internet
