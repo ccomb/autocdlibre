@@ -25,7 +25,7 @@
 #set -x
 
 # version de ce script
-autocdlibre_version=10
+autocdlibre_version=11
 # où récupérer les infos
 autocdlibre_server="http://ccomb.free.fr/autocdlibre"
 
@@ -241,11 +241,11 @@ exit
 
 #% CLAMAV
 %DIR Internet/Antivirus
-%URL http://belnet.dl.sourceforge.net/sourceforge/clamwin/clamwin-0.35-setup.exe
+%URL http://ovh.dl.sourceforge.net/sourceforge/clamwin/clamwin-0.35.1-setup.exe
 %DIR Internet/Antivirus/code source
-%URL http://belnet.dl.sourceforge.net/sourceforge/clamwin/clamwin-0.35-src.zip
+%URL http://ovh.dl.sourceforge.net/sourceforge/clamwin/clamwin-0.35-src.zip
 %FILE Internet/Antivirus/code source/codesource.txt
-le code source peut être obtenu ici : http://belnet.dl.sourceforge.net/sourceforge/clamwin/clamwin-0.35-src.zip
+le code source peut être obtenu ici : http://ovh.dl.sourceforge.net/sourceforge/clamwin/clamwin-0.35-src.zip
 
 #% HTTRACK
 %DIR Internet/Aspirateur de site web
@@ -257,25 +257,25 @@ le code source peut être obtenu ici : http://www.httrack.com/httrack-3.32-2.tar
 
 #% NVU
 %DIR Internet/Éditeur de site web
-%URL http://cvs.nvu.com/download/nvu-0.30-win32-installer-full.exe
+%URL http://cvs.nvu.com/download/nvu-0.41-win32-installer-full.exe
 %DIR Internet/Éditeur de site web/code source
-%URL http://www.nvu.com/download/nvu-0.30-source.tar.gz
+%URL http://www.nvu.com/download/nvu-0.41-source.tar.gz
 %FILE Internet/Éditeur de site web/code source/codesource.txt
-le code source peut être obtenu ici : http://www.nvu.com/download/nvu-0.30-source.tar.gz
+le code source peut être obtenu ici : http://www.nvu.com/download/nvu-0.41-source.tar.gz
 
 #% ABIWORD
 %DIR Bureautique/Traitement de texte seul
-%URL http://belnet.dl.sourceforge.net/sourceforge/abiword/abiword-setup-2.0.7.exe
-%URL http://belnet.dl.sourceforge.net/sourceforge/abiword/abiword-plugins-impexp-2.0.7.exe
-%URL http://belnet.dl.sourceforge.net/sourceforge/abiword/abiword-plugins-tools-2.0.7.exe
+%URL http://ovh.dl.sourceforge.net/sourceforge/abiword/abiword-setup-2.0.8.exe
+%URL http://ovh.dl.sourceforge.net/sourceforge/abiword/abiword-plugins-impexp-2.0.8.exe
+%URL http://ovh.dl.sourceforge.net/sourceforge/abiword/abiword-plugins-tools-2.0.8.exe
 %DIR Bureautique/Traitement de texte seul/code source
-%URL http://belnet.dl.sourceforge.net/sourceforge/abiword/abiword-2.0.7.tar.gz
+%URL http://ovh.dl.sourceforge.net/sourceforge/abiword/abiword-2.0.8.tar.bz2
 %FILE Bureautique/Traitement de texte seul/code source/codesource.txt
-le code source peut être obtenu ici : http://belnet.dl.sourceforge.net/sourceforge/abiword/abiword-2.0.7.tar.gz
+le code source peut être obtenu ici : http://ovh.dl.sourceforge.net/sourceforge/abiword/abiword-2.0.8.tar.bz2
 
 #% OPENVIP
 %DIR Multimedia/Montage vidéo
-%URL http://belnet.dl.sourceforge.net/sourceforge/openvip/openvip-1.0.1-setup.exe
+%URL http://ovh.dl.sourceforge.net/sourceforge/openvip/openvip-1.0.1-setup.exe
 %DIR Multimedia/Montage vidéo/code source
 %FILE Multimedia/Montage vidéo/code source/codesource.txt
 Le code source de OpenVIP peut être consulté ici : http://cvs.sourceforge.net/viewcvs.py/openvip/
@@ -284,9 +284,9 @@ Le code source de OpenVIP peut être consulté ici : http://cvs.sourceforge.net/
 %DIR Multimedia/Capture et traitement de vidéo
 %URLZIP http://puzzle.dl.sourceforge.net/sourceforge/virtualdub/VirtualDub-1.5.10.zip
 %DIR Multimedia/Capture et traitement de vidéo/code source
-%URL http://belnet.dl.sourceforge.net/sourceforge/virtualdub/VirtualDub-1.5.10-src.zip.bz2
+%URL http://ovh.dl.sourceforge.net/sourceforge/virtualdub/VirtualDub-1.5.10-src.zip.bz2
 %FILE Multimedia/Capture et traitement de vidéo/code source/codesource.txt
-le code source peut être obtenu ici : http://belnet.dl.sourceforge.net/sourceforge/virtualdub/VirtualDub-1.5.10-src.zip.bz2
+le code source peut être obtenu ici : http://ovh.dl.sourceforge.net/sourceforge/virtualdub/VirtualDub-1.5.10-src.zip.bz2
 
 #% CORNICE
 %DIR Multimedia/Visualiseur photos
@@ -298,11 +298,11 @@ le code source peut être obtenu ici : http://wxglade.sourceforge.net/extra/Corn
 
 #% PDFCREATOR
 %DIR Bureautique/Création de fichiers PDF
-%URL http://belnet.dl.sourceforge.net/sourceforge/pdfcreator/PDFCreator-0_8_0_GNUGhostscript.exe
+%URL http://ovh.dl.sourceforge.net/sourceforge/pdfcreator/PDFCreator-0_8_0_GNUGhostscript.exe
 %DIR Bureautique/Création de fichiers PDF/code source
-%URL http://belnet.dl.sourceforge.net/sourceforge/pdfcreator/PDFCreator-Source-0_8_0.zip
+%URL http://ovh.dl.sourceforge.net/sourceforge/pdfcreator/PDFCreator-Source-0_8_0.zip
 %FILE Bureautique/Création de fichiers PDF/code source/codesource.txt
-le code source peut être obtenu ici : http://belnet.dl.sourceforge.net/sourceforge/pdfcreator/PDFCreator-Source-0_8_0.zip
+le code source peut être obtenu ici : http://ovh.dl.sourceforge.net/sourceforge/pdfcreator/PDFCreator-Source-0_8_0.zip
 
 #% THE GIMP
 %DIR Multimedia/Éditeur photo
@@ -353,27 +353,25 @@ ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/ghostgum/gsv46src.zip
 
 #% FILEZILLA
 %DIR Internet/Transfert FTP
-%URL http://puzzle.dl.sourceforge.net/sourceforge/filezilla/FileZilla_2_2_7b_setup.exe
+%URL http://ovh.dl.sourceforge.net/sourceforge/filezilla/FileZilla_2_2_8a_setup.exe
 %DIR Internet/Transfert FTP/code source
-%URL http://belnet.dl.sourceforge.net/sourceforge/filezilla/FileZilla_2_2_7b_src.zip
+%URL http://ovh.dl.sourceforge.net/sourceforge/filezilla/FileZilla_2_2_8a_src.zip
 %FILE Internet/Transfert FTP/code source/codesource.txt
-le code source peut être obtenu ici : http://belnet.dl.sourceforge.net/sourceforge/filezilla/FileZilla_2_2_7b_src.zip
+le code source peut être obtenu ici : http://ovh.dl.sourceforge.net/sourceforge/filezilla/FileZilla_2_2_8a_src.zip
 
 #% DIA
 %DIR Bureautique/Éditeur de diagrammes
-%URLZIP http://belnet.dl.sourceforge.net/sourceforge/dia-installer/dia-0.92.2-1-setup.zip
+%URLZIP http://ovh.dl.sourceforge.net/sourceforge/dia-installer/dia-0.94-pre1-setup.zip
 %DIR Bureautique/Éditeur de diagrammes/code source
-%URL http://belnet.dl.sourceforge.net/sourceforge/dia-installer/dia-0.92.2.tar.bz2
-%URL http://belnet.dl.sourceforge.net/sourceforge/dia-installer/dia-installer-src-0.92.2-1.zip
+%URL http://ovh.dl.sourceforge.net/sourceforge/dia-installer/dia-0.94-pre1.tar.bz2
 %FILE Bureautique/Éditeur de diagrammes/code source/codesource.txt
 le code source peut être obtenu ici :
-http://belnet.dl.sourceforge.net/sourceforge/dia-installer/dia-0.92.2.tar.bz2
-http://belnet.dl.sourceforge.net/sourceforge/dia-installer/dia-installer-src-0.92.2-1.zip
+http://ovh.dl.sourceforge.net/sourceforge/dia-installer/dia-0.94-pre1.tar.bz2
 
 #% BLENDER
 %DIR Multimedia/Animation et rendu 3D
-%URL http://download.blender.org/release/Blender2.33a/blender-2.33a-windows.exe
-%URL http://download.blender.org/release/yafray.0.0.6/YafRay-0.0.6-2-win.exe
+%URL http://download.blender.org/release/Blender2.34/blender-2.34-windows.exe
+%URLZIP http://download.blender.org/release/yafray.0.0.7/yafray-0.0.6-7-win.zip
 %DIR Multimedia/Animation et rendu 3D/Manuel (anglais)
 %URLZIP http://download.blender.org/documentation/BlenderManualIen.23.pdf.zip
 %URLZIP http://download.blender.org/documentation/BlenderManualIIen.23.pdf.zip
@@ -408,18 +406,18 @@ Le code source est énorme et peut être récupéré ici : ftp://openoffice.cict
 
 #% CDEX
 %DIR Multimedia/Compression CD audio vers MP3 ou Ogg-Vorbis
-%URL http://belnet.dl.sourceforge.net/sourceforge/cdexos/cdex_151.exe
+%URL http://ovh.dl.sourceforge.net/sourceforge/cdexos/cdex_151.exe
 %DIR Multimedia/Compression CD audio vers MP3 ou Ogg-Vorbis/code source
 %FILE Multimedia/Compression CD audio vers MP3 ou Ogg-Vorbis/code source/codesource.txt
 Voir ici : http://cvs.sourceforge.net/viewcvs.py/cdexos/cdex_xp/
 
 #% 7-ZIP
 %DIR Compression de fichiers (zip, gz, bz2, etc.)
-%URL http://belnet.dl.sourceforge.net/sourceforge/sevenzip/7z313.exe
+%URL http://ovh.dl.sourceforge.net/sourceforge/sevenzip/7z313.exe
 %DIR Compression de fichiers (zip, gz, bz2, etc.)/code source
-%URL http://belnet.dl.sourceforge.net/sourceforge/sevenzip/7z313.tar.bz2
+%URL http://ovh.dl.sourceforge.net/sourceforge/sevenzip/7z313.tar.bz2
 %FILE Compression de fichiers (zip, gz, bz2, etc.)/code source/codesource.txt
-le code source peut être obtenu ici : http://belnet.dl.sourceforge.net/sourceforge/sevenzip/7z313.tar.bz2
+le code source peut être obtenu ici : http://ovh.dl.sourceforge.net/sourceforge/sevenzip/7z313.tar.bz2
 
 #% EMULE
 %DIR Internet/Téléchargement Peer2peer
@@ -448,26 +446,26 @@ il est gratuit, compatible, ouvert, facile à utiliser, plus stable, et il évol
 
 #% INKSCAPE
 %DIR Multimedia/Dessin vectoriel
-%URL http://belnet.dl.sourceforge.net/sourceforge/inkscape/Inkscape-0.39-1.win32.exe
+%URL http://ovh.dl.sourceforge.net/sourceforge/inkscape/Inkscape-0.39-1.win32.exe
 %DIR Multimedia/Dessin vectoriel/code source
-%URL http://belnet.dl.sourceforge.net/sourceforge/inkscape/inkscape-0.39.tar.bz2
+%URL http://ovh.dl.sourceforge.net/sourceforge/inkscape/inkscape-0.39.tar.bz2
 %FILE Multimedia/Dessin vectoriel/code source/codesource.txt
-le code source peut être obtenu ici : http://belnet.dl.sourceforge.net/sourceforge/inkscape/inkscape-0.39.tar.bz2
+le code source peut être obtenu ici : http://ovh.dl.sourceforge.net/sourceforge/inkscape/inkscape-0.39.tar.bz2
 
 #% AUDACITY
 %DIR Multimedia/Enregistreur et éditeur de sons
 %URL http://unc.dl.sourceforge.net/sourceforge/audacity/audacity-win-1.2.1.exe
 %DIR Multimedia/Enregistreur et éditeur de sons/code source
-%URL http://belnet.dl.sourceforge.net/sourceforge/audacity/audacity-src-1.2.1.tar.bz2
+%URL http://ovh.dl.sourceforge.net/sourceforge/audacity/audacity-src-1.2.1.tar.bz2
 %FILE Multimedia/Enregistreur et éditeur de sons/code source/codesource.txt
-le code source peut être obtenu ici : http://belnet.dl.sourceforge.net/sourceforge/audacity/audacity-src-1.2.1.tar.bz2
+le code source peut être obtenu ici : http://ovh.dl.sourceforge.net/sourceforge/audacity/audacity-src-1.2.1.tar.bz2
 
 #% MOZILLA
 %DIR Internet/Suite internet complète (navigateur, e-mail, éditeur web)
-%URL http://belnet.dl.sourceforge.net/sourceforge/frenchmozilla/mozilla-win32-1.7.1-installer-fr-FR.exe
+%URL http://ovh.dl.sourceforge.net/sourceforge/frenchmozilla/mozilla-win32-1.7.2-installer-fr-FR.exe
 #%URL http://frenchmozilla.sourceforge.net/FTP/1.7.1/mozilla-l10n-fr-FR-1.7.1.xpi
 %DIR Internet/Suite internet complète (navigateur, e-mail, éditeur web)/code source
-%URL http://ftp.mozilla.org/pub/mozilla.org/mozilla/releases/mozilla1.7.1/src/mozilla-source-1.7.1.tar.bz2
+%URL http://ftp.mozilla.org/pub/mozilla.org/mozilla/releases/mozilla1.7.2/src/mozilla-source-1.7.2.tar.bz2
 #%FILE Internet/Suite internet complète (navigateur, e-mail, éditeur web)/Comment installer la langue française.txt
 #%- installez d'abord Mozilla lui-même 
 #%- démarrez Mozilla et ouvrez le CD-ROM avec Mozilla
@@ -478,31 +476,31 @@ le code source peut être obtenu ici : http://belnet.dl.sourceforge.net/sourcefo
 #%- sélectionnez "Français" en haut, et "Région FR" en bas.
 #%- cliquez sur OK et redémarrez Mozilla
 %FILE Internet/Suite internet complète (navigateur, e-mail, éditeur web)/code source/codesource.txt
-le code source peut être obtenu ici : http://ftp.mozilla.org/pub/mozilla.org/mozilla/releases/mozilla1.7.1/src/mozilla-source-1.7.1.tar.bz2
+le code source peut être obtenu ici : http://ftp.mozilla.org/pub/mozilla.org/mozilla/releases/mozilla1.7.2/src/mozilla-source-1.7.2.tar.bz2
 
 #% FIREFOX
 %DIR Internet/Navigateur Internet
-%URL http://belnet.dl.sourceforge.net/sourceforge/frenchmozilla/FirefoxSetup-0.9.2-fr.exe
+%URL http://ovh.dl.sourceforge.net/sourceforge/frenchmozilla/FirefoxSetup-0.9.3-fr-FR.exe
 %DIR Internet/Navigateur Internet/code source
-%URL http://ftp.eu.mozilla.org/pub/mozilla.org/firefox/releases/0.9.2/firefox-0.9.2-source.tar.bz2
+%URL http://ftp.eu.mozilla.org/pub/mozilla.org/firefox/releases/0.9.3/firefox-0.9.3-source.tar.bz2
 %FILE Internet/Navigateur Internet/code source/codesource.txt
-le code source peut être obtenu ici : http://ftp.eu.mozilla.org/pub/mozilla.org/firefox/releases/0.9.2/firefox-0.9.2-source.tar.bz2
+le code source peut être obtenu ici : http://ftp.eu.mozilla.org/pub/mozilla.org/firefox/releases/0.9.3/firefox-0.9.3-source.tar.bz2
 
 #% THUNDERBIRD
 %DIR Internet/Logiciel de courrier électronique
-%URL http://belnet.dl.sourceforge.net/sourceforge/frenchmozilla/ThunderbirdSetup-0.7.2-fr.exe
+%URL http://ovh.dl.sourceforge.net/sourceforge/frenchmozilla/ThunderbirdSetup-0.7.3-fr-FR.exe
 %DIR Internet/Logiciel de courrier électronique/code source
-%URL http://ftp.eu.mozilla.org/pub/mozilla.org/thunderbird/releases/0.7.2/thunderbird-0.7.2-source.tar.bz2
+%URL http://ftp.eu.mozilla.org/pub/mozilla.org/thunderbird/releases/0.7.3/thunderbird-0.7.3-source.tar.bz2
 %FILE Internet/Logiciel de courrier électronique/code source/codesource.txt
-le code source peut être obtenu ici : http://ftp.eu.mozilla.org/pub/mozilla.org/thunderbird/releases/0.7.2/thunderbird-0.7.2-source.tar.bz2
+le code source peut être obtenu ici : http://ftp.eu.mozilla.org/pub/mozilla.org/thunderbird/releases/0.7.3/thunderbird-0.7.3-source.tar.bz2
 
 #% PRIVOXY
 %DIR Internet/Filtrage pubs internet
-%URL http://belnet.dl.sourceforge.net/sourceforge/ijbswa/privoxy_setup_3_0_3-2.exe
+%URL http://ovh.dl.sourceforge.net/sourceforge/ijbswa/privoxy_setup_3_0_3-2.exe
 %DIR Internet/Filtrage pubs internet/code source
-%URL http://belnet.dl.sourceforge.net/sourceforge/ijbswa/privoxy-3.0.3-2-stable.src.tar.gz
+%URL http://ovh.dl.sourceforge.net/sourceforge/ijbswa/privoxy-3.0.3-2-stable.src.tar.gz
 %FILE Internet/Filtrage pubs internet/code source/codesource.txt
-le code source peut être obtenu ici : http://belnet.dl.sourceforge.net/sourceforge/ijbswa/privoxy-3.0.3-2-stable.src.tar.gz
+le code source peut être obtenu ici : http://ovh.dl.sourceforge.net/sourceforge/ijbswa/privoxy-3.0.3-2-stable.src.tar.gz
 %FILE Internet/Filtrage pubs internet/comment utiliser Privoxy.txt
 Pour utiliser privoxy :
 dans Mozilla : menu Edition -> préférences -> avancé -> proxies -> configuration manuelle :
@@ -511,19 +509,19 @@ HTTP Port = 8118
 
 #% ZINF
 %DIR Multimedia/Lecteur audio (mp3, Ogg-Vorbis, etc.)
-%URL http://belnet.dl.sourceforge.net/sourceforge/zinf/zinf-setup-2.2.1.exe
+%URL http://ovh.dl.sourceforge.net/sourceforge/zinf/zinf-setup-2.2.1.exe
 %DIR Multimedia/Lecteur audio (mp3, Ogg-Vorbis, etc.)/code source
-%URL http://belnet.dl.sourceforge.net/sourceforge/zinf/zinf-2.2.1.tar.gz
+%URL http://ovh.dl.sourceforge.net/sourceforge/zinf/zinf-2.2.1.tar.gz
 %FILE Multimedia/Lecteur audio (mp3, Ogg-Vorbis, etc.)/code source/codesource.txt
-le code source peut être obtenu ici : http://belnet.dl.sourceforge.net/sourceforge/zinf/zinf-2.2.1.tar.gz
+le code source peut être obtenu ici : http://ovh.dl.sourceforge.net/sourceforge/zinf/zinf-2.2.1.tar.gz
 
 #% GAIM
 %DIR Internet/Messagerie instantanée (icq, jabber, msn, etc.)
-%URL http://belnet.dl.sourceforge.net/sourceforge/gaim/gaim-0.80.exe
+%URL http://ovh.dl.sourceforge.net/sourceforge/gaim/gaim-0.81.exe
 %DIR Internet/Messagerie instantanée (icq, jabber, msn, etc.)/code source
-%URL http://belnet.dl.sourceforge.net/sourceforge/gaim/gaim-0.80.tar.bz2
+%URL http://ovh.dl.sourceforge.net/sourceforge/gaim/gaim-0.81.tar.bz2
 %FILE Internet/Messagerie instantanée (icq, jabber, msn, etc.)/code source/codesource.txt
-le code source peut être obtenu ici : http://belnet.dl.sourceforge.net/sourceforge/gaim/gaim-0.80.tar.bz2
+le code source peut être obtenu ici : http://ovh.dl.sourceforge.net/sourceforge/gaim/gaim-0.80.tar.bz2
 
 #% VLC MEDIA PLAYER
 %DIR Multimedia/Lecteur Vidéo et DVD
@@ -535,27 +533,27 @@ le code source peut être obtenu ici : http://download.videolan.org/pub/videolan
 
 #% CELESTIA
 %DIR Divertissement/Visite univers en 3D
-%URL http://belnet.dl.sourceforge.net/sourceforge/celestia/celestia-win32-1.3.1-1.exe
+%URL http://ovh.dl.sourceforge.net/sourceforge/celestia/celestia-win32-1.3.1-1.exe
 %DIR Divertissement/Visite univers en 3D/code source
-%URL http://belnet.dl.sourceforge.net/sourceforge/celestia/celestia-1.3.1.tar.gz
+%URL http://ovh.dl.sourceforge.net/sourceforge/celestia/celestia-1.3.1.tar.gz
 %FILE Divertissement/Visite univers en 3D/code source/codesource.txt
-le code source peut être obtenu ici : http://belnet.dl.sourceforge.net/sourceforge/celestia/celestia-1.3.1.tar.gz
+le code source peut être obtenu ici : http://ovh.dl.sourceforge.net/sourceforge/celestia/celestia-1.3.1.tar.gz
 
 #% BILLARD 3D
 %DIR Divertissement/Billard en 3D
-%URL http://belnet.dl.sourceforge.net/sourceforge/billardgl/BillardGL-1.75-Setup.exe
+%URL http://ovh.dl.sourceforge.net/sourceforge/billardgl/BillardGL-1.75-Setup.exe
 %DIR Divertissement/Billard en 3D/code source
-%URL http://belnet.dl.sourceforge.net/sourceforge/billardgl/BillardGL-1.75.tar.gz
+%URL http://ovh.dl.sourceforge.net/sourceforge/billardgl/BillardGL-1.75.tar.gz
 %FILE Divertissement/Billard en 3D/code source/codesource.txt
-le code source peut être obtenu ici : http://belnet.dl.sourceforge.net/sourceforge/billardgl/BillardGL-1.75.tar.gz
+le code source peut être obtenu ici : http://ovh.dl.sourceforge.net/sourceforge/billardgl/BillardGL-1.75.tar.gz
 
 #% SCORCHED 3D
 %DIR Divertissement/Artillerie en 3D
-%URL http://belnet.dl.sourceforge.net/sourceforge/scorched3d/Scorched3D-37.2.exe
+%URL http://ovh.dl.sourceforge.net/sourceforge/scorched3d/Scorched3D-37.2.exe
 %DIR Divertissement/Artillerie en 3D/code source
-%URL http://belnet.dl.sourceforge.net/sourceforge/scorched3d/Scorched3D-37.2-src.zip
+%URL http://ovh.dl.sourceforge.net/sourceforge/scorched3d/Scorched3D-37.2-src.zip
 %FILE Divertissement/Artillerie en 3D/code source/codesource.txt
-le code source peut être obtenu ici : http://belnet.dl.sourceforge.net/sourceforge/scorched3d/Scorched3D-37.2-src.zip
+le code source peut être obtenu ici : http://ovh.dl.sourceforge.net/sourceforge/scorched3d/Scorched3D-37.2-src.zip
 
 %#######################FICHIER TEXTES######################
 %FILE Dans ce CD.txt
