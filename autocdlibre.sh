@@ -28,7 +28,7 @@
 unalias -a
 
 # version de ce script
-autocdlibre_version=21
+autocdlibre_version=22
 # où récupérer les infos
 autocdlibre_email="ccomb@free.fr"
 autocdlibre_server="ccomb.free.fr"
@@ -140,6 +140,10 @@ if [ -e latest_version -a $reseau -eq 1 ]; then
 			wget -c -q $autocdlibre_url/autocdlibre_v$latest_version.sh
 			chmod +x autocdlibre_v$latest_version.sh
 			echo "Exécution de la nouvelle version :"
+			trap exit INT
+			trap exit TERM
+			trap exit QUIT
+			trap exit HUP
 			./autocdlibre_v$latest_version.sh $@
 			exit
 		else echo "  OK, on garde la version actuelle."
@@ -238,7 +242,7 @@ BEGIN { ORS="\r\n"; insource=0; infile=0 }
 		rm -f ERROR
 		echo
 		echo "Au moins un fichier n'a pas pu être téléchargé."
-		echo "Veuillez relancer le script une ou deux fois et, si l'échec se répète, 
+		echo "Veuillez relancer le script une ou deux fois et, si l'échec se répète,"
 		echo "merci de prévenir à l'adresse $autocdlibre_email"
 		exit
 	fi

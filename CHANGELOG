@@ -188,3 +188,7 @@
 - correction de l'URL pour mozilla-source
 - mise à jour 7-zip 4.13 beta
 - modification du message en cas d'échec de téléchargement
+
+## version 22
+
+- correction du guillemet manquant dans la v21
