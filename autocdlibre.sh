@@ -25,7 +25,7 @@
 #set -x
 
 # version de ce script
-autocdlibre_version=9
+autocdlibre_version=10
 # où récupérer les infos
 autocdlibre_server="http://ccomb.free.fr/autocdlibre"
 
@@ -464,19 +464,19 @@ le code source peut être obtenu ici : http://belnet.dl.sourceforge.net/sourcefo
 
 #% MOZILLA
 %DIR Internet/Suite internet complète (navigateur, e-mail, éditeur web)
-%URL http://ftp.mozilla.org/pub/mozilla.org/mozilla/releases/mozilla1.7.1/mozilla-win32-1.7.1-installer.exe
-%URL http://frenchmozilla.sourceforge.net/FTP/1.7.1/mozilla-l10n-fr-FR-1.7.1.xpi
+%URL http://belnet.dl.sourceforge.net/sourceforge/frenchmozilla/mozilla-win32-1.7.1-installer-fr-FR.exe
+#%URL http://frenchmozilla.sourceforge.net/FTP/1.7.1/mozilla-l10n-fr-FR-1.7.1.xpi
 %DIR Internet/Suite internet complète (navigateur, e-mail, éditeur web)/code source
 %URL http://ftp.mozilla.org/pub/mozilla.org/mozilla/releases/mozilla1.7.1/src/mozilla-source-1.7.1.tar.bz2
-%FILE Internet/Suite internet complète (navigateur, e-mail, éditeur web)/Comment installer la langue française.txt
-- installez d'abord Mozilla lui-même 
-- démarrez Mozilla et ouvrez le CD-ROM avec Mozilla
-  (tapez D: ou la lettre correspondant à votre lecteur CD-ROM au lieu d'une adresse internet)
-- retrouvez dans le CD-ROM le fichier mozilla-l10n-fr-FR-1.7.1.xpi et CLIQUEZ DESSUS depuis Mozilla
-- confirmez l'installation
-- allez dans le menu Edit->Preferences->Appearance->Languages/Content
-- sélectionnez "Français" en haut, et "Région FR" en bas.
-- cliquez sur OK et redémarrez Mozilla
+#%FILE Internet/Suite internet complète (navigateur, e-mail, éditeur web)/Comment installer la langue française.txt
+#%- installez d'abord Mozilla lui-même 
+#%- démarrez Mozilla et ouvrez le CD-ROM avec Mozilla
+#%  (tapez D: ou la lettre correspondant à votre lecteur CD-ROM au lieu d'une adresse internet)
+#%- retrouvez dans le CD-ROM le fichier mozilla-l10n-fr-FR-1.7.1.xpi et CLIQUEZ DESSUS depuis Mozilla
+#%- confirmez l'installation
+#%- allez dans le menu Edit->Preferences->Appearance->Languages/Content
+#%- sélectionnez "Français" en haut, et "Région FR" en bas.
+#%- cliquez sur OK et redémarrez Mozilla
 %FILE Internet/Suite internet complète (navigateur, e-mail, éditeur web)/code source/codesource.txt
 le code source peut être obtenu ici : http://ftp.mozilla.org/pub/mozilla.org/mozilla/releases/mozilla1.7.1/src/mozilla-source-1.7.1.tar.bz2
 
