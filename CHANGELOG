@@ -36,3 +36,10 @@
 - ajout de la recherche du graveur pour noyau 2.4
 - mise à jour mozilla 1.7.1 (traduction française séparée en xpi)
 - petites modifications de noms de rubriques
+
+## version 5
+
+- ajout de l'antivirus Clamav (clamwin)
+- ajout du jeu d'artillerie Scorched 3D
+- modifications mineures de l'arborescence
+- affichage de tous les changelogs depuis la version courante au lieu du dernier.

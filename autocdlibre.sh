@@ -24,7 +24,7 @@
 #set -x
 
 # version de ce script
-autocdlibre_version=4
+autocdlibre_version=5
 # où récupérer les infos
 autocdlibre_server="http://ccomb.free.fr/autocdlibre"
 
@@ -59,23 +59,9 @@ if [ $? -ne 0 ]; then
 	exit
 fi
 }
-aton which
-aton echo
-aton wget
-aton cdrecord
-aton mkisofs
-aton grep
-aton head
-aton basename
-aton pwd
-aton find
-aton awk
-aton cut
-aton uniq
-aton date
-aton unzip
-aton dig
-aton expr
+for prog in which echo wget cdrecord mkisofs grep head basename pwd find awk cut uniq date unzip dig expr seq; do
+	aton $prog
+done
 
 # chemin du script
 script=`pwd`/$0
@@ -111,11 +97,16 @@ if [ -e latest_version -a $reseau -eq 1 ]; then
 	# on vérifie qu'on a la dernière version
 	if [ $latest_version -gt $autocdlibre_version ]; then
 		# on télécharge et on affiche le changelog
-		wget -c -T 4 -q $autocdlibre_server/changelog_v$latest_version
+		for i in `seq \`expr $autocdlibre_version + 1\` $latest_version`; do
+			wget -c -T 4 -q $autocdlibre_server/changelog_v$i
+		done
 		echo "  La nouvelle version (v$latest_version) de ce script est disponible."
 		echo "-------"
-		echo "  Modifications depuis la version `expr $latest_version - 1` :"
-		cat changelog_v$latest_version 2>/dev/null
+		echo "  Modifications depuis la version $autocdlibre_version :"
+		for i in `seq \`expr $autocdlibre_version + 1\` $latest_version`; do
+			echo "Dans la version $i :"
+			cat changelog_v$i 2>/dev/null
+		done
 		echo "-------"
 		printf "Voulez-vous récupérer et utiliser cette nouvelle version ? (o/n) [o] "
 		read rep;
@@ -172,8 +163,8 @@ BEGIN { ORS="\r\n"; insource=0; infile=0 }
 
   # on construit l'image du cd
   printf "Contruction de l'image ISO du cd..."
-  date="`date | cut -d' ' -f 2``date | cut -d' ' -f 7`"
-  mkisofs -quiet -J -V Logiciels\ Libres\ $date -o $cdname $repcd >/dev/null 2>&1
+  date="`date '+%B%Y'`"
+  mkisofs -quiet -rJ -V Logiciels\ Libres\ $date -o $cdname $repcd >/dev/null 2>&1
   if [ $? -eq 0 ]; then echo OK; else echo ECHEC; exit; fi
 fi
 
@@ -246,6 +237,14 @@ exit
 # ATTENTION : pour que -nosrc fonctionne, les répertoires contenant
 # les codes sources doivent s'appeler "code source"
 ################################"
+
+#% CLAMAV
+%DIR Internet/Antivirus
+%URL http://belnet.dl.sourceforge.net/sourceforge/clamwin/clamwin-0.35-setup.exe
+%DIR Internet/Antivirus/code source
+%URL http://belnet.dl.sourceforge.net/sourceforge/clamwin/clamwin-0.35-src.zip
+%FILE Internet/Antivirus/code source/codesource.txt
+le code source peut être obtenu ici : http://belnet.dl.sourceforge.net/sourceforge/clamwin/clamwin-0.35-src.zip
 
 #% HTTRACK
 %DIR Internet/Aspirateur de site web
@@ -525,21 +524,28 @@ le code source peut être obtenu ici : http://belnet.dl.sourceforge.net/sourcefo
 le code source peut être obtenu ici : http://download.videolan.org/pub/videolan/vlc/0.7.2/vlc-0.7.2.tar.bz2
 
 #% CELESTIA
-%DIR Divertissement/Univers en 3D
+%DIR Divertissement/Visite univers en 3D
 %URL http://belnet.dl.sourceforge.net/sourceforge/celestia/celestia-win32-1.3.1-1.exe
-%DIR Divertissement/Univers en 3D/code source
+%DIR Divertissement/Visite univers en 3D/code source
 %URL http://belnet.dl.sourceforge.net/sourceforge/celestia/celestia-1.3.1.tar.gz
-%FILE Divertissement/Univers en 3D/code source/codesource.txt
+%FILE Divertissement/Visite univers en 3D/code source/codesource.txt
 le code source peut être obtenu ici : http://belnet.dl.sourceforge.net/sourceforge/celestia/celestia-1.3.1.tar.gz
 
 #% BILLARD 3D
-%DIR Divertissement/Billard 3D
+%DIR Divertissement/Billard en 3D
 %URL http://belnet.dl.sourceforge.net/sourceforge/billardgl/BillardGL-1.75-Setup.exe
-%DIR Divertissement/Billard 3D/code source
+%DIR Divertissement/Billard en 3D/code source
 %URL http://belnet.dl.sourceforge.net/sourceforge/billardgl/BillardGL-1.75.tar.gz
-%FILE Divertissement/Billard 3D/code source/codesource.txt
+%FILE Divertissement/Billard en 3D/code source/codesource.txt
 le code source peut être obtenu ici : http://belnet.dl.sourceforge.net/sourceforge/billardgl/BillardGL-1.75.tar.gz
 
+#% SCORCHED 3D
+%DIR Divertissement/Artillerie en 3D
+%URL http://belnet.dl.sourceforge.net/sourceforge/scorched3d/Scorched3D-37.2.exe
+%DIR Divertissement/Artillerie en 3D/code source
+%URL http://belnet.dl.sourceforge.net/sourceforge/scorched3d/Scorched3D-37.2-src.zip
+%FILE Divertissement/Artillerie en 3D/code source/codesource.txt
+le code source peut être obtenu ici : http://belnet.dl.sourceforge.net/sourceforge/scorched3d/Scorched3D-37.2-src.zip
 
 %#######################FICHIER TEXTES######################
 %FILE Dans ce CD.txt
