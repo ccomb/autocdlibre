@@ -43,3 +43,9 @@
 - ajout du jeu d'artillerie Scorched 3D
 - modifications mineures de l'arborescence
 - affichage de tous les changelogs depuis la version courante au lieu du dernier.
+
+## version 6
+
+- mise à jour Gaim 0.80
+- indication dans les commentaires de l'encodage utilisé (UTF-8)
+- modifications mineures de l'arborescence

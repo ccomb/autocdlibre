@@ -2,6 +2,7 @@
 # name: autocdlibre
 # Ce script permet de télécharger automatiquement les dernières versions
 # de certains logiciels libres et de les graver sur un cd
+# ATTENTION : l'encodage de ce fichier est l'UTF-8
 ##################################################################
 # Copyright (C) 2004 Christophe Combelles (ccomb@free.fr)
 #
@@ -24,7 +25,7 @@
 #set -x
 
 # version de ce script
-autocdlibre_version=5
+autocdlibre_version=6
 # où récupérer les infos
 autocdlibre_server="http://ccomb.free.fr/autocdlibre"
 
@@ -330,13 +331,13 @@ ftp://ftp.gimp.org/pub/gtk/v2.4/atk-1.6.0.tar.bz2
 ftp://ftp.arnes.si/software/gimp-win/gimp-plugins-src.zip
 
 #% GHOSTSCRIPT ET GSVIEW
-%DIR Bureautique/Lecteur PDF et Postscript
+%DIR Bureautique/Visualiseur de fichiers PDF et Postscript
 %URL http://puzzle.dl.sourceforge.net/sourceforge/ghostscript/gs706w32.exe
 %URL ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/ghostgum/gsv46w32.exe
-%DIR Bureautique/Lecteur PDF et Postscript/code source
+%DIR Bureautique/Visualiseur de fichiers PDF et Postscript/code source
 %URL ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/gnu/gs707/ghostscript-7.07.tar.bz2
 %URL ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/ghostgum/gsv46src.zip
-%FILE Bureautique/Lecteur PDF et Postscript/code source/codesource.txt
+%FILE Bureautique/Visualiseur de fichiers PDF et Postscript/code source/codesource.txt
 le code source peut être obtenu ici :
 ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/gnu/gs707/ghostscript-7.07.tar.bz2
 ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/ghostgum/gsv46src.zip
@@ -397,18 +398,18 @@ Le code source est énorme et peut être récupéré ici : ftp://openoffice.cict
 %URLZIP http://fr.openoffice.org/Documentation/Livres/Livre_pdf.zip
 
 #% CDEX
-%DIR Multimedia/Compression CD audio vers MP3 ou OggVorbis
+%DIR Multimedia/Compression CD audio vers MP3 ou Ogg-Vorbis
 %URL http://belnet.dl.sourceforge.net/sourceforge/cdexos/cdex_151.exe
-%DIR Multimedia/Compression CD audio vers MP3 ou OggVorbis/code source
-%FILE Multimedia/Compression CD audio vers MP3 ou OggVorbis/code source/codesource.txt
+%DIR Multimedia/Compression CD audio vers MP3 ou Ogg-Vorbis/code source
+%FILE Multimedia/Compression CD audio vers MP3 ou Ogg-Vorbis/code source/codesource.txt
 Voir ici : http://cvs.sourceforge.net/viewcvs.py/cdexos/cdex_xp/
 
 #% 7-ZIP
-%DIR Compression de fichiers
+%DIR Compression de fichiers (zip, gz, bz2, etc.)
 %URL http://belnet.dl.sourceforge.net/sourceforge/sevenzip/7z313.exe
-%DIR Compression de fichiers/code source
+%DIR Compression de fichiers (zip, gz, bz2, etc.)/code source
 %URL http://belnet.dl.sourceforge.net/sourceforge/sevenzip/7z313.tar.bz2
-%FILE Compression de fichiers/code source/codesource.txt
+%FILE Compression de fichiers (zip, gz, bz2, etc.)/code source/codesource.txt
 le code source peut être obtenu ici : http://belnet.dl.sourceforge.net/sourceforge/sevenzip/7z313.tar.bz2
 
 #% EMULE
@@ -427,7 +428,7 @@ vous augmentez la notoriété et la diffusion de ces logiciels,
 et vous leur faites de la publicité inutilement.
 Vous perdez du temps à apprendre des logiciels que vous n'avez pas le droit d'utiliser,
 vous devenez dépendant d'un produit que vous risquez d'être obligé de payer un jour,
-et dont la perennité, le prix, la disponibilité, ou la compatibilité sont inconnus dans le futur.
+et dont la pérennité, le prix, la disponibilité, ou la compatibilité sont inconnus dans le futur.
 
 Au lieu de télécharger illégalement Photoshop, apprenez à utiliser GIMP.
 Il est aussi performant, gratuit, légal,
@@ -453,12 +454,12 @@ le code source peut être obtenu ici : http://belnet.dl.sourceforge.net/sourcefo
 le code source peut être obtenu ici : http://belnet.dl.sourceforge.net/sourceforge/audacity/audacity-src-1.2.1.tar.bz2
 
 #% MOZILLA
-%DIR Internet/Suite internet complète
+%DIR Internet/Suite internet complète (navigateur, e-mail, éditeur web)
 %URL http://ftp.mozilla.org/pub/mozilla.org/mozilla/releases/mozilla1.7.1/mozilla-win32-1.7.1-installer.exe
 %URL http://frenchmozilla.sourceforge.net/FTP/1.7.1/mozilla-l10n-fr-FR-1.7.1.xpi
-%DIR Internet/Suite internet complète/code source
+%DIR Internet/Suite internet complète (navigateur, e-mail, éditeur web)/code source
 %URL http://ftp.mozilla.org/pub/mozilla.org/mozilla/releases/mozilla1.7.1/src/mozilla-source-1.7.1.tar.bz2
-%FILE Internet/Suite internet complète/Comment installer la langue française.txt
+%FILE Internet/Suite internet complète (navigateur, e-mail, éditeur web)/Comment installer la langue française.txt
 - installez d'abord Mozilla lui-même 
 - démarrez Mozilla et ouvrez le CD-ROM avec Mozilla
   (tapez D: ou la lettre correspondant à votre lecteur CD-ROM au lieu d'une adresse internet)
@@ -467,23 +468,23 @@ le code source peut être obtenu ici : http://belnet.dl.sourceforge.net/sourcefo
 - allez dans le menu Edit->Preferences->Appearance->Languages/Content
 - sélectionnez "Français" en haut, et "Région FR" en bas.
 - cliquez sur OK et redémarrez Mozilla
-%FILE Internet/Suite internet complète/code source/codesource.txt
+%FILE Internet/Suite internet complète (navigateur, e-mail, éditeur web)/code source/codesource.txt
 le code source peut être obtenu ici : http://ftp.mozilla.org/pub/mozilla.org/mozilla/releases/mozilla1.7.1/src/mozilla-source-1.7.1.tar.bz2
 
 #% FIREFOX
-%DIR Internet/Navigateur seul
+%DIR Internet/Navigateur Internet
 %URL http://belnet.dl.sourceforge.net/sourceforge/frenchmozilla/FirefoxSetup-0.9.2-fr.exe
-%DIR Internet/Navigateur seul/code source
+%DIR Internet/Navigateur Internet/code source
 %URL http://ftp.eu.mozilla.org/pub/mozilla.org/firefox/releases/0.9.2/firefox-0.9.2-source.tar.bz2
-%FILE Internet/Navigateur seul/code source/codesource.txt
+%FILE Internet/Navigateur Internet/code source/codesource.txt
 le code source peut être obtenu ici : http://ftp.eu.mozilla.org/pub/mozilla.org/firefox/releases/0.9.2/firefox-0.9.2-source.tar.bz2
 
 #% THUNDERBIRD
-%DIR Internet/Logiciel de Courriel seul
+%DIR Internet/Logiciel de courrier électronique
 %URL http://belnet.dl.sourceforge.net/sourceforge/frenchmozilla/ThunderbirdSetup-0.7.2-fr.exe
-%DIR Internet/Logiciel de Courriel seul/code source
+%DIR Internet/Logiciel de courrier électronique/code source
 %URL http://ftp.eu.mozilla.org/pub/mozilla.org/thunderbird/releases/0.7.2/thunderbird-0.7.2-source.tar.bz2
-%FILE Internet/Logiciel de Courriel seul/code source/codesource.txt
+%FILE Internet/Logiciel de courrier électronique/code source/codesource.txt
 le code source peut être obtenu ici : http://ftp.eu.mozilla.org/pub/mozilla.org/thunderbird/releases/0.7.2/thunderbird-0.7.2-source.tar.bz2
 
 #% PRIVOXY
@@ -500,20 +501,20 @@ HTTP proxy = localhost
 HTTP Port = 8118
 
 #% ZINF
-%DIR Multimedia/Lecteur audio
+%DIR Multimedia/Lecteur audio (mp3, Ogg-Vorbis, etc.)
 %URL http://belnet.dl.sourceforge.net/sourceforge/zinf/zinf-setup-2.2.1.exe
-%DIR Multimedia/Lecteur audio/code source
+%DIR Multimedia/Lecteur audio (mp3, Ogg-Vorbis, etc.)/code source
 %URL http://belnet.dl.sourceforge.net/sourceforge/zinf/zinf-2.2.1.tar.gz
-%FILE Multimedia/Lecteur audio/code source/codesource.txt
+%FILE Multimedia/Lecteur audio (mp3, Ogg-Vorbis, etc.)/code source/codesource.txt
 le code source peut être obtenu ici : http://belnet.dl.sourceforge.net/sourceforge/zinf/zinf-2.2.1.tar.gz
 
 #% GAIM
-%DIR Internet/Messagerie instantanée
-%URL http://belnet.dl.sourceforge.net/sourceforge/gaim/gaim-0.79.exe
-%DIR Internet/Messagerie instantanée/code source
-%URL http://belnet.dl.sourceforge.net/sourceforge/gaim/gaim-0.79.tar.bz2
-%FILE Internet/Messagerie instantanée/code source/codesource.txt
-le code source peut être obtenu ici : http://belnet.dl.sourceforge.net/sourceforge/gaim/gaim-0.79.tar.bz2
+%DIR Internet/Messagerie instantanée (icq, jabber, msn, etc.)
+%URL http://belnet.dl.sourceforge.net/sourceforge/gaim/gaim-0.80.exe
+%DIR Internet/Messagerie instantanée (icq, jabber, msn, etc.)/code source
+%URL http://belnet.dl.sourceforge.net/sourceforge/gaim/gaim-0.80.tar.bz2
+%FILE Internet/Messagerie instantanée (icq, jabber, msn, etc.)/code source/codesource.txt
+le code source peut être obtenu ici : http://belnet.dl.sourceforge.net/sourceforge/gaim/gaim-0.80.tar.bz2
 
 #% VLC MEDIA PLAYER
 %DIR Multimedia/Lecteur Vidéo et DVD
