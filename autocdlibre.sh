@@ -28,7 +28,7 @@
 unalias -a
 
 # version de ce script
-autocdlibre_version=24
+autocdlibre_version=25
 # où récupérer les infos
 autocdlibre_email="ccomb@free.fr"
 autocdlibre_server="ccomb.free.fr"
@@ -47,7 +47,7 @@ while [ $# -gt 0 ]; do
 		echo "Syntaxe : $0 [-h][-nosrc][-arbre][-noburn]"
 		echo "-h      : ce petit texte d'aide"
 		echo "-nosrc  : ne pas inclure les codes sources"
-		echo "-arbre  : stopper après la creation de l'arborescence du CD"
+		echo "-arbre  : stopper après la création de l'arborescence du CD"
 		echo "-noburn : stopper juste avant la gravure."
 		echo "-auto   : valider toutes les questions par défaut"
 		echo
@@ -238,7 +238,7 @@ if [ ! -f $cdname -o "$reponse" != "o" -a "$reponse" != "O" -a "$reponse" != "" 
 	mkdir $repcd
 	# on crée un répertoire de téléchargement
 	mkdir -p $reptelech
-	# on démarre l'analyse des commandes en fin de script
+	# on démarre l'analyse des commandes en fin de script (oui c'est du awk illisible, si quelqu'un a mieux je suis preneur)
 	rm -f ERROR
 	awk -v repcd=$repcd -v reseau=$reseau -v reptelech=$reptelech -v nosrc=$NOSRC '
 BEGIN { ORS="\r\n"; insource=0; infile=0 }
@@ -324,65 +324,99 @@ sortie_propre
 
 exit
 ################################"
-# liste des logiciels qu'on veut
-# syntaxe :
+# Liste des logiciels qu'on veut
+# Syntaxe : ####################
 # une commande DIR suivi d'un nombre arbitraire de commandes URL et FILE
 # %DIR : sert à créer un répertoire
 # %URL : sert à télécharger quelque chose dans le dernier répertoire créé
 # %URLZIP : idem sauf qu'on décompresse (unzip seulement) avant de graver
 # %FILE : sert à créer un fichier texte (attention à créer le répertoire avant le fichier)
 # %# ou #% : sert à mettre un commentaire
-# ATTENTION : pour que -nosrc fonctionne, les répertoires contenant les codes sources doivent s'appeler "code source"
+# ATTENTION : pour que -nosrc fonctionne, les répertoires contenant les codes sources doivent s'appeler « code source »
 ################################"
+
+%#######################FICHIER TEXTES######################
+%FILE Dans ce CD.txt
+Ce CD ne contient que des LOGICIELS LIBRES.
+Ces logiciels sont distribués selon une licence qui vous autorise à en faire (presque) ce que vous voulez :
+
+installer, utiliser, copier, étudier, distribuer, modifier, adapter, traduire et même vendre.
+
+La seule restriction est que si vous distribuez des versions modifiées de ces logiciels,
+vous avez l'obligation de FOURNIR LE CODE DE VOS MODIFICATIONS
+(veuillez lire leurs licences pour plus de précisions.).
+C'est ce qui garantit que le logiciel restera toujours libre,
+et que vous pourrez toujours l'utiliser gratuitement.
+
+En apprenant à utiliser ces logiciels vous ne perdez pas de temps
+car vous avez l'assurance qu'ils ne vont pas disparaître ni devenir payants.
+Ils sont perennes et votre apprentissage l'est aussi !
+
+----
+
+Les logiciels les plus urgents et intéressants à utiliser sont Mozilla Firefox et OpenOffice.org.
+
+Mozilla Firefox, en tant que navigateur internet, est infiniment plus pratique,
+il est beaucoup plus moderne et plus sûr, il supporte et respecte mieux les derniers standards du web
+et permet d'éviter la moitié des problèmes de sécurité rencontrés sur internet (virus, logiciels espions, etc.).
+Sa part de marché augmente actuellement à une vitesse accrue face à Internet Explorer,
+qui n'a pas subit d'amélioration depuis cinq ans et est maintenant obsolète et même dangereux.
+La même remarque peut s'appliquer à Outlook Express, qui peut (doit) être remplacé par Mozilla Thunderbird.
+
+L'utilisation d'Internet Explorer n'est obligatoire aujourd'hui que pour quelques rares sites internet
+non standards qui n'ont été conçus que pour être visités avec ce navigateur. Lorsque vous tombez
+sur un tel site, prenez un peu de temps et écrivez à son webmaster pour vous plaindre. Vous contribuerez
+à rendre l'internet plus ouvert, plus standard, plus interopérable et plus accessible.
 
 #% GRISBI
 %DIR Bureautique/Comptabilité personnelle
-%URL http://ovh.dl.sourceforge.net/sourceforge/grisbi4win/grisbi-0.5.3-win32-gcc-041205-full.exe
+%URL http://ovh.dl.sourceforge.net/sourceforge/grisbi4win/grisbi-0.5.7-win32-gcc-050605-full.exe
 %DIR Bureautique/Comptabilité personnelle/code source
-%URL http://ovh.dl.sourceforge.net/sourceforge/grisbi/grisbi-0.5.3.tar.bz2
+%URL http://ovh.dl.sourceforge.net/sourceforge/grisbi/grisbi-0.5.7.tar.bz2
 %DIR Bureautique/Comptabilité personnelle/Manuel utilisateur
 %URL http://ovh.dl.sourceforge.net/sourceforge/grisbi/grisbi-manuel-img-0.5.1.pdf
 %FILE Bureautique/Comptabilité personnelle/code source/codesource.txt
 le code source peut être obtenu ici :
-http://ovh.dl.sourceforge.net/sourceforge/grisbi/grisbi-0.5.3.tar.bz2
+http://ovh.dl.sourceforge.net/sourceforge/grisbi/grisbi-0.5.7.tar.bz2
 
 #% CLAMWIN
 %DIR Internet/Scanner à virus
-%URL http://ovh.dl.sourceforge.net/sourceforge/clamwin/clamwin-0.37.3-setup.exe
+%URL http://ovh.dl.sourceforge.net/sourceforge/clamwin/clamwin-0.86-setup.exe
 %DIR Internet/Scanner à virus/code source
-%URL http://ovh.dl.sourceforge.net/sourceforge/clamwin/clamwin-0.37.3-src.zip
+%URL http://ovh.dl.sourceforge.net/sourceforge/clamwin/clamwin-0.86-src.zip
 %FILE Internet/Scanner à virus/code source/codesource.txt
 le code source peut être obtenu ici :
-http://ovh.dl.sourceforge.net/sourceforge/clamwin/clamwin-0.37.3-src.zip
+http://ovh.dl.sourceforge.net/sourceforge/clamwin/clamwin-0.86-src.zip
 
 #% HTTRACK
-%DIR Internet/Aspirateur de site web
-%URL http://download.httrack.com/httrack-3.32-2.exe
-%DIR Internet/Aspirateur de site web/code source
-%URL http://www.httrack.com/httrack-3.32-2.tar.gz
-%FILE Internet/Aspirateur de site web/code source/codesource.txt
-le code source peut être obtenu ici : http://www.httrack.com/httrack-3.32-2.tar.gz
+%DIR Internet/Aspirateur de sites web
+%URL http://www.httrack.com/httrack-3.33.exe
+%DIR Internet/Aspirateur de sites web/code source
+%URL http://www.httrack.com/httrack-3.33.tar.gz
+%FILE Internet/Aspirateur de sites web/code source/codesource.txt
+le code source peut être obtenu ici :
+http://www.httrack.com/httrack-3.33.tar.gz
 
 #% NVU
 %DIR Internet/Éditeur de site web
-%URL http://frenchmozilla.sourceforge.net/FTP/Nvu-tmp/nvu-0.60-win32-installer-fr.exe
+%URL http://ovh.dl.sourceforge.net/sourceforge/frenchmozilla/nvu-1.0PR-win32-installer-fr.exe
 %DIR Internet/Éditeur de site web/code source
-#%URL http://cvs.nvu.com/download/nvu-0.60-sources.tar.bz2
+%URL http://cvs.nvu.com/download/nvu-1.0PR-sources.tar.bz2
 %FILE Internet/Éditeur de site web/code source/codesource.txt
 le code source peut être obtenu ici :
-http://cvs.nvu.com/download/nvu-0.60-sources.tar.bz2
+http://cvs.nvu.com/download/nvu-1.0PR-sources.tar.bz2
 
 #% ABIWORD
 %DIR Bureautique/Traitement de texte seul
-%URL http://ovh.dl.sourceforge.net/sourceforge/abiword/abiword-setup-2.2.1.exe
-%URL http://ovh.dl.sourceforge.net/sourceforge/abiword/abiword-plugins-impexp-2.2.1.exe
-%URL http://ovh.dl.sourceforge.net/sourceforge/abiword/abiword-plugins-tools-2.2.1.exe
-%URL http://ovh.dl.sourceforge.net/sourceforge/abiword/AbiWord_Dictionrary_Francais.exe
+%URL http://www.abisource.com/downloads/abiword/2.2.8/Windows/abiword-setup-2.2.8.exe
+%URL http://www.abisource.com/downloads/abiword/2.2.8/Windows/abiword-plugins-impexp-2.2.8.exe
+%URL http://www.abisource.com/downloads/abiword/2.2.8/Windows/abiword-plugins-tools-2.2.8.exe
+%URL http://www.abisource.com/downloads/dictionaries/Windows/AbiWord_Dictionary_Francais.exe
 %DIR Bureautique/Traitement de texte seul/code source
-%URL http://ovh.dl.sourceforge.net/sourceforge/abiword/abiword-2.2.2.tar.bz2
+%URL http://www.abisource.com/downloads/abiword/2.2.8/source/abiword-2.2.8.tar.gz
 %FILE Bureautique/Traitement de texte seul/code source/codesource.txt
 le code source peut être obtenu ici :
-http://ovh.dl.sourceforge.net/sourceforge/abiword/abiword-2.2.2.tar.bz2
+http://www.abisource.com/downloads/abiword/2.2.8/source/abiword-2.2.8.tar.gz
 
 #% OPENVIP
 %DIR Multimedia/Montage vidéo
@@ -401,12 +435,12 @@ le code source peut être obtenu ici : http://ovh.dl.sourceforge.net/sourceforge
 
 #% CORNICE
 %DIR Multimedia/Visualiseur photos
-%URL http://wxglade.sourceforge.net/extra/cornice-0.5.2-wx24-setup.exe
+%URL http://wxglade.sourceforge.net/extra/cornice-0.6.1-setup.exe
 %DIR Multimedia/Visualiseur photos/code source
-%URL http://wxglade.sourceforge.net/extra/cornice-0.5.2.tar.gz
+%URL http://wxglade.sourceforge.net/extra/cornice-0.6.1.tar.gz
 %FILE Multimedia/Visualiseur photos/code source/codesource.txt
 le code source peut être obtenu ici :
-http://wxglade.sourceforge.net/extra/cornice-0.5.2.tar.gz
+http://wxglade.sourceforge.net/extra/cornice-0.6.1.tar.gz
 
 #% PDFCREATOR
 %DIR Bureautique/Création de fichiers PDF
@@ -418,14 +452,16 @@ le code source peut être obtenu ici : http://ovh.dl.sourceforge.net/sourceforge
 
 #% THE GIMP
 %DIR Multimedia/Retouche photo
-%URLZIP ftp://ftp.arnes.si/software/gimp-win/gtk+-2.4.9-setup.zip
-%URLZIP ftp://ftp.arnes.si/software/gimp-win/gimp-2.0.5-i586-setup.zip
-%URLZIP ftp://ftp.arnes.si/software/gimp-win/gimp-help-2-0.3-setup.zip
+%URLZIP http://ovh.dl.sourceforge.net/sourceforge/gimp-win/gtk+-2.6.7-setup-2.zip
+%URLZIP http://ovh.dl.sourceforge.net/sourceforge/gimp-win/gimp-2.2.7-i586-setup.zip
+%URLZIP http://ovh.dl.sourceforge.net/sourceforge/gimp-win/gimp-help-2-0.8-setup.zip
+%URLZIP ftp://ftp.arnes.si/software/gimp-win/gimp-gap-2.0.2-setup.zip
 %FILE Multimedia/Retouche photo/installation.txt
 Dans l'ordre, il faut installer :
 - gtk+
 - gimp
 - gimp-help
+- optionnellement gimp-gap (« Gimp Animation Package » pour créer par exemple des GIF animés)
 - optionnellement les plugins
 Consultez ensuite les tutoriels dans le dossier : Débuter avec GIMP
 
@@ -434,12 +470,10 @@ Consultez ensuite les tutoriels dans le dossier : Débuter avec GIMP
 %URLZIP http://www.aljacom.com/%7Egimp/debuter_avec_gimp_v2.zip
 %URLZIP http://www.aljacom.com/%7Egimp/debuter_avec_gimp_2_v2.zip
 %DIR Multimedia/Retouche photo/code source
-ftp://ftp.arnes.si/software/gimp-win/gimp-2.0.4-src.zip
-%URL ftp://ftp.arnes.si/software/gimp-win/gimp-plugins-src.zip
+http://ovh.dl.sourceforge.net/sourceforge/gimp-win/gimp-2.2.7.tar.bz2
 %FILE Multimedia/Retouche photo/code source/codesource.txt
 le code source peut être obtenu ici :
-ftp://ftp.arnes.si/software/gimp-win/gimp-2.0.4-src.zip
-ftp://ftp.arnes.si/software/gimp-win/gimp-plugins-src.zip
+http://ovh.dl.sourceforge.net/sourceforge/gimp-win/gimp-2.2.7.tar.bz2
 
 #% GHOSTSCRIPT ET GSVIEW
 %DIR Bureautique/Visualiseur de fichiers PDF et Postscript
@@ -458,12 +492,12 @@ ftp://sunsite.cnlab-switch.ch/mirror/ghost/ghostgum/gsv46src.zip
 
 #% FILEZILLA
 %DIR Internet/Transfert FTP
-%URL http://ovh.dl.sourceforge.net/sourceforge/filezilla/FileZilla_2_2_9_setup.exe
+%URL http://ovh.dl.sourceforge.net/sourceforge/filezilla/FileZilla_2_2_14b_setup.exe
 %DIR Internet/Transfert FTP/code source
-%URL http://ovh.dl.sourceforge.net/sourceforge/filezilla/FileZilla_2_2_9_src.zip
+%URL http://ovh.dl.sourceforge.net/sourceforge/filezilla/FileZilla_2_2_14b_src.zip
 %FILE Internet/Transfert FTP/code source/codesource.txt
 le code source peut être obtenu ici :
-http://ovh.dl.sourceforge.net/sourceforge/filezilla/FileZilla_2_2_9_src.zip
+http://ovh.dl.sourceforge.net/sourceforge/filezilla/FileZilla_2_2_14b_src.zip
 
 #% DIA
 %DIR Bureautique/Éditeur de diagrammes
@@ -476,7 +510,7 @@ http://ovh.dl.sourceforge.net/sourceforge/dia-installer/dia-0.94.tar.bz2
 
 #% BLENDER
 %DIR Multimedia/Animation et rendu 3D
-%URL http://download.blender.org/release/Blender2.35/blender-2.35a-windows.exe
+%URL http://download.blender.org/release/Blender2.37a/blender-2.37a-windows.exe
 %URLZIP http://download.blender.org/release/yafray.0.0.7/yafray-0.0.6-7-win.zip
 %DIR Multimedia/Animation et rendu 3D/Vidéos de démo
 %URL http://download.blender.org/demo/movies/ChairDivXS.avi
@@ -486,21 +520,22 @@ http://ovh.dl.sourceforge.net/sourceforge/dia-installer/dia-0.94.tar.bz2
 %URL http://download.blender.org/demo/movies/rotateedge_demo.avi
 %URL http://download.blender.org/demo/movies/snowman.avi
 %URL http://download.blender.org/demo/movies/stretchto_demo.avi
+%URL http://download.blender.org/demo/movies/proportional_edit_demo.avi
 #%URL http://download.blender.org/demo/movies/artintro_final.avi
 %DIR Multimedia/Animation et rendu 3D/Manuel (anglais)
 %URLZIP http://download.blender.org/documentation/BlenderManualIen.23.pdf.zip
 %URLZIP http://download.blender.org/documentation/BlenderManualIIen.23.pdf.zip
 %DIR Multimedia/Animation et rendu 3D/code source
 %URL http://download.blender.org/release/yafray.0.0.7/yafray-0.0.6-7-win.zip
-%URL http://download.blender.org/source/blender-2.35.tar.bz2
+%URL http://download.blender.org/source/blender-2.37a.tar.gz
 %FILE Multimedia/Animation et rendu 3D/code source/codesource.txt
 le code source peut être obtenu ici :
 http://download.blender.org/release/yafray.0.0.6/yafray-0.0.6-2-src.tar.gz
-http://download.blender.org/source/blender-2.33a.tar.bz2
+http://download.blender.org/source/blender-2.37a.tar.gz
 
 #% OPENOFFICE.ORG
 %DIR Bureautique/Suite Bureautique Complète/OpenOffice.org 1.1.4
-%URLZIP http://ftp.club-internet.fr/pub/OpenOffice/localized/fr/1.1.4/OOo_1.1.4_Win32Intel_install_fr.zip
+%URLZIP ftp://ftp.proxad.fr/mirrors/ftp.openoffice.org/localized/fr/1.1.4/OOo_1.1.4_Win32Intel_install_fr.zip
 %DIR Bureautique/Suite Bureautique Complète/code source
 %FILE Bureautique/Suite Bureautique Complète/code source/codesource.txt
 Le code source est énorme et peut être récupéré ici : http://www.openoffice.org/dev_docs/source/get_source.html
@@ -511,7 +546,7 @@ Le code source est énorme et peut être récupéré ici : http://www.openoffice
 %URL http://fr.openoffice.org/Documentation/Guides/guideDraw.pdf
 %URL http://fr.openoffice.org/Documentation/Guides/Andrew5.pdf
 %URL http://fr.openoffice.org/Documentation/Guides/Guide_comparatif_1.0.1.pdf
-%URLZIP http://essai.pba.fr/Livre_pdf.zip
+#%URLZIP http://essai.pba.fr/Livre_pdf.zip   (ne semble plus disponible. Si quelqu'un peut le retrouver...)
 
 #% CDEX
 %DIR Multimedia/Compression CD audio vers MP3 ou Ogg-Vorbis
@@ -522,7 +557,7 @@ Voir ici : http://cvs.sourceforge.net/viewcvs.py/cdexos/cdex_xp/
 
 #% 7-ZIP
 %DIR Bureautique/Compression de fichiers (zip, gz, bz2, etc.)
-%URL http://ovh.dl.sourceforge.net/sourceforge/sevenzip/7z413b.exe
+%URL http://www.7-zip.org/dl/7z420.exe
 %FILE Bureautique/Compression de fichiers (zip, gz, bz2, etc.)/lisez-moi.txt
 Après installation de 7-zip, voici ce qu'il faut faire pour avoir le programme en français et un usage plus agréable :
 - Menu Démarrer -> Programmes -> 7-zip -> 7-zip File Manager
@@ -533,24 +568,24 @@ Après installation de 7-zip, voici ce qu'il faut faire pour avoir le programme 
 Ensuite fermer 7-zip.
 Après ces réglages, 7-zip sera en français, le menu contextuel (clic droit) affichera un sous-menu global pour 7-zip, et tous les fichiers compressés seront automatiquement ouverts avec 7-zip.
 %DIR Bureautique/Compression de fichiers (zip, gz, bz2, etc.)/code source
-%URL http://ovh.dl.sourceforge.net/sourceforge/sevenzip/7z413b.tar.bz2
+%URL http://prdownloads.sourceforge.net/sevenzip/7z420.tar.bz2
 %FILE Bureautique/Compression de fichiers (zip, gz, bz2, etc.)/code source/codesource.txt
 le code source peut être obtenu ici :
-http://ovh.dl.sourceforge.net/sourceforge/sevenzip/7z413b.tar.bz2
+http://prdownloads.sourceforge.net/sevenzip/7z420.tar.bz2
 
 #% EMULE
 %DIR Internet/Téléchargement Peer2peer
-%URL http://ovh.dl.sourceforge.net/sourceforge/emule/eMule0.44d-Installer.exe
+%URL http://ovh.dl.sourceforge.net/sourceforge/emule/eMule0.46a_Installer.exe
 %DIR Internet/Téléchargement Peer2peer/code source
-%URL http://ovh.dl.sourceforge.net/sourceforge/emule/eMule0.44d-Sources.zip
+%URL http://ovh.dl.sourceforge.net/sourceforge/emule/emule0.46a-Sources.zip
 %FILE Internet/Téléchargement Peer2peer/code source/codesource.txt
 le code source peut être obtenu ici :
-http://ovh.dl.sourceforge.net/sourceforge/emule/eMule0.44d-Sources.zip
+http://ovh.dl.sourceforge.net/sourceforge/emule/emule0.46a-Sources.zip
 %FILE Internet/Téléchargement Peer2peer/conseil.txt
-Évidemment, tout le monde sait que le téléchargement des logiciels propriétaires et payants est illégal...
+Évidemment, tout le monde sait que le téléchargement de logiciels propriétaires et payants est illégal...
 Mais il faut penser à quelque chose de beaucoup plus important et plus néfaste : 
 
-En téléchargeant et en copiant des logiciels propriétaires payants,
+En téléchargeant et en copiant illégalement des logiciels propriétaires payants,
 vous augmentez la notoriété et la diffusion de ces logiciels,
 et vous leur faites de la publicité inutilement.
 Vous perdez du temps à apprendre des logiciels que vous n'avez pas le droit d'utiliser,
@@ -568,17 +603,18 @@ il est gratuit, compatible, ouvert, facile à utiliser, plus stable, et il évol
 
 #% INKSCAPE
 %DIR Multimedia/Dessin vectoriel
-%URL http://ovh.dl.sourceforge.net/sourceforge/inkscape/Inkscape-0.40-1.win32.exe
+%URL http://ovh.dl.sourceforge.net/sourceforge/inkscape/Inkscape-0.41-1.win32.exe
 %DIR Multimedia/Dessin vectoriel/code source
-%URL http://ovh.dl.sourceforge.net/sourceforge/inkscape/inkscape-0.40.tar.bz2
+%URL http://ovh.dl.sourceforge.net/sourceforge/inkscape/inkscape-0.41.tar.bz2
 %FILE Multimedia/Dessin vectoriel/code source/codesource.txt
 le code source peut être obtenu ici :
-http://ovh.dl.sourceforge.net/sourceforge/inkscape/inkscape-0.40.tar.bz2
+http://ovh.dl.sourceforge.net/sourceforge/inkscape/inkscape-0.41.tar.bz2
 
 #% AUDACITY
 %DIR Multimedia/Enregistreur et éditeur de sons
 %URL http://ovh.dl.sourceforge.net/sourceforge/audacity/audacity-win-1.2.3.exe
-%URL http://mitiok.free.fr/lame-3.96.1.zip
+#%URL http://mitiok.free.fr/lame-3.96.1.zip
+
 %DIR Multimedia/Enregistreur et éditeur de sons/mode d'emploi
 %URLZIP http://audacity.sourceforge.net/audacity-manual-1.2.zip
 %URL http://audacity.sourceforge.net/audacity-mode-d'emploi.pdf
@@ -589,13 +625,13 @@ le code source peut être obtenu ici :
 http://ovh.dl.sourceforge.net/sourceforge/audacity/audacity-src-1.2.3.tar.gz
 
 #% MOZILLA
-%DIR Internet/Suite internet complète (navigateur, e-mail, éditeur web)
-%URL http://ovh.dl.sourceforge.net/sourceforge/frenchmozilla/mozilla-win32-1.7.3-installer-fr-FR.exe
+###%DIR Internet/Suite internet complète (navigateur, e-mail, éditeur web)
+###%URL http://ovh.dl.sourceforge.net/sourceforge/frenchmozilla/mozilla-win32-1.7.3-installer-fr-FR.exe
 #%URL http://frenchmozilla.sourceforge.net/FTP/1.7.1/mozilla-l10n-fr-FR-1.7.1.xpi
-%DIR Internet/Suite internet complète (navigateur, e-mail, éditeur web)/manuel
-%URL http://ovh.dl.sourceforge.net/sourceforge/frenchmozilla/mozman-1.35.fr.pdf
-%DIR Internet/Suite internet complète (navigateur, e-mail, éditeur web)/code source
-%URL http://ftp.mozilla.org/pub/mozilla.org/mozilla/releases/mozilla1.7.3/src/mozilla-source-1.7.3.tar.bz2
+###%DIR Internet/Suite internet complète (navigateur, e-mail, éditeur web)/manuel
+###%URL http://ovh.dl.sourceforge.net/sourceforge/frenchmozilla/mozman-1.35.fr.pdf
+###%DIR Internet/Suite internet complète (navigateur, e-mail, éditeur web)/code source
+###%URL http://ftp.mozilla.org/pub/mozilla.org/mozilla/releases/mozilla1.7.3/src/mozilla-source-1.7.3.tar.bz2
 #%FILE Internet/Suite internet complète (navigateur, e-mail, éditeur web)/Comment installer la langue française.txt
 #%- installez d'abord Mozilla lui-même 
 #%- démarrez Mozilla et ouvrez le CD-ROM avec Mozilla
@@ -605,27 +641,27 @@ http://ovh.dl.sourceforge.net/sourceforge/audacity/audacity-src-1.2.3.tar.gz
 #%- allez dans le menu Edit->Preferences->Appearance->Languages/Content
 #%- sélectionnez "Français" en haut, et "Région FR" en bas.
 #%- cliquez sur OK et redémarrez Mozilla
-%FILE Internet/Suite internet complète (navigateur, e-mail, éditeur web)/code source/codesource.txt
-le code source peut être obtenu ici :
-http://ftp.mozilla.org/pub/mozilla.org/mozilla/releases/mozilla1.7.3/src/mozilla-source-1.7.3.tar.bz2
+###%FILE Internet/Suite internet complète (navigateur, e-mail, éditeur web)/code source/codesource.txt
+###le code source peut être obtenu ici :
+###http://ftp.mozilla.org/pub/mozilla.org/mozilla/releases/mozilla1.7.3/src/mozilla-source-1.7.3.tar.bz2
 
 #% FIREFOX
 %DIR Internet/Navigateur Internet moderne
-%URL http://ftp.eu.mozilla.org/pub/mozilla.org/firefox/releases/1.0/win32/fr-FR/Firefox Setup 1.0.exe
+%URL http://ftp.eu.mozilla.org/pub/mozilla.org/firefox/releases/1.0.4/win32/fr-FR/Firefox Setup 1.0.4.exe
 %DIR Internet/Navigateur Internet moderne/code source
-%URL http://ftp.eu.mozilla.org/pub/mozilla.org/firefox/releases/1.0/source/firefox-1.0-source.tar.bz2
+%URL http://ftp.eu.mozilla.org/pub/mozilla.org/firefox/releases/1.0.4/source/firefox-1.0.4-source.tar.bz2
 %FILE Internet/Navigateur Internet moderne/code source/codesource.txt
 le code source peut être obtenu ici :
-http://ftp.eu.mozilla.org/pub/mozilla.org/firefox/releases/1.0/source/firefox-1.0-source.tar.bz2
+http://ftp.eu.mozilla.org/pub/mozilla.org/firefox/releases/1.0.4/source/firefox-1.0.4-source.tar.bz2
 
 #% THUNDERBIRD
 %DIR Internet/Logiciel de courrier électronique
-%URL http://ftp.scarlet.be/pub/mozilla.org/thunderbird/releases/1.0/win32/fr-FR/Thunderbird Setup 1.0.exe
+%URL http://ftp.eu.mozilla.org/pub/mozilla.org/thunderbird/releases/1.0.2/win32/fr-FR/Thunderbird Setup 1.0.2.exe
 %DIR Internet/Logiciel de courrier électronique/code source
-%URL http://ftp.scarlet.be/pub/mozilla.org/thunderbird/releases/1.0/source/thunderbird-1.0-source.tar.bz2
+%URL http://ftp.eu.mozilla.org/pub/mozilla.org/thunderbird/releases/1.0.2/source/thunderbird-1.0.2-source.tar.bz2
 %FILE Internet/Logiciel de courrier électronique/code source/codesource.txt
 le code source peut être obtenu ici :
-http://ftp.scarlet.be/pub/mozilla.org/thunderbird/releases/1.0/source/thunderbird-1.0-source.tar.bz2
+http://ftp.eu.mozilla.org/pub/mozilla.org/thunderbird/releases/1.0.2/source/thunderbird-1.0.2-source.tar.bz2
 
 #% PRIVOXY
 %DIR Internet/Filtrage pubs internet
@@ -636,7 +672,7 @@ http://ftp.scarlet.be/pub/mozilla.org/thunderbird/releases/1.0/source/thunderbir
 le code source peut être obtenu ici : http://ovh.dl.sourceforge.net/sourceforge/ijbswa/privoxy-3.0.3-2-stable.src.tar.gz
 %FILE Internet/Filtrage pubs internet/comment utiliser Privoxy.txt
 Pour utiliser privoxy :
-dans Mozilla : menu Edition -> préférences -> avancé -> proxies -> configuration manuelle :
+dans Mozilla : menu Édition -> préférences -> avancé -> proxies -> configuration manuelle :
 HTTP proxy = localhost
 HTTP Port = 8118
 
@@ -650,12 +686,12 @@ le code source peut être obtenu ici : http://ovh.dl.sourceforge.net/sourceforge
 
 #% GAIM
 %DIR Internet/Messagerie instantanée (icq, jabber, msn, etc.)
-%URL http://ovh.dl.sourceforge.net/sourceforge/gaim/gaim-1.1.0.exe
+%URL http://ovh.dl.sourceforge.net/sourceforge/gaim/gaim-1.3.1.exe
 %DIR Internet/Messagerie instantanée (icq, jabber, msn, etc.)/code source
-%URL http://ovh.dl.sourceforge.net/sourceforge/gaim/gaim-1.1.0.tar.bz2
+%URL http://ovh.dl.sourceforge.net/sourceforge/gaim/gaim-1.3.1.tar.bz2
 %FILE Internet/Messagerie instantanée (icq, jabber, msn, etc.)/code source/codesource.txt
 le code source peut être obtenu ici :
-http://ovh.dl.sourceforge.net/sourceforge/gaim/gaim-1.1.0.tar.bz2
+http://ovh.dl.sourceforge.net/sourceforge/gaim/gaim-1.3.1.tar.bz2
 
 #% VLC MEDIA PLAYER
 %DIR Multimedia/Lecteur Vidéo et DVD
@@ -685,61 +721,29 @@ le code source peut être obtenu ici : http://ovh.dl.sourceforge.net/sourceforge
 
 #% SCORCHED 3D
 %DIR Divertissement/Artillerie en 3D
-%URL http://ovh.dl.sourceforge.net/sourceforge/scorched3d/Scorched3D-38.exe
+%URL http://ovh.dl.sourceforge.net/sourceforge/scorched3d/Scorched3D-38.1.exe
 %DIR Divertissement/Artillerie en 3D/code source
-%URL http://ovh.dl.sourceforge.net/sourceforge/scorched3d/Scorched3D-38-src.tar.gz
+%URL http://ovh.dl.sourceforge.net/sourceforge/scorched3d/Scorched3D-38.1-src.zip
 %FILE Divertissement/Artillerie en 3D/code source/codesource.txt
 le code source peut être obtenu ici :
-http://ovh.dl.sourceforge.net/sourceforge/scorched3d/Scorched3D-38-src.tar.gz
+http://ovh.dl.sourceforge.net/sourceforge/scorched3d/Scorched3D-38.1-src.zip
 
 #% TORCS
-%DIR Divertissement/Course de voiture en 3D
-%URL http://ovh.dl.sourceforge.net/sourceforge/torcs/TORCS-1.2.1-win32-setup.exe
-%DIR Divertissement/Course de voiture en 3D/Vidéo
+%DIR Divertissement/Course automobile en 3D
+%URL http://ovh.dl.sourceforge.net/sourceforge/torcs/torcs_1_2_3_setup.exe
+%DIR Divertissement/Course automobile en 3D/Vidéo
 %URL http://ovh.dl.sourceforge.net/sourceforge/torcs/mixed-1.avi
-%DIR Divertissement/Course de voiture en 3D/code source
-%FILE Divertissement/Course de voiture en 3D/code source/codesource.txt
+%DIR Divertissement/Course automobile en 3D/code source
+%FILE Divertissement/Course automobile en 3D/code source/codesource.txt
 le code source peut être obtenu ici :
 http://sourceforge.net/project/showfiles.php?group_id=3777
 
 #% BATTLE FOR WESNOTH
 %DIR Divertissement/Bataille stratégique en 3D
-%URL http://ovh.dl.sourceforge.net/sourceforge/wesnoth/wesnoth-windows-0.8.exe
+%URL http://ovh.dl.sourceforge.net/sourceforge/wesnoth/wesnoth-windows-0.9.2.exe
 %DIR Divertissement/Bataille stratégique en 3D/code source
-%URL http://ovh.dl.sourceforge.net/sourceforge/wesnoth/wesnoth-0.8.tar.gz
+%URL http://ovh.dl.sourceforge.net/sourceforge/wesnoth/wesnoth-0.9.2.tar.gz
 %FILE Divertissement/Bataille stratégique en 3D/code source/codesource.txt
 le code source peut être obtenu ici :
-http://ovh.dl.sourceforge.net/sourceforge/wesnoth/wesnoth-0.8.tar.gz
+http://ovh.dl.sourceforge.net/sourceforge/wesnoth/wesnoth-0.9.2.tar.gz
 
-%#######################FICHIER TEXTES######################
-%FILE Dans ce CD.txt
-Ce CD ne contient que des LOGICIELS LIBRES.
-Ces logiciels sont distribués selon une licence qui vous autorise à en faire ce que vous voulez :
-
-installer, utiliser, copier, étudier, distribuer, modifier, adapter, traduire et même vendre.
-
-La seule restriction est que si vous distribuez des versions modifiées de ces logiciels,
-vous avez l'obligation de fournir le code de vos modifications
-(veuillez lire leurs licences pour plus de précisions.).
-C'est ce qui garantit que le logiciel restera toujours libre,
-et que vous pourrez toujours l'utiliser gratuitement.
-
-En apprenant à utiliser ces logiciels vous ne perdez pas de temps
-car vous avez l'assurance qu'ils ne vont pas disparaître ni devenir payants.
-Ils sont perennes et votre apprentissage l'est aussi !
-
-----
-
-Les logiciels les plus urgents et intéressants à utiliser sont Mozilla (ou Firefox) et OpenOffice.org.
-
-Mozilla (ou Firefox), en tant que navigateur internet, est infiniment plus pratique,
-il est beaucoup plus moderne et plus sûr, il supporte et respecte mieux les derniers standards du web,
-et il permet d'éviter la moitié des problèmes de sécurité rencontrés sur internet.
-Sa part de marché augmente actuellement à une vitesse gigantesque face à Internet Explorer,
-qui n'a pas subit d'amélioration depuis plus de trois ans et est maintenant obsolète et même dangereux.
-La même remarque peut s'appliquer à Outlook Express, qui peut aussi être remplacé par Mozilla (ou Thunderbird).
-
-L'utilisation d'Internet Explorer n'est obligatoire aujourd'hui que pour quelques rares sites internet
-non standards qui n'ont été conçus que pour être visités avec ce navigateur. Lorsque vous tombez
-sur un tel site, prenez un peu de temps et écrivez à son webmaster pour vous plaindre. Vous contribuerez
-à rendre l'internet plus ouvert, plus standard, plus interopérable et plus accessible.
