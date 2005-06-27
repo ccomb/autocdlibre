@@ -28,7 +28,7 @@
 unalias -a
 
 # version de ce script
-autocdlibre_version=26
+autocdlibre_version=27
 # où récupérer les infos
 autocdlibre_email="ccomb@free.fr"
 autocdlibre_server="ccomb.free.fr"
@@ -695,12 +695,12 @@ http://ovh.dl.sourceforge.net/sourceforge/gaim/gaim-1.3.1.tar.bz2
 
 #% VLC MEDIA PLAYER
 %DIR Multimedia/Lecteur Vidéo et DVD
-%URL http://download.videolan.org/pub/videolan/vlc/0.8.1/win32/vlc-0.8.1-win32.exe
+%URL http://downloads.videolan.org/pub/videolan/vlc/0.8.2/win32/vlc-0.8.2-win32.exe
 %DIR Multimedia/Lecteur Vidéo et DVD/code source
-%URL http://download.videolan.org/pub/videolan/vlc/0.8.1/vlc-0.8.1.tar.bz2
+%URL http://download.videolan.org/pub/videolan/vlc/0.8.2/vlc-0.8.2.tar.bz2
 %FILE Multimedia/Lecteur Vidéo et DVD/code source/codesource.txt
 le code source peut être obtenu ici :
-http://download.videolan.org/pub/videolan/vlc/0.8.1/vlc-0.8.1.tar.bz2
+http://download.videolan.org/pub/videolan/vlc/0.8.2/vlc-0.8.2.tar.bz2
 
 #% CELESTIA
 %DIR Divertissement/Visite univers en 3D
