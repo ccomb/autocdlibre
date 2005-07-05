@@ -28,7 +28,7 @@
 unalias -a
 
 # version de ce script
-autocdlibre_version=28
+autocdlibre_version=29
 # où récupérer les infos
 autocdlibre_email="ccomb@free.fr"
 autocdlibre_server="ccomb.free.fr"
@@ -557,7 +557,7 @@ Voir ici : http://cvs.sourceforge.net/viewcvs.py/cdexos/cdex_xp/
 
 #% 7-ZIP
 %DIR Bureautique/Compression de fichiers (zip, gz, bz2, etc.)
-%URL http://osdn.dl.sourceforge.net/sourceforge/sevenzip/7z423.exe
+%URL http://osdn.dl.sourceforge.net/sourceforge/sevenzip/7z424.exe
 %FILE Bureautique/Compression de fichiers (zip, gz, bz2, etc.)/lisez-moi.txt
 Après installation de 7-zip, voici ce qu'il faut faire pour avoir le programme en français et un usage plus agréable :
 - Menu Démarrer -> Programmes -> 7-zip -> 7-zip File Manager
@@ -568,10 +568,10 @@ Après installation de 7-zip, voici ce qu'il faut faire pour avoir le programme 
 Ensuite fermer 7-zip.
 Après ces réglages, 7-zip sera en français, le menu contextuel (clic droit) affichera un sous-menu global pour 7-zip, et tous les fichiers compressés seront automatiquement ouverts avec 7-zip.
 %DIR Bureautique/Compression de fichiers (zip, gz, bz2, etc.)/code source
-%URL http://osdn.dl.sourceforge.net/sourceforge/sevenzip/7z423.tar.bz2
+%URL http://osdn.dl.sourceforge.net/sourceforge/sevenzip/7z424.tar.bz2
 %FILE Bureautique/Compression de fichiers (zip, gz, bz2, etc.)/code source/codesource.txt
 le code source peut être obtenu ici :
-http://osdn.dl.sourceforge.net/sourceforge/sevenzip/7z423.tar.bz2
+http://osdn.dl.sourceforge.net/sourceforge/sevenzip/7z424.tar.bz2
 
 #% EMULE
 %DIR Internet/Téléchargement Peer2peer
