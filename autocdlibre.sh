@@ -28,7 +28,7 @@
 unalias -a
 
 # version de ce script
-autocdlibre_version=29
+autocdlibre_version=30
 # où récupérer les infos
 autocdlibre_email="ccomb@free.fr"
 autocdlibre_server="ccomb.free.fr"
@@ -575,12 +575,12 @@ http://osdn.dl.sourceforge.net/sourceforge/sevenzip/7z424.tar.bz2
 
 #% EMULE
 %DIR Internet/Téléchargement Peer2peer
-%URL http://ovh.dl.sourceforge.net/sourceforge/emule/eMule0.46a_Installer.exe
+%URL http://ovh.dl.sourceforge.net/sourceforge/emule/eMule0.46b_Installer.exe
 %DIR Internet/Téléchargement Peer2peer/code source
-%URL http://ovh.dl.sourceforge.net/sourceforge/emule/emule0.46a-Sources.zip
+%URL http://ovh.dl.sourceforge.net/sourceforge/emule/eMule0.46b-Sources.zip
 %FILE Internet/Téléchargement Peer2peer/code source/codesource.txt
 le code source peut être obtenu ici :
-http://ovh.dl.sourceforge.net/sourceforge/emule/emule0.46a-Sources.zip
+http://ovh.dl.sourceforge.net/sourceforge/emule/eMule0.46b-Sources.zip
 %FILE Internet/Téléchargement Peer2peer/conseil.txt
 Évidemment, tout le monde sait que le téléchargement de logiciels propriétaires et payants est illégal...
 Mais il faut penser à quelque chose de beaucoup plus important et plus néfaste : 
