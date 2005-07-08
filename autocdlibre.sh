@@ -28,7 +28,7 @@
 unalias -a
 
 # version de ce script
-autocdlibre_version=31
+autocdlibre_version=32
 # où récupérer les infos
 autocdlibre_email="ccomb@free.fr"
 autocdlibre_server="ccomb.free.fr"
@@ -399,12 +399,12 @@ http://www.httrack.com/httrack-3.33.tar.gz
 
 #% NVU
 %DIR Internet/Éditeur de site web
-%URL http://ovh.dl.sourceforge.net/sourceforge/frenchmozilla/nvu-1.0PR-win32-installer-fr.exe
+%URL http://ovh.dl.sourceforge.net/sourceforge/frenchmozilla/nvu-1.0-win32-installer-fr.exe
 %DIR Internet/Éditeur de site web/code source
-%URL http://cvs.nvu.com/download/nvu-1.0PR-sources.tar.bz2
+%URL http://cvs.nvu.com/download/nvu-1.0-sources.tar.bz2
 %FILE Internet/Éditeur de site web/code source/codesource.txt
 le code source peut être obtenu ici :
-http://cvs.nvu.com/download/nvu-1.0PR-sources.tar.bz2
+http://cvs.nvu.com/download/nvu-1.0-sources.tar.bz2
 
 #% ABIWORD
 %DIR Bureautique/Traitement de texte seul
