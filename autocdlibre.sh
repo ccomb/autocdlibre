@@ -28,7 +28,7 @@
 unalias -a
 
 # version de ce script
-autocdlibre_version=30
+autocdlibre_version=31
 # où récupérer les infos
 autocdlibre_email="ccomb@free.fr"
 autocdlibre_server="ccomb.free.fr"
@@ -686,12 +686,12 @@ le code source peut être obtenu ici : http://ovh.dl.sourceforge.net/sourceforge
 
 #% GAIM
 %DIR Internet/Messagerie instantanée (icq, jabber, msn, etc.)
-%URL http://ovh.dl.sourceforge.net/sourceforge/gaim/gaim-1.3.1.exe
+%URL http://ovh.dl.sourceforge.net/sourceforge/gaim/gaim-1.4.0.exe
 %DIR Internet/Messagerie instantanée (icq, jabber, msn, etc.)/code source
-%URL http://ovh.dl.sourceforge.net/sourceforge/gaim/gaim-1.3.1.tar.bz2
+%URL http://ovh.dl.sourceforge.net/sourceforge/gaim/gaim-1.4.0.tar.bz2
 %FILE Internet/Messagerie instantanée (icq, jabber, msn, etc.)/code source/codesource.txt
 le code source peut être obtenu ici :
-http://ovh.dl.sourceforge.net/sourceforge/gaim/gaim-1.3.1.tar.bz2
+http://ovh.dl.sourceforge.net/sourceforge/gaim/gaim-1.4.0.tar.bz2
 
 #% VLC MEDIA PLAYER
 %DIR Multimedia/Lecteur Vidéo et DVD
