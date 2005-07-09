@@ -28,7 +28,7 @@
 unalias -a
 
 # version de ce script
-autocdlibre_version=32
+autocdlibre_version=33
 # où récupérer les infos
 autocdlibre_email="ccomb@free.fr"
 autocdlibre_server="ccomb.free.fr"
@@ -511,7 +511,7 @@ http://ovh.dl.sourceforge.net/sourceforge/dia-installer/dia-0.94.tar.bz2
 #% BLENDER
 %DIR Multimedia/Animation et rendu 3D
 %URL http://download.blender.org/release/Blender2.37a/blender-2.37a-windows.exe
-%URLZIP http://download.blender.org/release/yafray.0.0.7/yafray-0.0.6-7-win.zip
+%URLZIP http://www.yafray.org/sec/2/downloads/yafray_0.0.8_wininstaller.zip
 %DIR Multimedia/Animation et rendu 3D/Vidéos de démo
 %URL http://download.blender.org/demo/movies/ChairDivXS.avi
 %URL http://download.blender.org/demo/movies/erosion2.avi
@@ -526,11 +526,11 @@ http://ovh.dl.sourceforge.net/sourceforge/dia-installer/dia-0.94.tar.bz2
 %URLZIP http://download.blender.org/documentation/BlenderManualIen.23.pdf.zip
 %URLZIP http://download.blender.org/documentation/BlenderManualIIen.23.pdf.zip
 %DIR Multimedia/Animation et rendu 3D/code source
-%URL http://download.blender.org/release/yafray.0.0.7/yafray-0.0.6-7-win.zip
+%URL http://www.yafray.org/sec/2/downloads/yafray-0.0.8.tar.gz
 %URL http://download.blender.org/source/blender-2.37a.tar.gz
 %FILE Multimedia/Animation et rendu 3D/code source/codesource.txt
 le code source peut être obtenu ici :
-http://download.blender.org/release/yafray.0.0.6/yafray-0.0.6-2-src.tar.gz
+http://www.yafray.org/sec/2/downloads/yafray-0.0.8.tar.gz
 http://download.blender.org/source/blender-2.37a.tar.gz
 
 #% OPENOFFICE.ORG
