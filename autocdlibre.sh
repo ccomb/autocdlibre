@@ -28,7 +28,7 @@
 unalias -a
 
 # version de ce script
-autocdlibre_version=33
+autocdlibre_version=34
 # où récupérer les infos
 autocdlibre_email="ccomb@free.fr"
 autocdlibre_server="ccomb.free.fr"
@@ -647,12 +647,12 @@ http://ovh.dl.sourceforge.net/sourceforge/audacity/audacity-src-1.2.3.tar.gz
 
 #% FIREFOX
 %DIR Internet/Navigateur Internet moderne
-%URL http://ftp.eu.mozilla.org/pub/mozilla.org/firefox/releases/1.0.4/win32/fr-FR/Firefox Setup 1.0.4.exe
+%URL http://ftp.eu.mozilla.org/pub/mozilla.org/firefox/releases/1.0.6/win32/fr-FR/Firefox Setup 1.0.6.exe
 %DIR Internet/Navigateur Internet moderne/code source
-%URL http://ftp.eu.mozilla.org/pub/mozilla.org/firefox/releases/1.0.4/source/firefox-1.0.4-source.tar.bz2
+%URL http://ftp.eu.mozilla.org/pub/mozilla.org/firefox/releases/1.0.6/source/firefox-1.0.6-source.tar.bz2
 %FILE Internet/Navigateur Internet moderne/code source/codesource.txt
 le code source peut être obtenu ici :
-http://ftp.eu.mozilla.org/pub/mozilla.org/firefox/releases/1.0.4/source/firefox-1.0.4-source.tar.bz2
+http://ftp.eu.mozilla.org/pub/mozilla.org/firefox/releases/1.0.6/source/firefox-1.0.6-source.tar.bz2
 
 #% THUNDERBIRD
 %DIR Internet/Logiciel de courrier électronique
