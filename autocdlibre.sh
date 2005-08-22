@@ -28,7 +28,7 @@
 unalias -a
 
 # version de ce script
-autocdlibre_version=34
+autocdlibre_version=35
 # où récupérer les infos
 autocdlibre_email="ccomb@free.fr"
 autocdlibre_server="ccomb.free.fr"
@@ -381,12 +381,12 @@ http://ovh.dl.sourceforge.net/sourceforge/grisbi/grisbi-0.5.7.tar.bz2
 
 #% CLAMWIN
 %DIR Internet/Scanner à virus
-%URL http://ovh.dl.sourceforge.net/sourceforge/clamwin/clamwin-0.86.1-setup.exe
+%URL http://ovh.dl.sourceforge.net/sourceforge/clamwin/clamwin-0.86.2-setup.exe
 %DIR Internet/Scanner à virus/code source
-%URL http://ovh.dl.sourceforge.net/sourceforge/clamwin/clamwin-0.86.1-src.zip
+%URL http://ovh.dl.sourceforge.net/sourceforge/clamwin/clamwin-0.86.2-src.zip
 %FILE Internet/Scanner à virus/code source/codesource.txt
 le code source peut être obtenu ici :
-http://ovh.dl.sourceforge.net/sourceforge/clamwin/clamwin-0.86.1-src.zip
+http://ovh.dl.sourceforge.net/sourceforge/clamwin/clamwin-0.86.2-src.zip
 
 #% HTTRACK
 %DIR Internet/Aspirateur de sites web
@@ -408,30 +408,32 @@ http://cvs.nvu.com/download/nvu-1.0-sources.tar.bz2
 
 #% ABIWORD
 %DIR Bureautique/Traitement de texte seul
-%URL http://www.abisource.com/downloads/abiword/2.2.8/Windows/abiword-setup-2.2.8.exe
-%URL http://www.abisource.com/downloads/abiword/2.2.8/Windows/abiword-plugins-impexp-2.2.8.exe
-%URL http://www.abisource.com/downloads/abiword/2.2.8/Windows/abiword-plugins-tools-2.2.8.exe
+%URL http://www.abisource.com/downloads/abiword/2.2.9/Windows/abiword-setup-2.2.9.exe
+%URL http://www.abisource.com/downloads/abiword/2.2.9/Windows/abiword-plugins-impexp-2.2.9.exe
+%URL http://www.abisource.com/downloads/abiword/2.2.9/Windows/abiword-plugins-tools-2.2.9.exe
 %URL http://www.abisource.com/downloads/dictionaries/Windows/AbiWord_Dictionary_Francais.exe
 %DIR Bureautique/Traitement de texte seul/code source
-%URL http://www.abisource.com/downloads/abiword/2.2.8/source/abiword-2.2.8.tar.gz
+%URL http://www.abisource.com/downloads/abiword/2.2.9/source/abiword-2.2.9.tar.gz
 %FILE Bureautique/Traitement de texte seul/code source/codesource.txt
 le code source peut être obtenu ici :
-http://www.abisource.com/downloads/abiword/2.2.8/source/abiword-2.2.8.tar.gz
+http://www.abisource.com/downloads/abiword/2.2.9/source/abiword-2.2.9.tar.gz
 
 #% OPENVIP
 %DIR Multimedia/Montage vidéo
 %URL http://ovh.dl.sourceforge.net/sourceforge/openvip/openvip-1.0.1-setup.exe
 %DIR Multimedia/Montage vidéo/code source
 %FILE Multimedia/Montage vidéo/code source/codesource.txt
-Le code source de OpenVIP peut être consulté ici : http://cvs.sourceforge.net/viewcvs.py/openvip/
+Le code source de OpenVIP peut être consulté ici :
+http://cvs.sourceforge.net/viewcvs.py/openvip/
 
 #% VIRTUALDUB
 %DIR Multimedia/Capture et traitement de vidéo
-%URLZIP http://puzzle.dl.sourceforge.net/sourceforge/virtualdub/VirtualDub-1.5.10.zip
+%URLZIP http://ovh.dl.sourceforge.net/sourceforge/virtualdub/VirtualDub-1.6.10.zip
 %DIR Multimedia/Capture et traitement de vidéo/code source
-%URL http://ovh.dl.sourceforge.net/sourceforge/virtualdub/VirtualDub-1.5.10-src.zip.bz2
+%URL http://ovh.dl.sourceforge.net/sourceforge/virtualdub/VirtualDub-1.6.10-src.zip.bz2
 %FILE Multimedia/Capture et traitement de vidéo/code source/codesource.txt
-le code source peut être obtenu ici : http://ovh.dl.sourceforge.net/sourceforge/virtualdub/VirtualDub-1.5.10-src.zip.bz2
+le code source peut être obtenu ici :
+http://ovh.dl.sourceforge.net/sourceforge/virtualdub/VirtualDub-1.6.10-src.zip.bz2
 
 #% CORNICE
 %DIR Multimedia/Visualiseur photos
@@ -452,8 +454,8 @@ le code source peut être obtenu ici : http://ovh.dl.sourceforge.net/sourceforge
 
 #% THE GIMP
 %DIR Multimedia/Retouche photo
-%URLZIP http://ovh.dl.sourceforge.net/sourceforge/gimp-win/gtk+-2.6.7-setup-2.zip
-%URLZIP http://ovh.dl.sourceforge.net/sourceforge/gimp-win/gimp-2.2.7-i586-setup.zip
+%URLZIP http://ovh.dl.sourceforge.net/sourceforge/gimp-win/gtk+-2.6.8-setup-1.zip
+%URLZIP http://ovh.dl.sourceforge.net/sourceforge/gimp-win/gimp-2.2.8-i586-setup.zip
 %URLZIP http://ovh.dl.sourceforge.net/sourceforge/gimp-win/gimp-help-2-0.8-setup.zip
 %URLZIP ftp://ftp.arnes.si/software/gimp-win/gimp-gap-2.0.2-setup.zip
 %FILE Multimedia/Retouche photo/installation.txt
@@ -492,12 +494,12 @@ ftp://sunsite.cnlab-switch.ch/mirror/ghost/ghostgum/gsv46src.zip
 
 #% FILEZILLA
 %DIR Internet/Transfert FTP
-%URL http://ovh.dl.sourceforge.net/sourceforge/filezilla/FileZilla_2_2_14b_setup.exe
+%URL http://ovh.dl.sourceforge.net/sourceforge/filezilla/FileZilla_2_2_15_setup.exe
 %DIR Internet/Transfert FTP/code source
-%URL http://ovh.dl.sourceforge.net/sourceforge/filezilla/FileZilla_2_2_14b_src.zip
+%URL http://ovh.dl.sourceforge.net/sourceforge/filezilla/FileZilla_2_2_15_src.zip
 %FILE Internet/Transfert FTP/code source/codesource.txt
 le code source peut être obtenu ici :
-http://ovh.dl.sourceforge.net/sourceforge/filezilla/FileZilla_2_2_14b_src.zip
+http://ovh.dl.sourceforge.net/sourceforge/filezilla/FileZilla_2_2_15_src.zip
 
 #% DIA
 %DIR Bureautique/Éditeur de diagrammes
@@ -523,8 +525,8 @@ http://ovh.dl.sourceforge.net/sourceforge/dia-installer/dia-0.94.tar.bz2
 %URL http://download.blender.org/demo/movies/proportional_edit_demo.avi
 #%URL http://download.blender.org/demo/movies/artintro_final.avi
 %DIR Multimedia/Animation et rendu 3D/Manuel (anglais)
-%URLZIP http://download.blender.org/documentation/BlenderManualIen.23.pdf.zip
-%URLZIP http://download.blender.org/documentation/BlenderManualIIen.23.pdf.zip
+%URLZIP http://download.blender.org/documentation/BlenderManualIen.23.html.zip
+%URLZIP http://download.blender.org/documentation/BlenderManualIIen.23.html.zip
 %DIR Multimedia/Animation et rendu 3D/code source
 %URL http://www.yafray.org/sec/2/downloads/yafray-0.0.8.tar.gz
 %URL http://download.blender.org/source/blender-2.37a.tar.gz
@@ -557,7 +559,7 @@ Voir ici : http://cvs.sourceforge.net/viewcvs.py/cdexos/cdex_xp/
 
 #% 7-ZIP
 %DIR Bureautique/Compression de fichiers (zip, gz, bz2, etc.)
-%URL http://osdn.dl.sourceforge.net/sourceforge/sevenzip/7z424.exe
+%URL http://ovh.dl.sourceforge.net/sourceforge/sevenzip/7z426.exe
 %FILE Bureautique/Compression de fichiers (zip, gz, bz2, etc.)/lisez-moi.txt
 Après installation de 7-zip, voici ce qu'il faut faire pour avoir le programme en français et un usage plus agréable :
 - Menu Démarrer -> Programmes -> 7-zip -> 7-zip File Manager
@@ -568,19 +570,19 @@ Après installation de 7-zip, voici ce qu'il faut faire pour avoir le programme 
 Ensuite fermer 7-zip.
 Après ces réglages, 7-zip sera en français, le menu contextuel (clic droit) affichera un sous-menu global pour 7-zip, et tous les fichiers compressés seront automatiquement ouverts avec 7-zip.
 %DIR Bureautique/Compression de fichiers (zip, gz, bz2, etc.)/code source
-%URL http://osdn.dl.sourceforge.net/sourceforge/sevenzip/7z424.tar.bz2
+%URL http://ovh.dl.sourceforge.net/sourceforge/sevenzip/7z426.tar.bz2
 %FILE Bureautique/Compression de fichiers (zip, gz, bz2, etc.)/code source/codesource.txt
 le code source peut être obtenu ici :
-http://osdn.dl.sourceforge.net/sourceforge/sevenzip/7z424.tar.bz2
+http://ovh.dl.sourceforge.net/sourceforge/sevenzip/7z426.tar.bz2
 
 #% EMULE
 %DIR Internet/Téléchargement Peer2peer
-%URL http://ovh.dl.sourceforge.net/sourceforge/emule/eMule0.46b_Installer.exe
+%URL http://ovh.dl.sourceforge.net/sourceforge/emule/eMule0.46c_Installer.exe
 %DIR Internet/Téléchargement Peer2peer/code source
-%URL http://ovh.dl.sourceforge.net/sourceforge/emule/eMule0.46b-Sources.zip
+%URL http://ovh.dl.sourceforge.net/sourceforge/emule/eMule0.46c-Sources.zip
 %FILE Internet/Téléchargement Peer2peer/code source/codesource.txt
 le code source peut être obtenu ici :
-http://ovh.dl.sourceforge.net/sourceforge/emule/eMule0.46b-Sources.zip
+http://ovh.dl.sourceforge.net/sourceforge/emule/eMule0.46c-Sources.zip
 %FILE Internet/Téléchargement Peer2peer/conseil.txt
 Évidemment, tout le monde sait que le téléchargement de logiciels propriétaires et payants est illégal...
 Mais il faut penser à quelque chose de beaucoup plus important et plus néfaste : 
@@ -603,12 +605,12 @@ il est gratuit, compatible, ouvert, facile à utiliser, plus stable, et il évol
 
 #% INKSCAPE
 %DIR Multimedia/Dessin vectoriel
-%URL http://ovh.dl.sourceforge.net/sourceforge/inkscape/Inkscape-0.41-1.win32.exe
+%URL http://ovh.dl.sourceforge.net/sourceforge/inkscape/Inkscape-0.42-1.win32.exe
 %DIR Multimedia/Dessin vectoriel/code source
-%URL http://ovh.dl.sourceforge.net/sourceforge/inkscape/inkscape-0.41.tar.bz2
+%URL http://ovh.dl.sourceforge.net/sourceforge/inkscape/inkscape-0.42.tar.bz2
 %FILE Multimedia/Dessin vectoriel/code source/codesource.txt
 le code source peut être obtenu ici :
-http://ovh.dl.sourceforge.net/sourceforge/inkscape/inkscape-0.41.tar.bz2
+http://ovh.dl.sourceforge.net/sourceforge/inkscape/inkscape-0.42.tar.bz2
 
 #% AUDACITY
 %DIR Multimedia/Enregistreur et éditeur de sons
@@ -656,12 +658,12 @@ http://ftp.eu.mozilla.org/pub/mozilla.org/firefox/releases/1.0.6/source/firefox-
 
 #% THUNDERBIRD
 %DIR Internet/Logiciel de courrier électronique
-%URL http://ftp.eu.mozilla.org/pub/mozilla.org/thunderbird/releases/1.0.2/win32/fr-FR/Thunderbird Setup 1.0.2.exe
+%URL http://ftp.eu.mozilla.org/pub/mozilla.org/thunderbird/releases/1.0.6/win32/fr-FR/Thunderbird Setup 1.0.6.exe
 %DIR Internet/Logiciel de courrier électronique/code source
-%URL http://ftp.eu.mozilla.org/pub/mozilla.org/thunderbird/releases/1.0.2/source/thunderbird-1.0.2-source.tar.bz2
+%URL http://ftp.eu.mozilla.org/pub/mozilla.org/thunderbird/releases/1.0.6/source/thunderbird-1.0.6-source.tar.bz2
 %FILE Internet/Logiciel de courrier électronique/code source/codesource.txt
 le code source peut être obtenu ici :
-http://ftp.eu.mozilla.org/pub/mozilla.org/thunderbird/releases/1.0.2/source/thunderbird-1.0.2-source.tar.bz2
+http://ftp.eu.mozilla.org/pub/mozilla.org/thunderbird/releases/1.0.6/source/thunderbird-1.0.6-source.tar.bz2
 
 #% PRIVOXY
 %DIR Internet/Filtrage pubs internet
@@ -672,7 +674,7 @@ http://ftp.eu.mozilla.org/pub/mozilla.org/thunderbird/releases/1.0.2/source/thun
 le code source peut être obtenu ici : http://ovh.dl.sourceforge.net/sourceforge/ijbswa/privoxy-3.0.3-2-stable.src.tar.gz
 %FILE Internet/Filtrage pubs internet/comment utiliser Privoxy.txt
 Pour utiliser privoxy :
-dans Mozilla : menu Édition -> préférences -> avancé -> proxies -> configuration manuelle :
+dans Mozilla Firefox : menu Édition -> préférences -> avancé -> proxies -> configuration manuelle :
 HTTP proxy = localhost
 HTTP Port = 8118
 
@@ -686,12 +688,12 @@ le code source peut être obtenu ici : http://ovh.dl.sourceforge.net/sourceforge
 
 #% GAIM
 %DIR Internet/Messagerie instantanée (icq, jabber, msn, etc.)
-%URL http://ovh.dl.sourceforge.net/sourceforge/gaim/gaim-1.4.0.exe
+%URL http://ovh.dl.sourceforge.net/sourceforge/gaim/gaim-1.5.0.exe
 %DIR Internet/Messagerie instantanée (icq, jabber, msn, etc.)/code source
-%URL http://ovh.dl.sourceforge.net/sourceforge/gaim/gaim-1.4.0.tar.bz2
+%URL http://ovh.dl.sourceforge.net/sourceforge/gaim/gaim-1.5.0.tar.bz2
 %FILE Internet/Messagerie instantanée (icq, jabber, msn, etc.)/code source/codesource.txt
 le code source peut être obtenu ici :
-http://ovh.dl.sourceforge.net/sourceforge/gaim/gaim-1.4.0.tar.bz2
+http://ovh.dl.sourceforge.net/sourceforge/gaim/gaim-1.5.0.tar.bz2
 
 #% VLC MEDIA PLAYER
 %DIR Multimedia/Lecteur Vidéo et DVD
@@ -721,12 +723,12 @@ le code source peut être obtenu ici : http://ovh.dl.sourceforge.net/sourceforge
 
 #% SCORCHED 3D
 %DIR Divertissement/Artillerie en 3D
-%URL http://ovh.dl.sourceforge.net/sourceforge/scorched3d/Scorched3D-38.1.exe
+%URL http://ovh.dl.sourceforge.net/sourceforge/scorched3d/Scorched3D-39.exe
 %DIR Divertissement/Artillerie en 3D/code source
-%URL http://ovh.dl.sourceforge.net/sourceforge/scorched3d/Scorched3D-38.1-src.zip
+#%URL http://ovh.dl.sourceforge.net/sourceforge/scorched3d/Scorched3D-39-src.zip
 %FILE Divertissement/Artillerie en 3D/code source/codesource.txt
 le code source peut être obtenu ici :
-http://ovh.dl.sourceforge.net/sourceforge/scorched3d/Scorched3D-38.1-src.zip
+http://ovh.dl.sourceforge.net/sourceforge/scorched3d/Scorched3D-39-src.zip
 
 #% TORCS
 %DIR Divertissement/Course automobile en 3D
@@ -740,10 +742,10 @@ http://sourceforge.net/project/showfiles.php?group_id=3777
 
 #% BATTLE FOR WESNOTH
 %DIR Divertissement/Bataille stratégique en 3D
-%URL http://ovh.dl.sourceforge.net/sourceforge/wesnoth/wesnoth-windows-0.9.2.exe
+%URL http://ovh.dl.sourceforge.net/sourceforge/wesnoth/wesnoth-windows-0.9.5.exe
 %DIR Divertissement/Bataille stratégique en 3D/code source
-%URL http://ovh.dl.sourceforge.net/sourceforge/wesnoth/wesnoth-0.9.2.tar.gz
+#%URL http://ovh.dl.sourceforge.net/sourceforge/wesnoth/wesnoth-0.9.5.tar.gz
 %FILE Divertissement/Bataille stratégique en 3D/code source/codesource.txt
 le code source peut être obtenu ici :
-http://ovh.dl.sourceforge.net/sourceforge/wesnoth/wesnoth-0.9.2.tar.gz
+http://ovh.dl.sourceforge.net/sourceforge/wesnoth/wesnoth-0.9.5.tar.gz
 
