@@ -28,7 +28,7 @@
 unalias -a
 
 # version de ce script
-autocdlibre_version=35
+autocdlibre_version=36
 # où récupérer les infos
 autocdlibre_email="ccomb@free.fr"
 autocdlibre_server="ccomb.free.fr"
@@ -381,12 +381,12 @@ http://ovh.dl.sourceforge.net/sourceforge/grisbi/grisbi-0.5.7.tar.bz2
 
 #% CLAMWIN
 %DIR Internet/Scanner à virus
-%URL http://ovh.dl.sourceforge.net/sourceforge/clamwin/clamwin-0.86.2-setup.exe
+%URL http://ovh.dl.sourceforge.net/sourceforge/clamwin/clamwin-0.87-setup.exe
 %DIR Internet/Scanner à virus/code source
-%URL http://ovh.dl.sourceforge.net/sourceforge/clamwin/clamwin-0.86.2-src.zip
+%URL http://ovh.dl.sourceforge.net/sourceforge/clamwin/clamwin-0.87-src.zip
 %FILE Internet/Scanner à virus/code source/codesource.txt
 le code source peut être obtenu ici :
-http://ovh.dl.sourceforge.net/sourceforge/clamwin/clamwin-0.86.2-src.zip
+http://ovh.dl.sourceforge.net/sourceforge/clamwin/clamwin-0.87-src.zip
 
 #% HTTRACK
 %DIR Internet/Aspirateur de sites web
@@ -408,15 +408,15 @@ http://cvs.nvu.com/download/nvu-1.0-sources.tar.bz2
 
 #% ABIWORD
 %DIR Bureautique/Traitement de texte seul
-%URL http://www.abisource.com/downloads/abiword/2.2.9/Windows/abiword-setup-2.2.9.exe
-%URL http://www.abisource.com/downloads/abiword/2.2.9/Windows/abiword-plugins-impexp-2.2.9.exe
-%URL http://www.abisource.com/downloads/abiword/2.2.9/Windows/abiword-plugins-tools-2.2.9.exe
+%URL http://www.abisource.com/downloads/abiword/2.4.1/Windows/abiword-setup-2.4.1.exe
+%URL http://www.abisource.com/downloads/abiword/2.4.1/Windows/abiword-plugins-impexp-2.4.1.exe
+%URL http://www.abisource.com/downloads/abiword/2.4.1/Windows/abiword-plugins-tools-2.4.1.exe
 %URL http://www.abisource.com/downloads/dictionaries/Windows/AbiWord_Dictionary_Francais.exe
 %DIR Bureautique/Traitement de texte seul/code source
-%URL http://www.abisource.com/downloads/abiword/2.2.9/source/abiword-2.2.9.tar.gz
+%URL http://www.abisource.com/downloads/abiword/2.4.1/source/abiword-2.4.1.tar.gz
 %FILE Bureautique/Traitement de texte seul/code source/codesource.txt
 le code source peut être obtenu ici :
-http://www.abisource.com/downloads/abiword/2.2.9/source/abiword-2.2.9.tar.gz
+http://www.abisource.com/downloads/abiword/2.4.1/source/abiword-2.4.1.tar.gz
 
 #% OPENVIP
 %DIR Multimedia/Montage vidéo
@@ -536,8 +536,8 @@ http://www.yafray.org/sec/2/downloads/yafray-0.0.8.tar.gz
 http://download.blender.org/source/blender-2.37a.tar.gz
 
 #% OPENOFFICE.ORG
-%DIR Bureautique/Suite Bureautique Complète/OpenOffice.org 1.1.4
-%URLZIP ftp://ftp.proxad.fr/mirrors/ftp.openoffice.org/localized/fr/1.1.4/OOo_1.1.4_Win32Intel_install_fr.zip
+%DIR Bureautique/Suite Bureautique Complète/OpenOffice.org 1.1.5
+%URLZIP ftp://ftp.proxad.fr/mirrors/ftp.openoffice.org/localized/fr/1.1.5/OOo_1.1.5_Win32Intel_install_fr.zip
 %DIR Bureautique/Suite Bureautique Complète/code source
 %FILE Bureautique/Suite Bureautique Complète/code source/codesource.txt
 Le code source est énorme et peut être récupéré ici : http://www.openoffice.org/dev_docs/source/get_source.html
@@ -559,7 +559,7 @@ Voir ici : http://cvs.sourceforge.net/viewcvs.py/cdexos/cdex_xp/
 
 #% 7-ZIP
 %DIR Bureautique/Compression de fichiers (zip, gz, bz2, etc.)
-%URL http://ovh.dl.sourceforge.net/sourceforge/sevenzip/7z426.exe
+%URL http://ovh.dl.sourceforge.net/sourceforge/sevenzip/7z429.exe
 %FILE Bureautique/Compression de fichiers (zip, gz, bz2, etc.)/lisez-moi.txt
 Après installation de 7-zip, voici ce qu'il faut faire pour avoir le programme en français et un usage plus agréable :
 - Menu Démarrer -> Programmes -> 7-zip -> 7-zip File Manager
@@ -570,10 +570,10 @@ Après installation de 7-zip, voici ce qu'il faut faire pour avoir le programme 
 Ensuite fermer 7-zip.
 Après ces réglages, 7-zip sera en français, le menu contextuel (clic droit) affichera un sous-menu global pour 7-zip, et tous les fichiers compressés seront automatiquement ouverts avec 7-zip.
 %DIR Bureautique/Compression de fichiers (zip, gz, bz2, etc.)/code source
-%URL http://ovh.dl.sourceforge.net/sourceforge/sevenzip/7z426.tar.bz2
+%URL http://ovh.dl.sourceforge.net/sourceforge/sevenzip/7z429.tar.bz2
 %FILE Bureautique/Compression de fichiers (zip, gz, bz2, etc.)/code source/codesource.txt
 le code source peut être obtenu ici :
-http://ovh.dl.sourceforge.net/sourceforge/sevenzip/7z426.tar.bz2
+http://ovh.dl.sourceforge.net/sourceforge/sevenzip/7z429.tar.bz2
 
 #% EMULE
 %DIR Internet/Téléchargement Peer2peer
@@ -605,12 +605,12 @@ il est gratuit, compatible, ouvert, facile à utiliser, plus stable, et il évol
 
 #% INKSCAPE
 %DIR Multimedia/Dessin vectoriel
-%URL http://ovh.dl.sourceforge.net/sourceforge/inkscape/Inkscape-0.42-1.win32.exe
+%URL http://ovh.dl.sourceforge.net/sourceforge/inkscape/Inkscape-0.42.2-1.win32.exe
 %DIR Multimedia/Dessin vectoriel/code source
-%URL http://ovh.dl.sourceforge.net/sourceforge/inkscape/inkscape-0.42.tar.bz2
+%URL http://ovh.dl.sourceforge.net/sourceforge/inkscape/inkscape-0.42.2.tar.bz2
 %FILE Multimedia/Dessin vectoriel/code source/codesource.txt
 le code source peut être obtenu ici :
-http://ovh.dl.sourceforge.net/sourceforge/inkscape/inkscape-0.42.tar.bz2
+http://ovh.dl.sourceforge.net/sourceforge/inkscape/inkscape-0.42.2.tar.bz2
 
 #% AUDACITY
 %DIR Multimedia/Enregistreur et éditeur de sons
@@ -649,12 +649,12 @@ http://ovh.dl.sourceforge.net/sourceforge/audacity/audacity-src-1.2.3.tar.gz
 
 #% FIREFOX
 %DIR Internet/Navigateur Internet moderne
-%URL http://ftp.eu.mozilla.org/pub/mozilla.org/firefox/releases/1.0.6/win32/fr-FR/Firefox Setup 1.0.6.exe
+%URL http://ftp.eu.mozilla.org/pub/mozilla.org/firefox/releases/1.0.7/win32/fr-FR/Firefox Setup 1.0.7.exe
 %DIR Internet/Navigateur Internet moderne/code source
-%URL http://ftp.eu.mozilla.org/pub/mozilla.org/firefox/releases/1.0.6/source/firefox-1.0.6-source.tar.bz2
+%URL http://ftp.eu.mozilla.org/pub/mozilla.org/firefox/releases/1.0.7/source/firefox-1.0.7-source.tar.bz2
 %FILE Internet/Navigateur Internet moderne/code source/codesource.txt
 le code source peut être obtenu ici :
-http://ftp.eu.mozilla.org/pub/mozilla.org/firefox/releases/1.0.6/source/firefox-1.0.6-source.tar.bz2
+http://ftp.eu.mozilla.org/pub/mozilla.org/firefox/releases/1.0.7/source/firefox-1.0.7-source.tar.bz2
 
 #% THUNDERBIRD
 %DIR Internet/Logiciel de courrier électronique
@@ -723,16 +723,16 @@ le code source peut être obtenu ici : http://ovh.dl.sourceforge.net/sourceforge
 
 #% SCORCHED 3D
 %DIR Divertissement/Artillerie en 3D
-%URL http://ovh.dl.sourceforge.net/sourceforge/scorched3d/Scorched3D-39.exe
+%URL http://ovh.dl.sourceforge.net/sourceforge/scorched3d/Scorched3D-39.1.exe
 %DIR Divertissement/Artillerie en 3D/code source
 #%URL http://ovh.dl.sourceforge.net/sourceforge/scorched3d/Scorched3D-39-src.zip
 %FILE Divertissement/Artillerie en 3D/code source/codesource.txt
 le code source peut être obtenu ici :
-http://ovh.dl.sourceforge.net/sourceforge/scorched3d/Scorched3D-39-src.zip
+http://ovh.dl.sourceforge.net/sourceforge/scorched3d/Scorched3D-39.1-src.zip
 
 #% TORCS
 %DIR Divertissement/Course automobile en 3D
-%URL http://ovh.dl.sourceforge.net/sourceforge/torcs/torcs_1_2_3_setup.exe
+%URL http://ovh.dl.sourceforge.net/sourceforge/torcs/setup_1_2_4.exe
 %DIR Divertissement/Course automobile en 3D/Vidéo
 %URL http://ovh.dl.sourceforge.net/sourceforge/torcs/mixed-1.avi
 %DIR Divertissement/Course automobile en 3D/code source
@@ -742,10 +742,10 @@ http://sourceforge.net/project/showfiles.php?group_id=3777
 
 #% BATTLE FOR WESNOTH
 %DIR Divertissement/Bataille stratégique en 3D
-%URL http://ovh.dl.sourceforge.net/sourceforge/wesnoth/wesnoth-windows-0.9.5.exe
+%URL http://ovh.dl.sourceforge.net/sourceforge/wesnoth/wesnoth-windows-1.0.exe
 %DIR Divertissement/Bataille stratégique en 3D/code source
-#%URL http://ovh.dl.sourceforge.net/sourceforge/wesnoth/wesnoth-0.9.5.tar.gz
+#%URL http://ovh.dl.sourceforge.net/sourceforge/wesnoth/wesnoth-1.0.tar.gz
 %FILE Divertissement/Bataille stratégique en 3D/code source/codesource.txt
 le code source peut être obtenu ici :
-http://ovh.dl.sourceforge.net/sourceforge/wesnoth/wesnoth-0.9.5.tar.gz
+http://ovh.dl.sourceforge.net/sourceforge/wesnoth/wesnoth-1.0.tar.gz
 
