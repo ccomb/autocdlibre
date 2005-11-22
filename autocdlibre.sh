@@ -28,7 +28,7 @@
 unalias -a
 
 # version de ce script
-autocdlibre_version=36
+autocdlibre_version=37
 # où récupérer les infos
 autocdlibre_email="ccomb@free.fr"
 autocdlibre_server="ccomb.free.fr"
@@ -381,7 +381,7 @@ http://ovh.dl.sourceforge.net/sourceforge/grisbi/grisbi-0.5.7.tar.bz2
 
 #% CLAMWIN
 %DIR Internet/Scanner à virus
-%URL http://ovh.dl.sourceforge.net/sourceforge/clamwin/clamwin-0.87-setup.exe
+%URL http://ovh.dl.sourceforge.net/sourceforge/clamwin/clamwin-0.87.1-setup.exe
 %DIR Internet/Scanner à virus/code source
 %URL http://ovh.dl.sourceforge.net/sourceforge/clamwin/clamwin-0.87-src.zip
 %FILE Internet/Scanner à virus/code source/codesource.txt
@@ -454,10 +454,10 @@ le code source peut être obtenu ici : http://ovh.dl.sourceforge.net/sourceforge
 
 #% THE GIMP
 %DIR Multimedia/Retouche photo
-%URLZIP http://ovh.dl.sourceforge.net/sourceforge/gimp-win/gtk+-2.6.8-setup-1.zip
-%URLZIP http://ovh.dl.sourceforge.net/sourceforge/gimp-win/gimp-2.2.8-i586-setup.zip
-%URLZIP http://ovh.dl.sourceforge.net/sourceforge/gimp-win/gimp-help-2-0.8-setup.zip
-%URLZIP ftp://ftp.arnes.si/software/gimp-win/gimp-gap-2.0.2-setup.zip
+%URLZIP http://ovh.dl.sourceforge.net/sourceforge/gimp-win/gtk+-2.6.9-setup.zip
+%URLZIP http://ovh.dl.sourceforge.net/sourceforge/gimp-win/gimp-2.2.9-i586-setup.zip
+%URLZIP http://ovh.dl.sourceforge.net/sourceforge/gimp-win/gimp-help-2-0.9-setup.zip
+%URLZIP http://ovh.dl.sourceforge.net/sourceforge/gimp-win/gimp-gap-2.2.0-setup.zip
 %FILE Multimedia/Retouche photo/installation.txt
 Dans l'ordre, il faut installer :
 - gtk+
@@ -472,10 +472,10 @@ Consultez ensuite les tutoriels dans le dossier : Débuter avec GIMP
 %URLZIP http://www.aljacom.com/%7Egimp/debuter_avec_gimp_v2.zip
 %URLZIP http://www.aljacom.com/%7Egimp/debuter_avec_gimp_2_v2.zip
 %DIR Multimedia/Retouche photo/code source
-http://ovh.dl.sourceforge.net/sourceforge/gimp-win/gimp-2.2.7.tar.bz2
+http://ovh.dl.sourceforge.net/sourceforge/gimp-win/gimp-2.2.9.tar.bz2
 %FILE Multimedia/Retouche photo/code source/codesource.txt
 le code source peut être obtenu ici :
-http://ovh.dl.sourceforge.net/sourceforge/gimp-win/gimp-2.2.7.tar.bz2
+http://ovh.dl.sourceforge.net/sourceforge/gimp-win/gimp-2.2.9.tar.bz2
 
 #% GHOSTSCRIPT ET GSVIEW
 %DIR Bureautique/Visualiseur de fichiers PDF et Postscript
@@ -494,12 +494,12 @@ ftp://sunsite.cnlab-switch.ch/mirror/ghost/ghostgum/gsv46src.zip
 
 #% FILEZILLA
 %DIR Internet/Transfert FTP
-%URL http://ovh.dl.sourceforge.net/sourceforge/filezilla/FileZilla_2_2_15_setup.exe
+%URL http://ovh.dl.sourceforge.net/sourceforge/filezilla/FileZilla_2_2_17_setup.exe
 %DIR Internet/Transfert FTP/code source
-%URL http://ovh.dl.sourceforge.net/sourceforge/filezilla/FileZilla_2_2_15_src.zip
+%URL http://ovh.dl.sourceforge.net/sourceforge/filezilla/FileZilla_2_2_17_src.zip
 %FILE Internet/Transfert FTP/code source/codesource.txt
 le code source peut être obtenu ici :
-http://ovh.dl.sourceforge.net/sourceforge/filezilla/FileZilla_2_2_15_src.zip
+http://ovh.dl.sourceforge.net/sourceforge/filezilla/FileZilla_2_2_17_src.zip
 
 #% DIA
 %DIR Bureautique/Éditeur de diagrammes
@@ -536,14 +536,14 @@ http://www.yafray.org/sec/2/downloads/yafray-0.0.8.tar.gz
 http://download.blender.org/source/blender-2.37a.tar.gz
 
 #% OPENOFFICE.ORG
-%DIR Bureautique/Suite Bureautique Complète/OpenOffice.org 1.1.5
-%URLZIP ftp://ftp.proxad.fr/mirrors/ftp.openoffice.org/localized/fr/1.1.5/OOo_1.1.5_Win32Intel_install_fr.zip
+%DIR Bureautique/Suite Bureautique Complète
+%URL ftp://ftp.free.fr/mirrors/ftp.openoffice.org/localized/fr/2.0.0/OOo_2.0.0_Win32Intel_install_fr.exe
 %DIR Bureautique/Suite Bureautique Complète/code source
 %FILE Bureautique/Suite Bureautique Complète/code source/codesource.txt
 Le code source est énorme et peut être récupéré ici : http://www.openoffice.org/dev_docs/source/get_source.html
 #%URL ftp://openoffice.cict.fr/openoffice/stable/1.1.3/OOo_1.1.3_source.tar.gz
 %DIR Bureautique/Suite Bureautique Complète/Manuels et documentation
-%URL http://fr.openoffice.org/Documentation/Guides/Manuel_install1.1_v2.pdf
+#%URL http://fr.openoffice.org/Documentation/Guides/Manuel_install1.1_v2.pdf
 %URL http://fr.openoffice.org/Documentation/Guides/parcours_texte_ooo.pdf
 %URL http://fr.openoffice.org/Documentation/Guides/guideDraw.pdf
 %URL http://fr.openoffice.org/Documentation/Guides/Andrew5.pdf
@@ -559,7 +559,7 @@ Voir ici : http://cvs.sourceforge.net/viewcvs.py/cdexos/cdex_xp/
 
 #% 7-ZIP
 %DIR Bureautique/Compression de fichiers (zip, gz, bz2, etc.)
-%URL http://ovh.dl.sourceforge.net/sourceforge/sevenzip/7z429.exe
+%URL http://ovh.dl.sourceforge.net/sourceforge/sevenzip/7z430.exe
 %FILE Bureautique/Compression de fichiers (zip, gz, bz2, etc.)/lisez-moi.txt
 Après installation de 7-zip, voici ce qu'il faut faire pour avoir le programme en français et un usage plus agréable :
 - Menu Démarrer -> Programmes -> 7-zip -> 7-zip File Manager
@@ -596,7 +596,7 @@ et dont la pérennité, le prix, la disponibilité, ou la compatibilité sont in
 
 Quelques exemples :
 
-Au lieu de télécharger illégalement Photoshop, apprenez à utiliser GIMP.
+Au lieu de télécharger illégalement Photoshop, apprenez à utiliser Le GIMP.
 Il est aussi performant, gratuit, légal,
 et vous êtes sûr qu'il ne va jamais disparaître, ni devenir payant : c'est un Logiciel Libre.
 
@@ -605,12 +605,12 @@ il est gratuit, compatible, ouvert, facile à utiliser, plus stable, et il évol
 
 #% INKSCAPE
 %DIR Multimedia/Dessin vectoriel
-%URL http://ovh.dl.sourceforge.net/sourceforge/inkscape/Inkscape-0.42.2-1.win32.exe
+%URL http://ovh.dl.sourceforge.net/sourceforge/inkscape/Inkscape-0.43-1.win32.exe
 %DIR Multimedia/Dessin vectoriel/code source
-%URL http://ovh.dl.sourceforge.net/sourceforge/inkscape/inkscape-0.42.2.tar.bz2
+%URL http://ovh.dl.sourceforge.net/sourceforge/inkscape/inkscape-0.43.tar.bz2
 %FILE Multimedia/Dessin vectoriel/code source/codesource.txt
 le code source peut être obtenu ici :
-http://ovh.dl.sourceforge.net/sourceforge/inkscape/inkscape-0.42.2.tar.bz2
+http://ovh.dl.sourceforge.net/sourceforge/inkscape/inkscape-0.43.tar.bz2
 
 #% AUDACITY
 %DIR Multimedia/Enregistreur et éditeur de sons
