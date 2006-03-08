@@ -298,3 +298,8 @@
 - nouvelles docs pour OpenOffice.org 2.0
 - retrait de Privoxy
 - ajout de adblock plus et flashblock (avec page html d'install)
+
+## version 39
+
+- la doc gimp n'était pas incluse
+- erreur de répertoire pour gimp

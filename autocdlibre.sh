@@ -28,7 +28,7 @@
 unalias -a
 
 # version de ce script
-autocdlibre_version=38
+autocdlibre_version=39
 # où récupérer les infos
 autocdlibre_email="ccomb@free.fr"
 autocdlibre_server="ccomb.free.fr"
@@ -471,12 +471,12 @@ Dans l'ordre, il faut installer :
 Consultez ensuite les tutoriels dans le dossier : Débuter avec GIMP
 
 #%URL ftp://ftp.arnes.si/software/gimp-win/gimp-plugins.zip
-%DIR Multimedia/Retouche photo/Débuter avec GIMP
-%URLZIP http://www.aljacom.com/%7Egimp/doc_gimp_aljacom.exe
+%DIR Multimedia/Retouche et création graphique/Débuter avec GIMP
+%URL http://www.aljacom.com/%7Egimp/doc_gimp_aljacom.exe
 #%URLZIP http://www.aljacom.com/%7Egimp/debuter_avec_gimp_2_v2.zip
-%DIR Multimedia/Retouche photo/code source
+%DIR Multimedia/Retouche et création graphique/code source
 http://ovh.dl.sourceforge.net/sourceforge/gimp-win/gimp-2.2.10.tar.bz2
-%FILE Multimedia/Retouche photo/code source/codesource.txt
+%FILE Multimedia/Retouche et création graphique/code source/codesource.txt
 le code source peut être obtenu ici :
 http://ovh.dl.sourceforge.net/sourceforge/gimp-win/gimp-2.2.10.tar.bz2
 
