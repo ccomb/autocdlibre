@@ -28,7 +28,7 @@
 unalias -a
 
 # version de ce script
-autocdlibre_version=39
+autocdlibre_version=40
 # où récupérer les infos
 autocdlibre_email="ccomb@free.fr"
 autocdlibre_server="ccomb.free.fr"
@@ -676,8 +676,8 @@ http://ftp.eu.mozilla.org/pub/mozilla.org/thunderbird/releases/1.0.6/source/thun
 
 #% ADBLOCK FLASHBLOCK
 %DIR Internet/Filtrage pubs et flash
-%URL http://downloads.mozdev.org/adblockplus/adblockplus-0.6.1.1-fr-FR.xpi
-%URL http://downloads.mozdev.org/flashblock/flashblock-1.5.1.xpi
+%URL http://www.initworld.com/mozdev/adblockplus/adblockplus-0.6.1.2-fr-FR.xpi
+%URL http://mozdev.elliptic.fr/flashblock/flashblock-1.5.1.xpi
 %DIR Internet/Filtrage pubs et flash/code source
 #%URL http://ovh.dl.sourceforge.net/sourceforge/ijbswa/privoxy-3.0.3-2-stable.src.tar.gz
 %FILE Internet/Filtrage pubs et flash/code source/codesource.txt
@@ -696,7 +696,7 @@ Ces deux extensions de Firefox permettent d'accélérer fortement le chargement 
 - ouvrez cette page web avec Firefox (pas avec Internet Explorer !)<br />
 - cliquez sur les liens suivants :<br />
 <a href="flashblock-1.5.1.xpi">installer Flashblock</a><br />
-<a href="adblockplus-0.6.1.1-fr-FR.xpi">installer Adblock Plus</a><br />
+<a href="adblockplus-0.6.1.2-fr-FR.xpi">installer Adblock Plus</a><br />
 - Après l'installation, vous devrez redémarrer Firefox.<br />
 - Ces deux extensions peuvent être configurées dans le menu de Firefox : Outils -> Extensions<br />
 <br />
