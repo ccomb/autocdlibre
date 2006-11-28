@@ -307,3 +307,10 @@
 ## version 40
 
 - nouvelle URL pour flashblock et adblockplus
+
+## version 41
+
+- Ajout de Scribus
+- nouvelles versions des autres programmes
+- Modifs de certains fichiers textes inclus
+- Retrait de Ghostscript, httrack, abiword, cornice
