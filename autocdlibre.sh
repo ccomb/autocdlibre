@@ -4,7 +4,7 @@
 # de certains logiciels libres et de les graver sur un cd
 # ATTENTION : ce fichier est encodé en UTF-8
 ##################################################################
-# Copyright (C) 2004-2006 Christophe Combelles (ccomb@free.fr)
+# Copyright (C) 2004-2007 Christophe Combelles (ccomb@free.fr)
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -28,7 +28,7 @@
 unalias -a
 
 # version de ce script
-autocdlibre_version=41
+autocdlibre_version=42
 # où récupérer les infos
 autocdlibre_email="ccomb@free.fr"
 autocdlibre_server="ccomb.free.fr"
@@ -481,12 +481,12 @@ http://ovh.dl.sourceforge.net/sourceforge/gimp-win/gimp-2.2.13.tar.bz2
 
 #% FILEZILLA
 %DIR Internet/Transfert FTP
-%URL http://ovh.dl.sourceforge.net/sourceforge/filezilla/FileZilla_3.0.0-beta2_win32-setup.exe
+%URL http://ovh.dl.sourceforge.net/sourceforge/filezilla/FileZilla_3.0.0-beta5_win32-setup.exe
 %DIR Internet/Transfert FTP/code source
-%URL http://ovh.dl.sourceforge.net/sourceforge/filezilla/FileZilla_3.0.0-beta2_src.tar.bz2
+%URL http://ovh.dl.sourceforge.net/sourceforge/filezilla/FileZilla_3.0.0-beta5_src.tar.bz2
 %FILE Internet/Transfert FTP/code source/codesource.txt
 le code source peut être obtenu ici :
-http://ovh.dl.sourceforge.net/sourceforge/filezilla/FileZilla_3.0.0-beta2_src.tar.bz2
+http://ovh.dl.sourceforge.net/sourceforge/filezilla/FileZilla_3.0.0-beta5_src.tar.bz2
 
 #% DIA
 %DIR Bureautique/Éditeur de diagrammes
@@ -525,7 +525,7 @@ http://download.blender.org/source/blender-2.42a.tar.gz
 
 #% OPENOFFICE.ORG
 %DIR Bureautique/Suite Bureautique Complète
-%URL ftp://ftp.free.fr/mirrors/ftp.openoffice.org/localized/fr/2.0.4/OOo_2.0.4_Win32Intel_install_fr.exe
+%URL ftp://ftp.free.fr/mirrors/ftp.openoffice.org/localized/fr/2.1.0/OOo_2.1.0_Win32Intel_install_fr.exe
 %DIR Bureautique/Suite Bureautique Complète/code source
 %FILE Bureautique/Suite Bureautique Complète/code source/codesource.txt
 Le code source est énorme et peut être récupéré ici : http://www.openoffice.org/dev_docs/source/get_source.html
@@ -563,7 +563,7 @@ Voir ici : http://cvs.sourceforge.net/viewcvs.py/cdexos/cdex_xp/
 %DIR Bureautique/Compression de fichiers (zip, 7z, gz, bz2, etc.)
 %URL http://ovh.dl.sourceforge.net/sourceforge/sevenzip/7z442.exe
 %DIR Bureautique/Compression de fichiers (zip, 7z, gz, bz2, etc.)/code source
-%URL http://ovh.dl.sourceforge.net/sourceforge/sevenzip/7z432.tar.bz2
+%URL http://ovh.dl.sourceforge.net/sourceforge/sevenzip/7z442.tar.bz2
 %FILE Bureautique/Compression de fichiers (zip, 7z, gz, bz2, etc.)/code source/codesource.txt
 le code source peut être obtenu ici :
 http://ovh.dl.sourceforge.net/sourceforge/sevenzip/7z442.tar.bz2
@@ -608,7 +608,7 @@ http://ovh.dl.sourceforge.net/sourceforge/inkscape/inkscape-0.44.1.tar.gz
 #% AUDACITY
 %DIR Multimedia/Enregistreur et éditeur de sons
 %URL http://ovh.dl.sourceforge.net/sourceforge/audacity/audacity-win-1.2.6.exe
-#%URL http://mitiok.free.fr/lame-3.96.1.zip
+%URL http://audio.ciara.us/rarewares/lame3.97.zip
 
 %DIR Multimedia/Enregistreur et éditeur de sons/mode d'emploi
 %URLZIP http://audacity.sourceforge.net/audacity-manual-1.2.zip
@@ -642,25 +642,25 @@ http://ovh.dl.sourceforge.net/sourceforge/audacity/audacity-src-1.2.6.tar.gz
 
 #% FIREFOX
 %DIR Internet/Navigateur Internet moderne
-%URL http://releases.mozilla.org/pub/mozilla.org/firefox/releases/2.0/win32/fr/Firefox Setup 2.0.exe
+%URL http://releases.mozilla.org/pub/mozilla.org/firefox/releases/2.0.0.1/win32/fr/Firefox Setup 2.0.0.1.exe
 %DIR Internet/Navigateur Internet moderne/code source
-%URL http://releases.mozilla.org/pub/mozilla.org/firefox/releases/2.0/source/firefox-2.0-source.tar.bz2
+%URL http://releases.mozilla.org/pub/mozilla.org/firefox/releases/2.0.0.1/source/firefox-2.0.0.1-source.tar.bz2
 %FILE Internet/Navigateur Internet moderne/code source/codesource.txt
 le code source peut être obtenu ici :
-http://releases.mozilla.org/pub/mozilla.org/firefox/releases/2.0/source/firefox-2.0-source.tar.bz2
+http://releases.mozilla.org/pub/mozilla.org/firefox/releases/2.0.0.1/source/firefox-2.0.0.1-source.tar.bz2
 
 #% THUNDERBIRD
 %DIR Internet/Logiciel de courrier électronique
-%URL http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/1.5.0.8/win32/fr/Thunderbird Setup 1.5.0.8.exe
+%URL http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/1.5.0.9/win32/fr/Thunderbird Setup 1.5.0.9.exe
 %DIR Internet/Logiciel de courrier électronique/code source
-#%URL http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/1.5.0.8/source/thunderbird-1.5.0.8-source.tar.bz2
+#%URL http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/1.5.0.9/source/thunderbird-1.5.0.9-source.tar.bz2
 %FILE Internet/Logiciel de courrier électronique/code source/codesource.txt
 le code source peut être obtenu ici :
-http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/1.5.0.8/source/thunderbird-1.5.0.8-source.tar.bz2
+http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/1.5.0.9/source/thunderbird-1.5.0.9-source.tar.bz2
 
 #% ADBLOCK FLASHBLOCK
 %DIR Internet/Filtrage pubs et flash
-%URL http://adblockplus.org/downloads/adblockplus-0.7.2.2-fr-FR.xpi
+%URL http://adblockplus.org/downloads/adblockplus-0.7.2.4-fr-FR.xpi
 %URL http://mozdev.elliptic.fr/flashblock/flashblock-1.5.2.xpi
 %DIR Internet/Filtrage pubs et flash/code source
 #%URL http://ovh.dl.sourceforge.net/sourceforge/ijbswa/privoxy-3.0.3-2-stable.src.tar.gz
@@ -700,12 +700,12 @@ http://ovh.dl.sourceforge.net/sourceforge/gaim/gaim-2.0.0beta5.tar.bz2
 
 #% VLC MEDIA PLAYER
 %DIR Multimedia/Lecteur Vidéo, Audio et DVD
-%URL http://downloads.videolan.org/pub/videolan/vlc/0.8.5/win32/vlc-0.8.5-win32.exe
+%URL http://downloads.videolan.org/pub/videolan/vlc/0.8.6a/win32/vlc-0.8.6a-win32.exe
 %DIR Multimedia/Lecteur Vidéo, Audio et DVD/code source
-%URL http://downloads.videolan.org/pub/videolan/vlc/0.8.5/vlc-0.8.5.tar.gz
+%URL http://downloads.videolan.org/pub/videolan/vlc/0.8.6a/vlc-0.8.6a.tar.gz
 %FILE Multimedia/Lecteur Vidéo, Audio et DVD/code source/codesource.txt
 le code source peut être obtenu ici :
-http://downloads.videolan.org/pub/videolan/vlc/0.8.5/vlc-0.8.5.tar.gz
+http://downloads.videolan.org/pub/videolan/vlc/0.8.6a/vlc-0.8.6a.tar.gz
 
 #% CELESTIA
 %DIR Divertissement/Visite univers en 3D
