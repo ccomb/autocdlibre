@@ -28,7 +28,7 @@
 unalias -a
 
 # version de ce script
-autocdlibre_version=42
+autocdlibre_version=43
 # où récupérer les infos
 autocdlibre_email="ccomb@free.fr"
 autocdlibre_server="ccomb.free.fr"
@@ -357,12 +357,12 @@ Ils sont perennes et votre apprentissage l'est aussi !
 %DIR Bureautique/Comptabilité personnelle
 %URL http://ovh.dl.sourceforge.net/sourceforge/grisbi4win/grisbi-0.5.9-win32-gcc-gtk-2.6.9-060725-full.exe
 %DIR Bureautique/Comptabilité personnelle/code source
-%URL http://belnet.dl.sourceforge.net/sourceforge/grisbi/grisbi-0.5.9.tar.bz2
+%URL http://ovh.dl.sourceforge.net/sourceforge/grisbi/grisbi-0.5.9.tar.bz2
 %DIR Bureautique/Comptabilité personnelle/Manuel utilisateur
 %URL http://ovh.dl.sourceforge.net/sourceforge/grisbi/grisbi-manuel-img-0.5.1.pdf
 %FILE Bureautique/Comptabilité personnelle/code source/codesource.txt
 le code source peut être obtenu ici :
-http://belnet.dl.sourceforge.net/sourceforge/grisbi/grisbi-0.5.9.tar.bz2
+http://ovh.dl.sourceforge.net/sourceforge/grisbi/grisbi-0.5.9.tar.bz2
 
 #% CLAMWIN
 %DIR Internet/Scanner à virus
@@ -525,7 +525,8 @@ http://download.blender.org/source/blender-2.42a.tar.gz
 
 #% OPENOFFICE.ORG
 %DIR Bureautique/Suite Bureautique Complète
-%URL ftp://ftp.free.fr/mirrors/ftp.openoffice.org/localized/fr/2.1.0/OOo_2.1.0_Win32Intel_install_fr.exe
+#%URL ftp://ftp.free.fr/mirrors/ftp.openoffice.org/localized/fr/2.1.0/OOo_2.1.0_Win32Intel_install_fr.exe
+%URL ftp://ftp.free.fr/mirrors/ftp.openoffice.org/localized/fr/2.3.1/OOo_2.3.1_Win32Intel_install_fr.exe
 %DIR Bureautique/Suite Bureautique Complète/code source
 %FILE Bureautique/Suite Bureautique Complète/code source/codesource.txt
 Le code source est énorme et peut être récupéré ici : http://www.openoffice.org/dev_docs/source/get_source.html
@@ -642,26 +643,27 @@ http://ovh.dl.sourceforge.net/sourceforge/audacity/audacity-src-1.2.6.tar.gz
 
 #% FIREFOX
 %DIR Internet/Navigateur Internet moderne
-%URL http://releases.mozilla.org/pub/mozilla.org/firefox/releases/2.0.0.1/win32/fr/Firefox Setup 2.0.0.1.exe
+%URL http://releases.mozilla.org/pub/mozilla.org/firefox/releases/2.0.0.12/win32/fr/Firefox Setup 2.0.0.12.exe
 %DIR Internet/Navigateur Internet moderne/code source
-%URL http://releases.mozilla.org/pub/mozilla.org/firefox/releases/2.0.0.1/source/firefox-2.0.0.1-source.tar.bz2
+%URL http://releases.mozilla.org/pub/mozilla.org/firefox/releases/2.0.0.12/source/firefox-2.0.0.12-source.tar.bz2
 %FILE Internet/Navigateur Internet moderne/code source/codesource.txt
 le code source peut être obtenu ici :
-http://releases.mozilla.org/pub/mozilla.org/firefox/releases/2.0.0.1/source/firefox-2.0.0.1-source.tar.bz2
+http://releases.mozilla.org/pub/mozilla.org/firefox/releases/2.0.0.12/source/firefox-2.0.0.12-source.tar.bz2
 
 #% THUNDERBIRD
 %DIR Internet/Logiciel de courrier électronique
-%URL http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/1.5.0.9/win32/fr/Thunderbird Setup 1.5.0.9.exe
+
+%URL http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/2.0.0.9/win32/fr/Thunderbird Setup 2.0.0.9.exe
 %DIR Internet/Logiciel de courrier électronique/code source
-#%URL http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/1.5.0.9/source/thunderbird-1.5.0.9-source.tar.bz2
+#%URL http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/2.0.0.9/source/thunderbird-2.0.0.9-source.tar.bz2
 %FILE Internet/Logiciel de courrier électronique/code source/codesource.txt
 le code source peut être obtenu ici :
-http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/1.5.0.9/source/thunderbird-1.5.0.9-source.tar.bz2
+http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/2.0.0.9/source/thunderbird-2.0.0.9-source.tar.bz2
 
 #% ADBLOCK FLASHBLOCK
 %DIR Internet/Filtrage pubs et flash
-%URL http://adblockplus.org/downloads/adblockplus-0.7.2.4-fr-FR.xpi
-%URL http://mozdev.elliptic.fr/flashblock/flashblock-1.5.2.xpi
+%URL https://addons.mozilla.org/en-US/firefox/downloads/file/19510/adblock_plus-0.7.5.3-fx+tb+sm+fl.xpi
+%URL http://downloads.mozdev.org/flashblock/flashblock-1.5.5.xpi
 %DIR Internet/Filtrage pubs et flash/code source
 #%URL http://ovh.dl.sourceforge.net/sourceforge/ijbswa/privoxy-3.0.3-2-stable.src.tar.gz
 %FILE Internet/Filtrage pubs et flash/code source/codesource.txt
@@ -689,14 +691,14 @@ Pour plus d'informations, rendez-vous sur les pages d'<a href="http://adblockplu
 </body></html>
 
 
-#% GAIM
+#% PIDGIN (ex GAIM)
 %DIR Internet/Messagerie instantanée (icq, jabber, msn, etc.)
-%URL http://ovh.dl.sourceforge.net/sourceforge/gaim/gaim-2.0.0beta5.exe
+%URL http://ovh.dl.sourceforge.net/sourceforge/pidgin/pidgin-2.4.0.exe
 %DIR Internet/Messagerie instantanée (icq, jabber, msn, etc.)/code source
-%URL http://ovh.dl.sourceforge.net/sourceforge/gaim/gaim-2.0.0beta5.tar.bz2
+%URL http://ovh.dl.sourceforge.net/sourceforge/pidgin/pidgin-2.4.0.tar.bz2
 %FILE Internet/Messagerie instantanée (icq, jabber, msn, etc.)/code source/codesource.txt
 le code source peut être obDtenu ici :
-http://ovh.dl.sourceforge.net/sourceforge/gaim/gaim-2.0.0beta5.tar.bz2
+http://ovh.dl.sourceforge.net/sourceforge/pidgin/pidgin-2.4.0.tar.bz2
 
 #% VLC MEDIA PLAYER
 %DIR Multimedia/Lecteur Vidéo, Audio et DVD
